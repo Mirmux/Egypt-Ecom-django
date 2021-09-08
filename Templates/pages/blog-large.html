@@ -1,0 +1,379 @@
+{% extends 'base/base.html' %}
+{% load  static %}
+
+{% block content %}
+    <section class="inner-banner">
+        <div class="container">
+            <h2 class="inner-banner__title">Blog Large Image</h2><!-- /.inner-banner__title -->
+            <ul class="list-unstyled thm-breadcrumb">
+                <li><a href="{% url 'home-url' %}">Home</a></li>
+                <li><a href="{% url 'blog-large-url' %}">Pages</a></li>
+                <li>Blog</li>
+            </ul><!-- /.thm-breadcrumb -->
+        </div><!-- /.container -->
+    </section><!-- /.inner-banner -->
+
+
+    <section class="blog-large blog-four">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="blog-four__single">
+                        <div class="blog-four__date">
+                                <span>
+                                    <b>05</b>
+                                    Oct
+                                </span>
+                        </div><!-- /.blog-four__date -->
+                        <div class="blog-four__image">
+                            <img src="{% static 'images/blog/blog-l-1-1.jpg' %}" alt="Awesome Image"/>
+                            <a href="{% url 'blog-detail-url' %}"><i class="egypt-icon-add"></i><!-- /.egypt-icon-add --></a>
+                        </div><!-- /.blog-four__image -->
+                        <div class="blog-four__content">
+                            <div class="blog-four__meta">
+                                <a href="{% url 'blog-detail-url' %}">Admin</a>
+                                <span class="blog-four__meta-sep">_</span><!-- /.blog-four__meta-sep -->
+                                <a href="{% url 'blog-detail-url' %}">Press Release</a>
+                                <span class="blog-four__meta-sep">_</span><!-- /.blog-four__meta-sep -->
+                                <a href="{% url 'blog-detail-url' %}">5 Comments</a>
+                                <span class="blog-four__meta-sep">_</span><!-- /.blog-four__meta-sep -->
+                                <a href="{% url 'blog-detail-url' %}">24 Views</a>
+                            </div><!-- /.blog-four__meta -->
+
+                            <h3 class="blog-four__title"><a href="{% url 'blog-detail-url' %}">Celebrating Authentic Marathon
+                                2019</a></h3><!-- /.blog-four__title -->
+
+                            <p class="blog-four__text">Explain to you how all this mistaken some idea of denouncing
+                                pleasure again is there or desires to obtain pain of itself, because great
+                                pleasure....</p><!-- /.blog-four__text -->
+
+                            <div class="blog-four__bottom">
+                                <a href="{% url 'blog-detail-url' %}" class="thm-btn blog-four__btn">Read More</a>
+
+                                <div class="blog-four__social">
+                                    <span>Share this post</span>
+                                    <a href="{% url 'blog-large-url' %}"><i class="egypt-icon-share"></i></a>
+                                </div><!-- /.blog-four__social -->
+                            </div><!-- /.blog-four__bottom -->
+                        </div><!-- /.blog-four__content -->
+                    </div><!-- /.blog-four__single -->
+                    <div class="blog-four__single">
+                        <div class="blog-four__date">
+                                <span>
+                                    <b>05</b>
+                                    Oct
+                                </span>
+                        </div><!-- /.blog-four__date -->
+                        <div class="blog-four__image">
+                            <img src="{% static  'images/blog/blog-l-1-2.jpg' %}" alt="Awesome Image"/>
+                            <a href="{% url 'blog-detail-url' %}"><i class="egypt-icon-add"></i><!-- /.egypt-icon-add --></a>
+                        </div><!-- /.blog-four__image -->
+                        <div class="blog-four__content">
+                            <div class="blog-four__meta">
+                                <a href="{% url 'blog-detail-url' %}">Admin</a>
+                                <span class="blog-four__meta-sep">_</span><!-- /.blog-four__meta-sep -->
+                                <a href="{% url 'blog-detail-url' %}">Press Release</a>
+                                <span class="blog-four__meta-sep">_</span><!-- /.blog-four__meta-sep -->
+                                <a href="{% url 'blog-detail-url' %}">5 Comments</a>
+                                <span class="blog-four__meta-sep">_</span><!-- /.blog-four__meta-sep -->
+                                <a href="{% url 'blog-detail-url' %}">24 Views</a>
+                            </div><!-- /.blog-four__meta -->
+
+                            <h3 class="blog-four__title"><a href="{% url 'blog-detail-url' %}">Plan Your Visit to The Egypt
+                                Museum</a></h3><!-- /.blog-four__title -->
+
+                            <p class="blog-four__text">Explain to you how all this mistaken some idea of denouncing
+                                pleasure again is there or desires to obtain pain of itself, because great
+                                pleasure....</p><!-- /.blog-four__text -->
+
+                            <div class="blog-four__bottom">
+                                <a href="{% url 'blog-detail-url' %}" class="thm-btn blog-four__btn">Read More</a>
+
+                                <div class="blog-four__social">
+                                    <span>Share this post</span>
+                                    <a href="{% url 'blog-large-url' %}"><i class="egypt-icon-share"></i></a>
+                                </div><!-- /.blog-four__social -->
+                            </div><!-- /.blog-four__bottom -->
+                        </div><!-- /.blog-four__content -->
+                    </div><!-- /.blog-four__single -->
+                    <div class="blog-four__single">
+                        <div class="blog-four__date">
+                                <span>
+                                    <b>05</b>
+                                    Oct
+                                </span>
+                        </div><!-- /.blog-four__date -->
+                        <div class="blog-four__image">
+                            <img src="{% static 'images/blog/blog-l-1-3.jpg' %}" alt="Awesome Image"/>
+                            <a href="{% url 'blog-detail-url' %}"><i class="egypt-icon-add"></i><!-- /.egypt-icon-add --></a>
+                        </div><!-- /.blog-four__image -->
+                        <div class="blog-four__content">
+                            <div class="blog-four__meta">
+                                <a href="{% url 'blog-detail-url' %}">Admin</a>
+                                <span class="blog-four__meta-sep">_</span><!-- /.blog-four__meta-sep -->
+                                <a href="{% url 'blog-detail-url' %}">Press Release</a>
+                                <span class="blog-four__meta-sep">_</span><!-- /.blog-four__meta-sep -->
+                                <a href="{% url 'blog-detail-url' %}">5 Comments</a>
+                                <span class="blog-four__meta-sep">_</span><!-- /.blog-four__meta-sep -->
+                                <a href="{% url 'blog-detail-url' %}">24 Views</a>
+                            </div><!-- /.blog-four__meta -->
+
+                            <h3 class="blog-four__title"><a href="{% url 'blog-detail-url' %}">Celebrate 200th Year of Egypt</a>
+                            </h3><!-- /.blog-four__title -->
+
+                            <p class="blog-four__text">Explain to you how all this mistaken some idea of denouncing
+                                pleasure again is there or desires to obtain pain of itself, because great
+                                pleasure....</p><!-- /.blog-four__text -->
+
+                            <div class="blog-four__bottom">
+                                <a href="{% url 'blog-detail-url' %}" class="thm-btn blog-four__btn">Read More</a>
+
+                                <div class="blog-four__social">
+                                    <span>Share this post</span>
+                                    <a href="{% url 'blog-large-url' %}"><i class="egypt-icon-share"></i></a>
+                                </div><!-- /.blog-four__social -->
+                            </div><!-- /.blog-four__bottom -->
+                        </div><!-- /.blog-four__content -->
+                    </div><!-- /.blog-four__single -->
+                    <div class="blog-four__single">
+                        <div class="blog-four__date">
+                                <span>
+                                    <b>05</b>
+                                    Oct
+                                </span>
+                        </div><!-- /.blog-four__date -->
+                        <div class="blog-four__image">
+                            <img src="{% static 'images/blog/blog-l-1-4.jpg' %}" alt="Awesome Image"/>
+                            <a href="{% url 'blog-detail-url' %}"><i class="egypt-icon-add"></i><!-- /.egypt-icon-add --></a>
+                        </div><!-- /.blog-four__image -->
+                        <div class="blog-four__content">
+                            <div class="blog-four__meta">
+                                <a href="{% url 'blog-detail-url' %}">Admin</a>
+                                <span class="blog-four__meta-sep">_</span><!-- /.blog-four__meta-sep -->
+                                <a href="{% url 'blog-detail-url' %}">Press Release</a>
+                                <span class="blog-four__meta-sep">_</span><!-- /.blog-four__meta-sep -->
+                                <a href="{% url 'blog-detail-url' %}">5 Comments</a>
+                                <span class="blog-four__meta-sep">_</span><!-- /.blog-four__meta-sep -->
+                                <a href="{% url 'blog-detail-url' %}">24 Views</a>
+                            </div><!-- /.blog-four__meta -->
+
+                            <h3 class="blog-four__title"><a href="{% url 'blog-detail-url' %}">Celebrating Authentic Marathon
+                                2019</a></h3><!-- /.blog-four__title -->
+
+                            <p class="blog-four__text">Explain to you how all this mistaken some idea of denouncing
+                                pleasure again is there or desires to obtain pain of itself, because great
+                                pleasure....</p><!-- /.blog-four__text -->
+
+                            <div class="blog-four__bottom">
+                                <a href="{% url 'blog-detail-url' %}" class="thm-btn blog-four__btn">Read More</a>
+
+                                <div class="blog-four__social">
+                                    <span>Share this post</span>
+                                    <a href="{% url 'blog-large-url' %}"><i class="egypt-icon-share"></i></a>
+                                </div><!-- /.blog-four__social -->
+                            </div><!-- /.blog-four__bottom -->
+                        </div><!-- /.blog-four__content -->
+                    </div><!-- /.blog-four__single -->
+                    <div class="blog-four__single">
+                        <div class="blog-four__date">
+                                <span>
+                                    <b>05</b>
+                                    Oct
+                                </span>
+                        </div><!-- /.blog-four__date -->
+                        <div class="blog-four__image">
+                            <img src="{% static 'images/blog/blog-l-1-5.jpg' %}" alt="Awesome Image"/>
+                            <a href="{% url 'blog-detail-url' %}"><i class="egypt-icon-add"></i><!-- /.egypt-icon-add --></a>
+                        </div><!-- /.blog-four__image -->
+                        <div class="blog-four__content">
+                            <div class="blog-four__meta">
+                                <a href="{% url 'blog-detail-url' %}">Admin</a>
+                                <span class="blog-four__meta-sep">_</span><!-- /.blog-four__meta-sep -->
+                                <a href="{% url 'blog-detail-url' %}">Press Release</a>
+                                <span class="blog-four__meta-sep">_</span><!-- /.blog-four__meta-sep -->
+                                <a href="{% url 'blog-detail-url' %}">5 Comments</a>
+                                <span class="blog-four__meta-sep">_</span><!-- /.blog-four__meta-sep -->
+                                <a href="{% url 'blog-detail-url' %}">24 Views</a>
+                            </div><!-- /.blog-four__meta -->
+
+                            <h3 class="blog-four__title"><a href="{% url 'blog-detail-url' %}">Best Ideas for Your Family Fun</a>
+                            </h3><!-- /.blog-four__title -->
+
+                            <p class="blog-four__text">Explain to you how all this mistaken some idea of denouncing
+                                pleasure again is there or desires to obtain pain of itself, because great
+                                pleasure....</p><!-- /.blog-four__text -->
+
+                            <div class="blog-four__bottom">
+                                <a href="{% url 'blog-detail-url' %}" class="thm-btn blog-four__btn">Read More</a>
+
+                                <div class="blog-four__social">
+                                    <span>Share this post</span>
+                                    <a href="{% url 'blog-large-url' %}"><i class="egypt-icon-share"></i></a>
+                                </div><!-- /.blog-four__social -->
+                            </div><!-- /.blog-four__bottom -->
+                        </div><!-- /.blog-four__content -->
+                    </div><!-- /.blog-four__single -->
+
+
+                    <div class="post-pagination post-pagination__two">
+                        <a href="{% url 'blog-large-url' %}">Prev</a>
+                        <a href="{% url 'blog-large-url' %}" class="active">1</a>
+                        <a href="{% url 'blog-large-url' %}">2</a>
+                        <a href="{% url 'blog-large-url' %}">Next</a>
+                    </div><!-- /.post-pagination -->
+                </div><!-- /.col-lg-8 -->
+                <div class="col-lg-4">
+                    <div class="sidebar sidebar__right">
+                        <div class="sidebar__single sidebar__search">
+                            <form action="{% url 'blog-large-url' %}" class="sidebar__search-form">
+                                <input type="text" name="search" placeholder="Search...">
+                                <button type="submit"><i class="egypt-icon-search"></i></button>
+                            </form><!-- /.sidebar__search-form -->
+                        </div><!-- /.sidebar__single -->
+                        <div class="sidebar__single">
+                            <h3 class="sidebar__title">Categories</h3><!-- /.sidebar__title -->
+                            <ul class="list-unstyled sidebar__cat-list">
+                                <li>
+                                    <a href="{% url 'blog-large-url' %}">
+                                        <span class="sidebar__cat-list__icon"></span>
+                                        History
+                                        <span class="sidebar__cat-list__count">(10)</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{% url 'blog-large-url' %}">
+                                        <span class="sidebar__cat-list__icon"></span>
+                                        Internationl
+                                        <span class="sidebar__cat-list__count">(10)</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{% url 'blog-large-url' %}">
+                                        <span class="sidebar__cat-list__icon"></span>
+                                        Exhibition
+                                        <span class="sidebar__cat-list__count">(10)</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{% url 'blog-large-url' %}">
+                                        <span class="sidebar__cat-list__icon"></span>
+                                        Kids & Family
+                                        <span class="sidebar__cat-list__count">(10)</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{% url 'blog-large-url' %}">
+                                        <span class="sidebar__cat-list__icon"></span>
+                                        Press Release
+                                        <span class="sidebar__cat-list__count">(10)</span>
+                                    </a>
+                                </li>
+                            </ul><!-- /.sidebar__cat-list -->
+                        </div><!-- /.sidebar__single -->
+                        <div class="sidebar__single">
+                            <h3 class="sidebar__title">Trending Post</h3><!-- /.sidebar__title -->
+                            <div class="sidebar__post-carousel owl-carousel owl-theme">
+                                <div class="item">
+                                    <div class="sidebar__post-single">
+                                        <div class="sidebar__post-image">
+                                            <div class="sidebar__post-date"><span>5</span> sep</div>
+                                            <!-- /.sidebar__post-date -->
+                                            <img src="{% static 'images/blog/blog-s-1-1.jpg' %}" alt="Awesome Image"/>
+                                        </div><!-- /.sidebar__post-image -->
+                                        <div class="sidebar__post-content">
+                                            <a href="{% url 'blog-large-url' %}" class="sidebar__post-cata">International</a>
+                                            <h3 class="sidebar__post-title"><a href="{% url 'blog-detail-url' %}">5 Things You’ll
+                                                Learn at The Egypt National Symposium</a></h3>
+                                            <!-- /.sidebar__post-title -->
+                                            <a href="{% url 'blog-detail-url' %}" class="sidebar__post-link">Read More
+                                                <span>+</span></a>
+                                        </div><!-- /.sidebar__post-content -->
+                                    </div><!-- /.sidebar__post-single -->
+                                </div><!-- /.item -->
+                                <div class="item">
+                                    <div class="sidebar__post-single">
+                                        <div class="sidebar__post-image">
+                                            <div class="sidebar__post-date"><span>5</span> sep</div>
+                                            <!-- /.sidebar__post-date -->
+                                            <img src="{% static 'images/blog/blog-s-1-1.jpg' %}" alt="Awesome Image"/>
+                                        </div><!-- /.sidebar__post-image -->
+                                        <div class="sidebar__post-content">
+                                            <a href="{% url 'blog-large-url' %}" class="sidebar__post-cata">International</a>
+                                            <h3 class="sidebar__post-title"><a href="{% url 'blog-detail-url' %}">5 Things You’ll
+                                                Learn at The Egypt National Symposium</a></h3>
+                                            <!-- /.sidebar__post-title -->
+                                            <a href="{% url 'blog-detail-url' %}" class="sidebar__post-link">Read More
+                                                <span>+</span></a>
+                                        </div><!-- /.sidebar__post-content -->
+                                    </div><!-- /.sidebar__post-single -->
+                                </div><!-- /.item -->
+                                <div class="item">
+                                    <div class="sidebar__post-single">
+                                        <div class="sidebar__post-image">
+                                            <div class="sidebar__post-date"><span>5</span> sep</div>
+                                            <!-- /.sidebar__post-date -->
+                                            <img src="{% static 'images/blog/blog-s-1-1.jpg' %}" alt="Awesome Image"/>
+                                        </div><!-- /.sidebar__post-image -->
+                                        <div class="sidebar__post-content">
+                                            <a href="{% url 'blog-large-url' %}" class="sidebar__post-cata">International</a>
+                                            <h3 class="sidebar__post-title"><a href="{% url 'blog-detail-url' %}">5 Things You’ll
+                                                Learn at The Egypt National Symposium</a></h3>
+                                            <!-- /.sidebar__post-title -->
+                                            <a href="{% url 'blog-detail-url' %}" class="sidebar__post-link">Read More
+                                                <span>+</span></a>
+                                        </div><!-- /.sidebar__post-content -->
+                                    </div><!-- /.sidebar__post-single -->
+                                </div><!-- /.item -->
+                            </div><!-- /.sidebar__post-carousel -->
+                        </div><!-- /.sidebar__single -->
+                        <div class="sidebar__single">
+                            <h3 class="sidebar__title">Tags</h3><!-- /.sidebar__title -->
+                            <div class="sidebar__tags-list">
+                                <a href="{% url 'blog-large-url' %}">Art</a>
+                                <a href="{% url 'blog-large-url' %}">Collection</a>
+                                <a href="{% url 'blog-large-url' %}">Display</a>
+                                <a href="{% url 'blog-large-url' %}">Events</a>
+                                <a href="{% url 'blog-large-url' %}">Exhibition</a>
+                                <a href="{% url 'blog-large-url' %}">Gallery</a>
+                                <a href="{% url 'blog-large-url' %}">Memorial</a>
+                                <a href="{% url 'blog-large-url' %}">Visit</a>
+                            </div><!-- /.sidebar__tags-list -->
+                        </div><!-- /.sidebar__single -->
+                        <div class="sidebar__single">
+                            <h3 class="sidebar__title">Instagram</h3><!-- /.sidebar__title -->
+                            <ul class="sidebar__insta-list list-unstyled">
+                                <li><a href="{% url 'blog-large-url' %}">
+                                    <span class="sidebar__insta-list__link">+</span>
+                                    <img src="{% static 'images/blog/blog-insta-1-1.jpg' %}" alt="Awesome Image"/>
+                                </a></li>
+                                <li><a href="{% url 'blog-large-url' %}">
+                                    <span class="sidebar__insta-list__link">+</span>
+                                    <img src="{% static 'images/blog/blog-insta-1-2.jpg' %}" alt="Awesome Image"/>
+                                </a></li>
+                                <li><a href="{% url 'blog-large-url' %}">
+                                    <span class="sidebar__insta-list__link">+</span>
+                                    <img src="{% static 'images/blog/blog-insta-1-3.jpg' %}" alt="Awesome Image"/>
+                                </a></li>
+                                <li><a href="{% url 'blog-large-url' %}">
+                                    <span class="sidebar__insta-list__link">+</span>
+                                    <img src="{% static 'images/blog/blog-insta-1-4.jpg' %}" alt="Awesome Image"/>
+                                </a></li>
+                                <li><a href="{% url 'blog-large-url' %}">
+                                    <span class="sidebar__insta-list__link">+</span>
+                                    <img src="{% static 'images/blog/blog-insta-1-5.jpg' %}" alt="Awesome Image"/>
+                                </a></li>
+                                <li><a href="{% url 'blog-large-url' %}">
+                                    <span class="sidebar__insta-list__link">+</span>
+                                    <img src="{% static 'images/blog/blog-insta-1-6.jpg' %}" alt="Awesome Image"/>
+                                </a></li>
+                            </ul><!-- /.sidebar__insta-list -->
+                        </div><!-- /.sidebar__single -->
+                    </div><!-- /.sidebar -->
+                </div><!-- /.col-lg-4 -->
+            </div><!-- /.row -->
+        </div><!-- /.container -->
+    </section><!-- /.blog-large -->
+
+    <a href="{% url 'blog-large-url' %}" data-target="html" class="scroll-to-target scroll-to-top"><i
+            class="egypt-icon-arrow-2"></i></a>
+{% endblock content %}

@@ -1,0 +1,91 @@
+{% extends 'base/base.html' %}
+{% load  static %}
+
+{% block content %}
+    <section class="inner-banner">
+        <div class="container">
+            <h2 class="inner-banner__title">Exhibition </h2><!-- /.inner-banner__title -->
+            <ul class="list-unstyled thm-breadcrumb">
+                <li><a href="{% url 'home-url' %}">Home</a></li>
+                <li><a href="{% url 'exbition-url' %}">What’s On</a></li>
+                <li>Exhibition</li>
+            </ul><!-- /.thm-breadcrumb -->
+
+
+            <ul class="nav nav-tabs exhibhition-one__menu">
+                <li class="nav-item">
+                    <a class="nav-link active" data-toggle="tab" href="{% url 'exbition-url' %}">Current</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="tab" href="{% url 'exbition-url' %}">Upcoming</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="{% url 'exbition-url' %}"
+                       role="button"
+                       aria-haspopup="true" aria-expanded="false">Archive</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" data-toggle="tab" href="{% url 'exbition-url' %}">November 2019</a>
+                        <a class="dropdown-item" href="{% url 'exbition-url' %}">January 2020</a>
+                        <a class="dropdown-item" href="{% url 'exbition-url' %}">February 2020</a>
+                        <a class="dropdown-item" href="{% url 'exbition-url' %}">March 2020</a>
+                        <a class="dropdown-item" href="{% url 'exbition-url' %}">April 2020</a>
+                    </div>
+                </li>
+            </ul>
+        </div><!-- /.container -->
+    </section><!-- /.inner-banner -->
+    <section class="exhibhition-one exhibhition-one__page">
+        <div class="container">
+            <div class="tab-content">
+                <div class="tab-pane show active animated fadeInUp" id="current">
+                    <div class="row">
+                        {% for exhibit in exhibition %}
+                            <div class="col-lg-4">
+                                <div class="exhibhition-one__single wow fadeInUp" data-wow-duration="1500ms">
+                                    <div class="exhibhition-one__image">
+                                        <div class="exhibhition-one__image-inner">
+                                            <span class="exhibhition-one__image-border-1"></span>
+                                            <span class="exhibhition-one__image-border-2"></span>
+                                            <span class="exhibhition-one__image-border-3"></span>
+                                            <span class="exhibhition-one__image-border-4"></span>
+                                            <img src="{{ exhibit.image.url }}" width="350" height="250"
+                                                 alt="Awesome Image"/>
+                                            <a href="{% url 'eventstatic-detail-url' exhibit.pk %}"
+                                               class="exhibhition-one__image-link"><i
+                                                    class="egypt-icon-arrow-1"></i></a>
+                                        </div><!-- /.exhibhition-one__image-inner -->
+                                    </div><!-- /.exhibhition-one__image -->
+                                    <div class="exhibhition-one__content">
+                                        <a href="{% url 'eventstatic-detail-url' exhibit.pk %}"
+                                           class="exhibhition-one__category">{{ exhibit.title }}</a>
+                                        <h3 class="exhibhition-one__title"><a
+                                                href="{% url 'eventstatic-detail-url' exhibit.pk %}">{{ exhibit.description|truncatechars:65 }}</a>
+                                        </h3><!-- /.exhibhition-one__title -->
+                                        <div class="exhibhition-one__bottom">
+                                            <div class="exhibhition-one__bottom-left">
+                                                <span>{{ exhibit.created | date }}</span>
+                                                <span>{{ exhibit.updated | date }} <i
+                                                        class="fa fa-angle-double-left"></i></span>
+                                            </div><!-- /.exhibhition-one__bottom-left -->
+                                            <div class="exhibhition-one__bottom-right">
+                                                <a href="{% url 'eventstatic-detail-url' exhibit.pk %}"
+                                                   class="thm-btn exhibhition-one__btn">Read More</a>
+                                            </div><!-- /.exhibhition-one__bottom-right -->
+                                        </div><!-- /.exhibhition-one__bottom -->
+                                    </div><!-- /.exhibhition-one__content -->
+                                </div><!-- /.exhibhition-one__single -->
+                            </div><!-- /.col-lg-4 -->
+                        {% endfor %}
+                    </div><!-- /.row -->
+                </div><!-- /#current.tab-pane show active animated fadeInUp -->
+            <div class="text-center">
+                <a href="{% url 'exbition-url' %}" class="exhibhition-one__more-link">
+
+                </a>
+            </div><!-- /.text-center -->
+        </div><!-- /.container -->
+    </section><!-- /.exhibhition-one -->
+
+    <a href="{% url 'exbition-url' %}" data-target="html" class="scroll-to-target scroll-to-top"><i
+            class="egypt-icon-arrow-2"></i></a>
+{% endblock content %}

@@ -1,0 +1,77 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block content %}
+
+
+        <section class="inner-banner">
+            <div class="container">
+                <h2 class="inner-banner__title">Meet Our Team</h2><!-- /.inner-banner__title -->
+                <ul class="list-unstyled thm-breadcrumb">
+                    <li><a href="{% url 'home-url' %}">Home</a></li>
+                    <li><a href="{% url 'about-url' %}">The Museum</a></li>
+                    <li>Meet Our Team</li>
+                </ul><!-- /.thm-breadcrumb -->
+            </div><!-- /.container -->
+        </section><!-- /.inner-banner -->
+        <section class="team-one team-one__team-page">
+            <div class="container">
+                <div class="block-title text-center">
+                    <h2 class="block-title__title">Board of Directors</h2><!-- /.block-title__title -->
+                </div><!-- /.block-title -->
+                <div class="row">
+                    {% for directors in teamdirectors %}
+                    <div class="col-lg-3 col-md-6">
+                        <div class="team-one__single wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="000ms">
+                            <div class="team-one__image">
+                                <img src="{{ directors.image.url }}" alt="Awesome Image" />
+                            </div><!-- /.team-one__image -->
+                            <div class="team-one__content">
+                                <h3 class="team-one__name">{{ directors.name }}</h3><!-- /.team-one__name -->
+                                <p class="team-one__designation">{{ directors.job }}</p><!-- /.team-one__designation -->
+                                <div class="team-one__social">
+                                    <p class="team-one__social-text text-uppercase">
+                                        <i class="egypt-icon-share"></i>Get Touch With Me
+                                    </p><!-- /.team-one__social-text -->
+                                    <div class="team-one__social-links">
+                                        <a href="https://www.facebook.com/{{ directors.facebook }}" class="fa fa-facebook-f"></a>
+                                        <a href="https://www.twitter.com/{{ directors.twitter }}" class="fa fa-twitter"></a>
+                                        <a href="https://www.linkedin.com/{{ directors.linkedin }}" class="fa fa-linkedin"></a>
+                                    </div><!-- /.team-one__social-links -->
+                                </div><!-- /.team-one__social -->
+                            </div><!-- /.team-one__content -->
+                        </div><!-- /.team-one__single -->
+                    </div><!-- /.col-lg-3 col-md-6 -->
+                    {% endfor %}
+                </div><!-- /.row -->
+            </div><!-- /.container -->
+        </section><!-- /.team-one -->
+
+        <section class="team-two">
+            <div class="container">
+                <div class="block-title text-center">
+                    <h2 class="block-title__title">Museum Staff</h2><!-- /.block-title__title -->
+                </div><!-- /.block-title -->
+                <div class="row">
+                    {% for staff in teamstaff %}
+                    <div class="col-lg-4 col-md-6">
+                        <div class="team-two__single">
+                            <div class="team-two__image">
+                                <div class="testimonials-two__image-inner">
+                                    <img src="{{ staff.image_staff.url }}" width="100" height="100" alt="Awesome Image" />
+                                </div><!-- /.testimonials-two__image-inner -->
+                            </div><!-- /.team-two__image -->
+                            <div class="team-two__content">
+                                <h3 class="team-two__name">{{ staff.name_staff }}</h3><!-- /.team-two__name -->
+                                <p class="team-two__designation">{{ staff.job_staff }}</p><!-- /.team-two__designation -->
+                                <a href="tel:321-888-789-0123" class="team-two__link">{{ staff.phone_staff }}</a>
+                            </div><!-- /.team-two__content -->
+                        </div><!-- /.team-two__single -->
+                    </div><!-- /.col-lg-4 col-md-6 -->
+                    {% endfor %}
+                </div><!-- /.row -->
+            </div><!-- /.container -->
+        </section><!-- /.team-two -->
+
+    <a href="team.html#" data-target="html" class="scroll-to-target scroll-to-top"><i class="egypt-icon-arrow-2"></i></a>
+{% endblock content %}

@@ -1,0 +1,130 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block content %}
+
+    <section class="exhibhition-one">
+
+        <div class="container">
+
+            <div class="row">
+                {% for exhibit in object_list %}
+                    <div class="col-lg-4">
+                        <div class="exhibhition-one__single wow fadeInUp" data-wow-duration="1500ms">
+                            <div class="exhibhition-one__image">
+                                <div class="exhibhition-one__image-inner">
+                                    <span class="exhibhition-one__image-border-1"></span>
+                                    <span class="exhibhition-one__image-border-2"></span>
+                                    <span class="exhibhition-one__image-border-3"></span>
+                                    <span class="exhibhition-one__image-border-4"></span>
+                                    <img src="{{ exhibit.search_results }}" width="350" height="250"
+                                         alt="Awesome Image"/>
+                                    <a href="{% url 'eventstatic-detail-url' exhibit.pk %}"
+                                       class="exhibhition-one__image-link"><i
+                                            class="egypt-icon-arrow-1"></i></a>
+                                </div><!-- /.exhibhition-one__image-inner -->
+                            </div><!-- /.exhibhition-one__image -->
+                            <div class="exhibhition-one__content">
+                                <a href="{% url 'eventstatic-detail-url' exhibit.pk %}"
+                                   class="exhibhition-one__category">{{ exhibit.title }}</a>
+                                <h3 class="exhibhition-one__title"><a
+                                        href="{% url 'eventstatic-detail-url' exhibit.pk %}">{{ exhibit.description|truncatechars:65 }}</a>
+                                </h3><!-- /.exhibhition-one__title -->
+                                <div class="exhibhition-one__bottom">
+                                    <div class="exhibhition-one__bottom-left">
+                                        <span>{{ exhibit.created | date }}</span>
+                                        <span>{{ exhibit.updated | date }} <i
+                                                class="fa fa-angle-double-left"></i></span>
+                                    </div><!-- /.exhibhition-one__bottom-left -->
+                                    <div class="exhibhition-one__bottom-right">
+                                        <a href="{% url 'eventstatic-detail-url' exhibit.pk %}"
+                                           class="thm-btn exhibhition-one__btn">Read More</a>
+                                    </div><!-- /.exhibhition-one__bottom-right -->
+                                </div><!-- /.exhibhition-one__bottom -->
+                            </div><!-- /.exhibhition-one__content -->
+                        </div><!-- /.exhibhition-one__single -->
+                    </div><!-- /.col-lg-4 -->
+                {% endfor %}
+            </div><!-- /.row -->
+
+        </div><!-- /.container -->
+    </section><!-- /.exhibhition-one -->
+
+
+    {% if not object_list %}
+        <section class="page_404">
+            <div class="container">
+                <div class="row justify-content-md-center">
+                    <div class="col-sm-12 ">
+                        <div class="col-sm-10 col-sm-offset-1  text-center">
+                            <div class="four_zero_four_bg">
+                                <h1 class="text-center ">404</h1>
+
+
+                            </div>
+
+                            <div class="contant_box_404">
+                                <h3 class="h2">
+                                    Look like you're lost
+                                </h3>
+
+                                <p>the page you are looking for not avaible!</p>
+
+                                <a href="{% url 'home-url' %}" class="link_404">Go to Home</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    {% endif %}
+{% endblock content %}
+
+{% block custom_style %}
+
+    <style>
+
+        /*======================
+            404 page
+        =======================*/
+
+
+        .page_404 {
+            padding: 40px 0;
+            background: #fff;
+            font-family: 'Arvo', serif;
+        }
+
+        .page_404 img {
+            width: 100%;
+        }
+
+        .four_zero_four_bg {
+
+            background-image: url(https://cdn.dribbble.com/users/285475/screenshots/2083086/dribbble_1.gif);
+            height: 400px;
+            background-position: center;
+        }
+
+
+        .four_zero_four_bg h1 {
+            font-size: 80px;
+        }
+
+        .four_zero_four_bg h3 {
+            font-size: 80px;
+        }
+
+        .link_404 {
+            color: #fff !important;
+            padding: 10px 20px;
+            background: #39ac31;
+            margin: 20px 0;
+            display: inline-block;
+        }
+
+        .contant_box_404 {
+            margin-top: -50px;
+        }
+    </style>
+{% endblock %}

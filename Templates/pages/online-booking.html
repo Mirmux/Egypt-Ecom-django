@@ -1,0 +1,26 @@
+{% extends 'base/base.html' %}
+
+{% load static %}
+
+{% block content %}
+    <section class="event-details">
+        <h1 align="center">Online Booking</h1>
+        <br>
+        <div class="row justify-content-md-center">
+            <div class="col-lg-4">
+                <div class="event-details__form">
+                    <h3 class="event-details__form-title">Online Booking Form</h3><!-- /.event-details__form-title -->
+                    <form action="" method="post">{% csrf_token %}{{ form.as_p }}
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <button type="submit" class="thm-btn event-details__form-btn">Proceed to Book
+                                </button>
+                            </div><!-- /.col-sm-12 -->
+                        </div><!-- /.row -->
+                    </form>
+                </div><!-- /.event-details__form -->
+            </div><!-- /.col-lg-4 -->
+        </div>
+    </section>
+
+{% endblock %}

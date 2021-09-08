@@ -1,0 +1,75 @@
+{% extends 'base/base.html' %}
+{% load  static %}
+
+{% block content %}
+    <div class="container">
+        <ul class="list-unstyled thm-breadcrumb thm-breadcrumb__two">
+            <li><a href="{% url 'home-url' %}">Home</a></li>
+            <li><a href="{% url 'myaccount-url' %}">Pages</a></li>
+            <li><a href="{% url 'product-url' %}">Shop</a></li>
+            <li>My Account</li>
+        </ul><!-- /.thm-breadcrumb -->
+    </div><!-- /.container -->
+    <section class="login-form">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <h3 class="login-form__title">Login</h3><!-- /.login-form__title -->
+                    <form action="my-account.html#" class="login-form__form">
+                        <div class="login-form__field">
+                            <input type="text" name="name" placeholder="Your Name">
+                            <i class="fa fa-user"></i>
+                        </div><!-- /.login-form__field -->
+                        <div class="login-form__field">
+                            <input type="text" name="email" placeholder="Email Address">
+                            <i class="fa fa-envelope-o"></i>
+                        </div><!-- /.login-form__field -->
+                        <div class="login-form__field">
+                            <input type="password" name="password" placeholder="Enter Password">
+                            <i class="fa fa-lock"></i>
+                        </div><!-- /.login-form__field -->
+                        <div class="login-form__bottom">
+                            <button type="submit" class="thm-btn login-form__btn">Login <span>+</span></button>
+                            <div class="login-form__social">
+                                <span>Or login with</span>
+                                <a href="my-account.html#" class="fa fa-facebook-f"></a>
+                                <a href="my-account.html#" class="fa fa-twitter"></a>
+                            </div><!-- /.login-form__social -->
+                        </div><!-- /.login-form__bottom -->
+                        <p class="login-form__checkbox">
+                            <input type="checkbox" id="test1" name="radio-group" checked>
+                            <label for="test1">Remember Me</label>
+                        </p>
+                    </form><!-- /.login-form__form -->
+                </div><!-- /.col-lg-6 -->
+                <div class="col-lg-6">
+                    <h3 class="login-form__title">Register</h3><!-- /.login-form__title -->
+                    <form action="my-account.html#" class="login-form__form">
+                        <div class="login-form__field">
+                            <input type="text" name="name" placeholder="Your Name">
+                            <i class="fa fa-user"></i>
+                        </div><!-- /.login-form__field -->
+                        <div class="login-form__field">
+                            <input type="text" name="email" placeholder="Email Address">
+                            <i class="fa fa-envelope-o"></i>
+                        </div><!-- /.login-form__field -->
+                        <div class="login-form__field">
+                            <input type="password" name="password" placeholder="Enter Password">
+                            <i class="fa fa-lock"></i>
+                        </div><!-- /.login-form__field -->
+                        <div class="login-form__bottom">
+                            <button type="submit" class="thm-btn login-form__btn login-form__btn-two">Register
+                                <span>+</span></button>
+                            <div class="login-form__social">
+                                <span>*You must be a free registered user</span>
+                            </div><!-- /.login-form__social -->
+                        </div><!-- /.login-form__bottom -->
+                    </form><!-- /.login-form__form -->
+                </div><!-- /.col-lg-6 -->
+            </div><!-- /.row -->
+        </div><!-- /.container -->
+    </section><!-- /.login-form -->
+
+    <a href="my-account.html#" data-target="html" class="scroll-to-target scroll-to-top"><i
+            class="egypt-icon-arrow-2"></i></a>
+{% endblock content %}

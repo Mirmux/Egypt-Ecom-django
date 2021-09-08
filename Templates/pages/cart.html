@@ -1,0 +1,94 @@
+{% extends 'base/base.html' %}
+{% load  static %}
+
+{% block content %}
+    <div class="container">
+        <ul class="list-unstyled thm-breadcrumb thm-breadcrumb__two">
+            <li><a href="{% url 'home-url' %}">Home</a></li>
+            <li><a href="{% url 'cart-url' %}">Pages</a></li>
+            <li><a href="{% url 'product-url' %}">Shop</a></li>
+            <li>Shopping Cart</li>
+        </ul><!-- /.thm-breadcrumb -->
+    </div><!-- /.container -->
+    <section class="cart-page">
+        <div class="container">
+            <div class="cart-total">
+                <h3 class="cart-total__text text-uppercase">Your Cart: <span
+                        class="text-capitalize">{{ order.get_cart_items }} Items</span></h3>
+                <!-- /.cart-total__text -->
+                <h3 class="cart-total__text text-uppercase">Total Price: <span
+                        class="text-capitalize cart-total__highlight">${{ order.get_cart_total|floatformat:2 }}</span>
+                </h3><!-- /.cart-total__text -->
+            </div><!-- /.cart-total -->
+            <div class="cart-main">
+                <div class="table-outer table-responsive">
+                    <table class="cart-table">
+                        <thead class="cart-header">
+                        <tr>
+                            <th class="prod-column">Product</th>
+                            <th class="price">Price</th>
+                            <th>Quantity</th>
+                            <th>Total</th>
+                            <th>Remove</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for item in items %}
+                            <tr>
+                                <td class="prod-column">
+                                    <div class="column-box">
+                                        <figure class="prod-thumb"><a href="{% url 'cart-url' %}"><img
+                                                src="{{ item.product.image.url }}" width="100" height="100"
+                                                alt=""></a></figure>
+                                        <h3 class="prod-title padd-top-20">{{ item.product.name }}</h3>
+                                    </div>
+                                </td>
+                                <td class="price">${{ item.product.price|floatformat:2 }}</td>
+                                <td class="qty update-cart" style="padding: 40px;">
+                                    <button type="submit" class="cart-add update-cart"
+                                            data-product="{{ item.product.id }}" data-action="remove"><span>-</span>
+                                    </button>
+                                    <p class="cart-add">{{ item.quantity }}</p>
+                                    <button type="submit" class="cart-add update-cart "
+                                            data-product="{{ item.product.id }}" data-action="add"><span>+</span>
+                                    </button>
+                                </td>
+                                <td class="sub-total">${{ item.get_total }}</td>
+                                <td class="remove"><a href="{% url 'cart-url' %}" data-product="{{ item.product.id }}"
+                                                      data-action="delete" class="remove-btn update-cart"><span
+                                        class="egypt-icon-remove"></span> </a></td>
+
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div><!-- /.cart-main -->
+            <div class="cart-update">
+                <div class="row justify-content-between">
+                    <div class="col-lg-6">
+                        <form action="{% url 'cart-url' %}" class="cart-update__form">
+                            <input type="text" placeholder="Enter Coupon Code...">
+                            <button type="submit" class="thm-btn cart-update__btn">Apply Coupon<span>+</span></button>
+                        </form><!-- /.cart-update__form -->
+                    </div><!-- /.col-lg-5 -->
+                    <div class="col-lg-5">
+                        <div class="cart-update__button-box">
+                            <a href="{% url 'cart-url' %}">
+                                <button type="submit" class="thm-btn cart-update__btn cart-update__btn-two">Update Cart
+                                    <span>+</span></button>
+                            </a>
+                            <a href="{% url 'checkout-url' %}">
+                                <button type="submit" class="thm-btn cart-update__btn cart-update__btn-three">Checkout
+                                    <span>+</span></button>
+                            </a>
+                        </div><!-- /.cart-update__button-box -->
+                    </div><!-- /.col-lg-5 -->
+                </div><!-- /.row -->
+            </div><!-- /.cart-update -->
+        </div><!-- /.container -->
+    </section><!-- /.cart-page -->
+
+    <a href="{% url 'cart-url' %}" data-target="html" class="scroll-to-target scroll-to-top"><i
+            class="egypt-icon-arrow-2"></i></a>
+{% endblock content %}

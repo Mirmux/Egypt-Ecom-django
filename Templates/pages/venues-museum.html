@@ -1,0 +1,52 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block content %}
+
+    <section class="inner-banner">
+        <div class="container">
+            <h2 class="inner-banner__title">Plan Your Visit</h2><!-- /.inner-banner__title -->
+            <ul class="list-unstyled thm-breadcrumb">
+                <li><a href="{% url 'home-url' %}">Home</a></li>
+                <li>Visit</li>
+            </ul><!-- /.thm-breadcrumb -->
+        </div><!-- /.container -->
+    </section><!-- /.inner-banner -->
+    <section class="venue-two venue-two__venu-page">
+        <div class="container">
+            <div class="block-title text-center">
+                <p class="block-title__tag-line">Our Museum</p><!-- /.block-title__tag-line -->
+                <h2 class="block-title__title">Choose Your Museum</h2><!-- /.block-title__title -->
+            </div><!-- /.block-title -->
+            <div class="row">
+                {% for museum in object.museum.all %}
+                    <div class="col-lg-4 col-md-4">
+                        <div class="venue-two__single">
+                            <div class="venue-two__icon">
+                                <img src="{{ museum.image.url }}" width="300" height="200" alt="">
+                            </div><!-- /.venue-two__icon -->
+                            <h3 class="venue-two__title">{{ museum.name }}</h3><!-- /.venue-two__title -->
+                            <p class="venue-two__text"> {{ museum.address }}</p><!-- /.venue-two__text -->
+                            <p class="venue-two__contact">
+                                <a href="{{ museum.phone }}">{{ museum.phone }}</a> <br>
+                                <a href="{{ museum.email }}">{{ museum.email }}</a>
+                            </p><!-- /.venue-two__contact -->
+                            <div class="venue-two__hover">
+                                <h3 class="venue-two__title">{{ museum.name }}</h3><!-- /.venue-two__title -->
+                                <p class="venue-two__text"> {{ museum.address }} <br></p><!-- /.venue-two__text -->
+                                <a href="{% url 'visits-url' museum.pk %}" class="thm-btn venue-two__btn">More Details</a>
+                                <p class="venue-two__contact">
+                                    <a href="{{ museum.phone }}">{{ museum.phone }}</a> <br>
+                                    <a href="{{ museum.email }}">{{ museum.email }}</a>
+                                </p><!-- /.venue-two__contact -->
+                            </div><!-- /.venue-two__hover -->
+                        </div><!-- /.venue-two__single -->
+                    </div><!-- /.col-lg-4 col-md-6 -->
+                {% endfor %}
+            </div><!-- /.row -->
+        </div><!-- /.container -->
+    </section><!-- /.venue-two venue-two__venu-page -->
+    <a href="request-visit.html#" data-target="html" class="scroll-to-target scroll-to-top"><i
+            class="egypt-icon-arrow-2"></i></a>
+
+{% endblock content %}

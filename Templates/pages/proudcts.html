@@ -1,0 +1,124 @@
+{% extends 'base/base.html' %}
+{% load  static %}
+
+{% block content %}
+    <section class="inner-banner"
+             style="background-image: url({% static 'images/background/inner-banner-bg-1-2.jpg' %});">
+        <div class="container">
+            <h2 class="inner-banner__title">Our Store</h2><!-- /.inner-banner__title -->
+            <ul class="list-unstyled thm-breadcrumb">
+                <li><a href="{% url 'home-url' %}">Home</a></li>
+                <li><a href="{% url 'product-url' %}">Pages</a></li>
+                <li>Store</li>
+            </ul><!-- /.thm-breadcrumb -->
+            <ul class="nav nav-tabs exhibhition-one__menu">
+                <li class="nav-item">
+                    <a class="nav-link active"  href="{% url 'product-url' %}">Current</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link"  href="{% url 'product-url' %}?category=upcoming">Upcoming</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="{% url 'exbition-url' %}"
+                       role="button"
+                       aria-haspopup="true" aria-expanded="false">Sorting</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="{% url 'product-url' %}">Default of Sort</a>
+                        {% for category in category %}
+                        <a class="dropdown-item" href="{% url 'product-url' %}?category={{ category.name }}">{{ category.name }}</a>
+                        {% endfor %}
+                    </div>
+                </li>
+            </ul>
+        </div><!-- /.container -->
+    </section><!-- /.inner-banner -->
+    <div class="product-sorting">
+        <div class="container">
+        </div><!-- /.container -->
+    </div><!-- /.product-sorting -->
+    <section class="product-one">
+        <div class="container">
+            <div class="row">
+                {% for product in products %}
+                    <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-duration="1500ms">
+                        <div class="product-one__single">
+                            <div class="product-one__image">
+                                <img src="{{ product.image.url }}" height="260" width="200" alt="Awesome Image"/>
+                            </div><!-- /.product-one__image -->
+                            <div class="product-one__content">
+                                <div class="product-one__content-left">
+                                    <h3 class="product-one__title">
+                                        <a href="{% url 'product-details-url' product.pk %}">{{ product.name }}</a>
+                                    </h3><!-- /.product-one__title -->
+                                    <p class="product-one__text">${{ product.price }}</p><!-- /.product-one__text -->
+                                    <p class="product-one__stars">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <span>({{ product.get_comment_total }} Reviews)</span>
+                                    </p><!-- /.product-one__stars -->
+                                </div><!-- /.product-one__content-left -->
+
+                                {% if user.is_authenticated %}
+                                <div class="product-one__content-right">
+                                    <button data-product="{{ product.id }}" data-action="add" data-toggle="tooltip" data-placement="top"
+                                       title="Add to Cart"
+                                            class="product-one__cart-btn update-cart"><i class="egypt-icon-supermarket"></i></button>
+                                </div><!-- /.product-one__content-right -->
+
+                                {% else %}
+                                    <div class="product-one__content-right">
+                                        <a class="egypt-icon-supermarket product-one__cart-btn update-cart" href="{% url 'home-url' %}"></a>
+                                    </div><!-- /.product-one__content-right -->
+
+                                {% endif %}
+
+                            </div><!-- /.product-one__content -->
+                        </div><!-- /.product-one__single -->
+                    </div><!-- /.col-lg-3 col-md-6 -->
+                {% endfor %}
+            </div><!-- /.row -->
+
+            <!-- Pagination -->
+            <div class="post-pagination post-pagination__two">
+            <span class="step_links">
+                {% if page_obj.has_previous %}
+                    <a href="?page={{ page_obj.previous_page_number }}">Prev</a>
+                {% endif %}
+
+                <span class="current">
+                    {% for num in page_obj.paginator.page_range %}
+                        {% if page_obj.number == num %}
+                            <span class="pagination-number pagination-current">{{ num }}</span>
+                        {% elif num > page_obj.number|add:-3 and num < page_obj.number|add:3 %}
+                            <a class="pagination-number" href="?page={{ num }}">{{ num }}</a>
+                        {% endif %}
+                    {% endfor %}
+                </span>
+
+                {% if page_obj.has_next %}
+                    <a href="?page={{ page_obj.next_page_number }}">Next</a>
+                {% endif %}
+            </span>
+            </div>
+            <!-- end pagination -->
+
+        </div><!-- /.container -->
+    </section><!-- /.product-one -->
+    <script type="text/javascript">
+        var urlMenu = document.getElementById('category');
+        urlMenu.onchange = function (){
+            var userOption = this.options[this.selectedIndex];
+            {% for category in category %}
+            if (userOption.value == "{% url 'product-url' %}?category={{ category.name }}"){
+                open(userOption.value, 'Art', "");
+            }
+            {% endfor %}
+        }
+    </script>
+
+    <a href="{% url 'product-url' %}" data-target="html" class="scroll-to-target scroll-to-top"><i
+            class="egypt-icon-arrow-2"></i></a>
+{% endblock content %}

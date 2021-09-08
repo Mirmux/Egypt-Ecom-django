@@ -1,0 +1,72 @@
+{% extends 'base/base.html' %}
+{% load  static %}
+
+{% block content %}
+    <section class="inner-banner inner-banner__collection-page">
+        <div class="container">
+            <h2 class="inner-banner__title">Antiquities Collection</h2><!-- /.inner-banner__title -->
+            <ul class="list-unstyled thm-breadcrumb">
+                <li><a href="{% url 'home-url' %}">Home</a></li>
+                <li><a href="{% url 'collection-sculpture-url' %}">Collections</a></li>
+                <li>Antiquities</li>
+            </ul><!-- /.thm-breadcrumb -->
+        </div><!-- /.container -->
+    </section><!-- /.inner-banner -->
+    <div class="collection-search collection-page">
+        <div class="container">
+            <div class="inner-container">
+                <div class="collection-search__outer">
+                    <div class="collection-search__field">
+                        <select class="selectpicker">
+                            <option>Collections</option>
+                            <option>Collections</option>
+                            <option>Collections</option>
+                            <option>Collections</option>
+                        </select>
+                    </div><!-- /.collection-search__field -->
+                    <div class="collection-search__field">
+                        <select class="selectpicker">
+                            <option>Artist</option>
+                            <option>Artist</option>
+                            <option>Artist</option>
+                            <option>Artist</option>
+                        </select>
+                    </div><!-- /.collection-search__field -->
+                    <div class="collection-search__field">
+                        <select class="selectpicker">
+                            <option>Objects</option>
+                            <option>Objects</option>
+                            <option>Objects</option>
+                            <option>Objects</option>
+                        </select>
+                    </div><!-- /.collection-search__field -->
+                </div><!-- /.collection-search__outer -->
+                <button type="submit" class="thm-btn collection-search__btn">Collections <span>+</span></button>
+            </div><!-- /.inner-container -->
+        </div><!-- /.container -->
+    </div><!-- /.collection-serch -->
+
+    <section class="collection-four">
+        <div class="container-fluid">
+            <div class="row high-gutters">
+                {% for atq in antiquities %}
+                <div class="col-lg-3 col-md-6 col-sm-6">
+                    <div class="collection-four__single">
+                        <img src="{{ atq.image.url }}" width="180" height="170" alt="Awesome Image"/>
+                        <div class="collection-four__content">
+                            <a href="{% url 'antiquities-details-url' atq.pk %}" class="collection-four__link">+</a>
+                            <p class="collection-four__cat">{{ atq.place }}</p><!-- /.collection-four__cat -->
+                            <h3 class="collection-four__title"><a href="{% url 'antiquities-details-url' atq.pk %}">{{ atq.title }}</a>
+                            </h3><!-- /.collection-four__title -->
+                        </div><!-- /.collection-four__content -->
+                    </div><!-- /.collection-four__single -->
+                </div><!-- /.col-lg-3 -->
+                {% endfor %}
+            </div><!-- /.row -->
+
+        </div><!-- /.container-fluid -->
+    </section><!-- /.collection-four -->
+
+    <a href="collection-url" data-target="html" class="scroll-to-target scroll-to-top"><i
+            class="egypt-icon-arrow-2"></i></a>
+{% endblock content %}

@@ -1,0 +1,217 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block content %}
+    <section class="inner-banner">
+        <div class="container">
+            <h2 class="inner-banner__title">{{ object.organizer }}</h2><!-- /.inner-banner__title -->
+            <ul class="list-unstyled thm-breadcrumb">
+                <li><a href="{% url 'home-url' %}">Home</a></li>
+                <li><a href="{% url 'collection-sculpture-url' %}">Events</a></li>
+                <li>Single Event</li>
+            </ul><!-- /.thm-breadcrumb -->
+        </div><!-- /.container -->
+    </section><!-- /.inner-banner -->
+    <section class="event-details">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="event-details__content">
+                        <ul class="nav nav-tabs plan-visit__tab-links">
+                            <li class="nav-item">
+                                <a href="{% url 'event-detail-url' %}" data-target="#about-event"
+                                   class="nav-link  active">About Event</a>
+                            </li><!-- /.nav-item -->
+                            <li class="nav-item">
+                                <a href="{% url 'event-detail-url' %}" data-target="#schedule"
+                                   class="nav-link ">Schedule</a>
+                            </li><!-- /.nav-item -->
+                            <li class="nav-item">
+                                <a href="{% url 'event-detail-url' %}" data-target="#gallery"
+                                   class="nav-link ">Gallery</a>
+                            </li><!-- /.nav-item -->
+                            <li class="nav-item">
+                                <a href="{% url 'event-detail-url' %}" data-target="#contact"
+                                   class="nav-link ">Contact</a>
+                            </li><!-- /.nav-item -->
+                        </ul><!-- /.nav nav-tabs plan-visit -->
+                        <div class="event-details__single" id="about-event">
+                            <div class="event-details__event-info">
+                                <div class="row">
+
+                                    <div class="col-lg-6 d-flex">
+                                        <div class="my-auto">
+                                            <ul class="list-unstyled event-details__event-info__list">
+                                                <li>
+                                                    <span>Date & Time</span>
+                                                    <p>
+                                                        <i class="fa fa-clock-o"></i>
+                                                        {{ object.created|date }}, {{ object.start_time }}
+                                                        to {{ object.end_time }}
+                                                    </p>
+                                                </li>
+                                                <li>
+                                                    <span>Location</span>
+                                                    <p>
+                                                        <i class="fa fa-location-arrow"></i>
+                                                        {{ object.address }}
+                                                    </p>
+                                                </li>
+                                                <li>
+                                                    <span>Organizer</span>
+                                                    <p>
+                                                        <i class="fa fa-user"></i>
+                                                        {{ object.organizer }}
+                                                    </p>
+                                                </li>
+                                                <li>
+                                                    <span>Ticket Cost</span>
+                                                    <p>
+                                                        <i class="fa fa-money"></i>
+                                                        Adults - ${{ object.cost_adults }} / Children -
+                                                        ${{ object.cost_children }}
+                                                    </p>
+                                                </li>
+                                            </ul><!-- /.list-unstyled event-details__event-info__list -->
+                                            <p class="event-details__event-info__condition">*Free for Museum
+                                                Members.</p>
+                                        </div><!-- /.my-auto -->
+                                    </div><!-- /.col-lg-6 -->
+
+                                    <div class="col-lg-6 clearfix">
+                                        <img src="{{ object.image.url }}" width="400" height="365" class="float-right"
+                                             alt="Awesome Image"/>
+                                    </div><!-- /.col-lg-6 -->
+
+                                </div><!-- /.row -->
+                            </div><!-- /.event-details__event-info -->
+                            <h3 class="event-details__title">Details About Event</h3><!-- /.event-details__title -->
+
+                            <p class="event-details__text">{{ object.description }}</p><!-- /.event-details__text -->
+                        </div><!-- /#about-event.event-details__single -->
+                        <div id="schedule" class="event-details__single">
+                            <h3 class="event-details__title">Event Schedule</h3><!-- /.event-details__title -->
+                            <ul class="event-details__schedule-list list-unstyled">
+                                <li>
+                                    <div class="event-details__schedule-time">
+                                        10am - 12pm
+                                    </div><!-- /.event-details__schedule-time -->
+                                    <div class="event-details__schedule-content">
+                                        <h3>Introduction of independent {{ object.organizer }}</h3>
+                                        <p>Enjoy a 2 hours express Highlights</p>
+                                    </div><!-- /.event-details__schedule-content -->
+                                </li>
+                                <li>
+                                    <div class="event-details__schedule-time">
+                                        1pm - 4pm
+                                    </div><!-- /.event-details__schedule-time -->
+                                    <div class="event-details__schedule-content">
+                                        <h3>A curated selection of {{ object.organizer }}</h3>
+                                        <p>This program will take place in Classroom B</p>
+                                    </div><!-- /.event-details__schedule-content -->
+                                </li>
+                                <li>
+                                    <div class="event-details__schedule-time">
+                                        4.30pm - 6pm
+                                    </div><!-- /.event-details__schedule-time -->
+                                    <div class="event-details__schedule-content">
+                                        <h3>Know Antiques roadshow appraiser from exper</h3>
+                                        <p>Owing to the claims of duty or the obligations </p>
+                                    </div><!-- /.event-details__schedule-content -->
+                                </li>
+                            </ul><!-- /.event-details__schedule-list -->
+                        </div><!-- /#schedule.event-details__single -->
+
+
+                        <div id="gallery" class="event-details__single">
+                            <h3 class="event-details__title">Gallery</h3><!-- /.event-details__title -->
+                            <div class="row masonary-layout">
+                                {% for photo in object.galleries.all %}
+                                    <div class="col-md-6 masonary-item">
+                                        <img class="img-fluid" src="{{ photo.images.url }}" height="400" width="400"
+                                             alt="Awesome Image"/>
+                                    </div><!-- /.col-md-6 -->
+                                {% endfor %}
+
+                            </div><!-- /.row masonary-layout -->
+                        </div><!-- /#gallery.event-details__single -->
+
+
+                        <div id="contact" class="event-details__single">
+                            <div class="event-details__contact">
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <h3 class="event-details__title">Contact Information</h3>
+                                        <!-- /.event-details__title -->
+                                        <p class="event-details__text">Do you have any query about this event pls
+                                            contact our team.</p><!-- /.event-details__text -->
+                                        <ul class="event-details__contact-list list-unstyled">
+                                            <li>
+                                                <span>Address:</span>
+                                                <p>{{ object.address }}</p>
+                                            </li>
+                                            <li>
+                                                <span>phone:</span>
+                                                <p><a href="tel:321-888-789-0123">{{ object.phone }}</a></p>
+                                            </li>
+                                            <li>
+                                                <span>Email: </span>
+                                                <p><a href="mailto:{{ object.email }}">{{ object.email }}</a>
+                                                </p>
+                                            </li>
+                                        </ul><!-- /.event-details__contact-list list-unstyled -->
+                                    </div><!-- /.col-lg-6 -->
+                                    <div class="col-lg-6">
+                                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4562.753041141002!2d-118.80123790098536!3d34.152323469614075!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80e82469c2162619%3A0xba03efb7998eef6d!2sCostco+Wholesale!5e0!3m2!1sbn!2sbd!4v1562518641290!5m2!1sbn!2sbd"
+                                                class="google-map__home" allowfullscreen></iframe>
+                                    </div><!-- /.col-lg-6 -->
+                                </div><!-- /.row -->
+                            </div><!-- /.event-details__contact -->
+                        </div><!-- /#contact.event-details__single -->
+                    </div><!-- /.event-details__content -->
+                </div><!-- /.col-lg-8 -->
+                <div class="col-lg-4">
+                    <div class="event-details__form">
+                        <h3 class="event-details__form-title">Online Booking</h3><!-- /.event-details__form-title -->
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <a type="submit" href="{% url 'booking-url' object.pk %}" class="thm-btn event-details__form-btn">Online Booking</a>
+                            </div><!-- /.col-sm-12 -->
+                        </div><!-- /.row -->
+                    </div><!-- /.event-details__form -->
+                </div><!-- /.col-lg-4 -->
+            </div><!-- /.row -->
+        </div><!-- /.container -->
+    </section><!-- /.event-details -->
+    <div class="event-details__pagination">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <a href="{% url 'event-detail-url' %}" class="event-details__pagination__left">
+                        <div class="event-details__pagination-icon">
+                            <i class="fa fa-angle-left"></i>
+                        </div><!-- /.event-details__pagination-icon -->
+                        <div class="event-details__pagination-content">
+                            <span>Prev Event</span>
+                            <h3>Are there Carbon Monoxide Detectors</h3>
+                        </div><!-- /.event-details__pagination-content -->
+                    </a><!-- /.event-details__pagination__left -->
+                </div><!-- /.col-lg-6 -->
+                <div class="col-lg-6">
+                    <a href="{% url 'event-detail-url' %}" class="event-details__pagination__right">
+                        <div class="event-details__pagination-icon">
+                            <i class="fa fa-angle-right"></i>
+                        </div><!-- /.event-details__pagination-icon -->
+                        <div class="event-details__pagination-content">
+                            <span>Next Event</span>
+                            <h3>Are there Carbon Monoxide Detectors</h3>
+                        </div><!-- /.event-details__pagination-content -->
+                    </a><!-- /.event-details__pagination__right -->
+                </div><!-- /.col-lg-6 -->
+            </div><!-- /.row -->
+        </div><!-- /.container -->
+    </div><!-- /.event-details__pagination -->
+
+    <a href="{% url 'event-detail-url' %}" data-target="html" class="scroll-to-target scroll-to-top"><i
+            class="egypt-icon-arrow-2"></i></a>
+{% endblock content %}

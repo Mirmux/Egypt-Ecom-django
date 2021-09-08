@@ -1,0 +1,21 @@
+{% extends 'base/base.html' %}
+
+{% load static %}
+
+{% block content %}
+    <div class="card-body">
+        {% if new_comment %}
+            <div class="alert alert-success" role="alert">
+                Your comment is awaiting moderation <a href="{% url 'product-url' %}">Go Back</a>
+            </div>
+        {% else %}
+            <h3>Leave a comment</h3>
+            <form method="post" class="contact-one__form contact-one__field" style="margin-top: 1.3em;">
+                {{ comment_form.as_p }}
+                {% csrf_token %}
+                <button type="submit" class="thm-btn contact-one__btn">Submit</button>
+            </form>
+        {% endif %}
+    </div>
+
+{% endblock content %}

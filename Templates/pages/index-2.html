@@ -1,0 +1,859 @@
+{% extends 'base/base.html' %}
+{% load  static %}
+
+{% block content %}
+        <section class="slider-two">
+            <div class="slider-one__carousel owl-carousel owl-theme">
+                <div class="item slider-two__slider-1" style="background-image: url({% static 'images/slider/slider-2-1.jpg' %});">
+                    <div class="container text-left">
+                        <p class="slider-two__tag-line ">Awesome of Collection of</p><!-- /.slider-two__tag-line -->
+                        <h2 class="slider-two__title">Mercenary Soldiers</h2><!-- /.slider-two__title -->
+                        <p class="slider-two__text ">Egypt is the world’s leading museum of history & culture, housing a <br>
+                            permanent collection of over 2.3 million objects.</p>
+                        <!-- /.slider-two__text -->
+                        <a href="{% url 'home2' %}" class="thm-btn slider-two__btn">Find Out More</a><!-- /.thm-btn slider-two__btn -->
+                    </div><!-- /.container -->
+                </div><!-- /.item -->
+                <div class="item slider-two__slider-2" style="background-image: url({% static 'images/slider/slider-2-2.jpg' %});">
+                    <div class="container text-center">
+                        <p class="slider-two__tag-line ">Greatest Collection of</p>
+                        <!-- /.slider-two__tag-line -->
+                        <h2 class="slider-two__title">Egyptian Artifacts</h2><!-- /.slider-two__title -->
+                        <p class="slider-two__text">Egypt is the world’s leading museum of history & culture, housing a <br>
+                            permanent collection of over 2.3 million objects.</p>
+                        <!-- /.slider-two__text -->
+                        <a href="{% url 'home2' %}" class="thm-btn slider-two__btn">Find Out More</a><!-- /.thm-btn slider-two__btn -->
+                    </div><!-- /.container -->
+                </div><!-- /.item -->
+                <div class="item slider-two__slider-3" style="background-image: url({% static 'images/slider/slider-2-3.jpg' %});">
+                    <div class="container text-left">
+                        <div class="row justify-content-end">
+                            <div class="col-xl-7 col-lg-9">
+                                <p class="slider-two__tag-line ">A Montage of History</p><!-- /.slider-two__tag-line -->
+                                <h2 class="slider-two__title">Proof of Evolution</h2><!-- /.slider-two__title -->
+                                <p class="slider-two__text">Egypt is the world’s leading museum of history & culture, housing a
+                                    <br>
+                                    permanent collection of over 2.3 million objects.</p>
+                                <!-- /.slider-two__text -->
+                                <a href="{% url 'home2' %}" class="thm-btn slider-two__btn">Find Out More</a><!-- /.thm-btn slider-two__btn -->
+                            </div><!-- /.col-lg-7 -->
+                        </div><!-- /.row -->
+
+                    </div><!-- /.container -->
+                </div><!-- /.item -->
+            </div><!-- /.slider-two__carousel -->
+            <div class="slider-two__nav">
+                <a class="slider-two__nav-left slide-one__left-btn" href="{% url 'home2' %}"><i class="egypt-icon-right-angle"></i></a>
+                <a class="slider-two__nav-right slide-one__right-btn" href="{% url 'home2' %}"><i class="egypt-icon-left-angle"></i></a>
+            </div><!-- /.slider-two__nav -->
+        </section><!-- /.slider-two -->
+
+        <section class="about-one">
+            <div class="container">
+                <div class="inner-container wow fadeInUp" data-wow-duration="1500ms">
+                    <div class="row">
+                        <div class="col-lg-7">
+                            <div class="about-one__content">
+                                <div class="block-title">
+                                    <p class="block-title__tag-line">About Us</p><!-- /.block-title__tag-line -->
+                                    <h2 class="block-title__sub-title">The World's Leading Museum of <br>
+                                        Histrory & Culture.</h2><!-- /.block-title__title -->
+                                </div><!-- /.block-title -->
+                                <p class="about-one__text">Desires to obtain pain of itself, because it is pain because
+                                    occasionally.</p><!-- /.about-one__text -->
+                                <p class="about-one__text">Explain to you how all this mistaken idea of denouncing pleasure and
+                                    praising pain was born and I will give you a complete account of the system, and the actual
+                                    teachings of the great explorer of the truth.</p><!-- /.about-one__text -->
+                            </div><!-- /.about-one__content -->
+                        </div><!-- /.col-lg-7 -->
+                        <div class="col-lg-5">
+                            <div class="about-one__feature">
+                                <div class="about-one__feature-single">
+                                    <div class="about-one__feature-icon">
+                                        <i class="egypt-icon-place"></i><!-- /.egypt-icon-place -->
+                                    </div><!-- /.about-one__feature-icon -->
+                                    <div class="about-one__feature-content">
+                                        <h3 class="about-one__feature-title">Egypt Museum</h3>
+                                        <!-- /.about-one__feature-title -->
+                                        <p class="about-one__feature-text">Flat A, 20/7, Reynolds Neck <br>
+                                            Helenaville 08745.</p><!-- /.about-one__feature-text -->
+                                        <a href="{% url 'home2' %}" class="about-one__feature-link">Get Direction <span>+</span></a>
+                                        <!-- /.about-one__feature-link -->
+                                    </div><!-- /.about-one__feature-content -->
+                                </div><!-- /.about-one__feature-single -->
+                                <div class="about-one__feature-single">
+                                    <div class="about-one__feature-icon">
+                                        <i class="egypt-icon-ticket"></i><!-- /.egypt-icon-ticket -->
+                                    </div><!-- /.about-one__feature-icon -->
+                                    <div class="about-one__feature-content">
+                                        <h3 class="about-one__feature-title">Free Admission</h3>
+                                        <!-- /.about-one__feature-title -->
+                                        <p class="about-one__feature-text">Exhibitions are free for our <br>
+                                            museum members.</p><!-- /.about-one__feature-text -->
+                                        <a href="{% url 'home2' %}" class="about-one__feature-link">Become a Member <span>+</span></a>
+                                        <!-- /.about-one__feature-link -->
+                                    </div><!-- /.about-one__feature-content -->
+                                </div><!-- /.about-one__feature-single -->
+                            </div><!-- /.about-one__feature -->
+                        </div><!-- /.col-lg-5 -->
+                    </div><!-- /.row -->
+                </div><!-- /.inner-container -->
+            </div><!-- /.container -->
+        </section><!-- /.about-one -->
+
+        <section class="collection-one">
+            <div class="container">
+                <div class="block-title text-center">
+                    <p class="block-title__tag-line">Categories</p><!-- /.block-title__tag-line -->
+                    <h2 class="block-title__title">On View At Our Museum</h2><!-- /.block-title__title -->
+                </div><!-- /.block-title -->
+                <div class="row">
+                    <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="000ms">
+                        <div class="collection-one__single">
+                            <div class="collection-one__icon">
+                                <div class="collection-one__icon-img">
+                                    <img src="{% static 'images/icons/collection-icon-1-1.png' %}" alt="">
+                                </div><!-- /.collection-one__icon-img -->
+                            </div><!-- /.collection-one__icon -->
+                            <div class="collection-one__content">
+                                <h3 class="collection-one__title"><a href="collection-antiquties.html">Antiquities</a></h3>
+                                <!-- /.collection-one__title -->
+                                <a href="collection-antiquties.html" class="collection-one__link">Explore The Collection</a>
+                                <!-- /.collection-one__link -->
+                            </div><!-- /.collection-one__content -->
+                        </div><!-- /.collection-one__single -->
+                    </div><!-- /.col-lg-4 -->
+                    <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="100ms">
+                        <div class="collection-one__single">
+                            <div class="collection-one__icon">
+                                <div class="collection-one__icon-img">
+                                    <img src="{% static 'images/icons/collection-icon-1-2.png' %}" alt="">
+                                </div><!-- /.collection-one__icon-img -->
+                            </div><!-- /.collection-one__icon -->
+                            <div class="collection-one__content">
+                                <h3 class="collection-one__title"><a href="collection-drawing.html">Drawing</a></h3>
+                                <!-- /.collection-one__title -->
+                                <a href="collection-drawing.html" class="collection-one__link">Explore The Collection</a>
+                                <!-- /.collection-one__link -->
+                            </div><!-- /.collection-one__content -->
+                        </div><!-- /.collection-one__single -->
+                    </div><!-- /.col-lg-4 -->
+                    <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="200ms">
+                        <div class="collection-one__single">
+                            <div class="collection-one__icon">
+                                <div class="collection-one__icon-img">
+                                    <img src="{% static 'images/icons/collection-icon-1-3.png' %}" alt="">
+                                </div><!-- /.collection-one__icon-img -->
+                            </div><!-- /.collection-one__icon -->
+                            <div class="collection-one__content">
+                                <h3 class="collection-one__title"><a href="{% url 'home2' %}">Virtual</a></h3><!-- /.collection-one__title -->
+                                <a href="{% url 'home2' %}" class="collection-one__link">Explore The Collection</a>
+                                <!-- /.collection-one__link -->
+                            </div><!-- /.collection-one__content -->
+                        </div><!-- /.collection-one__single -->
+                    </div><!-- /.col-lg-4 -->
+                    <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="300ms">
+                        <div class="collection-one__single">
+                            <div class="collection-one__icon">
+                                <div class="collection-one__icon-img">
+                                    <img src="{% static 'images/icons/collection-icon-1-4.png' %}" alt="">
+                                </div><!-- /.collection-one__icon-img -->
+                            </div><!-- /.collection-one__icon -->
+                            <div class="collection-one__content">
+                                <h3 class="collection-one__title"><a href="collection-cultural.html">Cultural</a></h3>
+                                <!-- /.collection-one__title -->
+                                <a href="collection-cultural.html" class="collection-one__link">Explore The Collection</a>
+                                <!-- /.collection-one__link -->
+                            </div><!-- /.collection-one__content -->
+                        </div><!-- /.collection-one__single -->
+                    </div><!-- /.col-lg-4 -->
+                    <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="400ms">
+                        <div class="collection-one__single">
+                            <div class="collection-one__icon">
+                                <div class="collection-one__icon-img">
+                                    <img src="{% static 'images/icons/collection-icon-1-5.png' %}" alt="">
+                                </div><!-- /.collection-one__icon-img -->
+                            </div><!-- /.collection-one__icon -->
+                            <div class="collection-one__content">
+                                <h3 class="collection-one__title"><a href="collection-painting.html">Painting</a></h3>
+                                <!-- /.collection-one__title -->
+                                <a href="collection-painting.html" class="collection-one__link">Explore The Collection</a>
+                                <!-- /.collection-one__link -->
+                            </div><!-- /.collection-one__content -->
+                        </div><!-- /.collection-one__single -->
+                    </div><!-- /.col-lg-4 -->
+                    <div class="col-xl-4 col-lg-6 col-md-6 col-sm-12 wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="500ms">
+                        <div class="collection-one__single">
+                            <div class="collection-one__icon">
+                                <div class="collection-one__icon-img">
+                                    <img src="{% static 'images/icons/collection-icon-1-6.png' %}" alt="">
+                                </div><!-- /.collection-one__icon-img -->
+                            </div><!-- /.collection-one__icon -->
+                            <div class="collection-one__content">
+                                <h3 class="collection-one__title"><a href="collection-sculpture.html">Sculpture</a></h3>
+                                <!-- /.collection-one__title -->
+                                <a href="collection-sculpture.html" class="collection-one__link">Explore The Collection</a>
+                                <!-- /.collection-one__link -->
+                            </div><!-- /.collection-one__content -->
+                        </div><!-- /.collection-one__single -->
+                    </div><!-- /.col-lg-4 -->
+                </div><!-- /.row -->
+                <div class="text-center">
+                    <a href="{% url 'home2' %}" class="thm-btn collection-one__more-btn">More Categories</a>
+                </div><!-- /.text-center -->
+            </div><!-- /.container -->
+        </section><!-- /.collection-one -->
+
+
+        <section class="event-one">
+            <div class="container">
+                <div class="event-one__top">
+                    <div class="block-title text-left">
+                        <p class="block-title__tag-line">Events</p><!-- /.block-title__tag-line -->
+                        <h2 class="block-title__title">Exhibition & Events</h2><!-- /.block-title__title -->
+                    </div><!-- /.block-title -->
+
+                    <div class="event-one__more-links-wrap">
+                        <a href="{% url 'home2' %}" class="event-one__more-links">
+                            <i class="fa fa-angle-right"></i><!-- /.fa fa-angle-left -->
+                            View More Events
+                        </a><!-- /.event-one__more-links -->
+                    </div><!-- /.event-one__more-links-wrap -->
+                </div><!-- /.event-one__top -->
+
+                <div class="event-one__single wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="0ms">
+                    <div class="row">
+                        <div class="col-xl-6">
+                            <div class="event-one__content">
+                                <div class="event-one__image">
+                                    <div class="event-one__image-inner">
+                                        <img src="{% static 'images/event/event-1-3.jpg' %}" alt="">
+                                    </div><!-- /.event-one__image-inner -->
+                                    <div class="event-one__image-hover">
+                                        $25
+                                    </div><!-- /.event-one__image-hover -->
+                                </div><!-- /.event-one__image -->
+                                <div class="event-one__text">
+                                    <div class="event-one__content-top">
+                                        <div class="event-one__date">
+                                            <div class="event-one__date-num">
+                                                24
+                                            </div><!-- /.event-one__date-num -->
+                                            <div class="event-one__date-text">
+                                                <span>Oct</span>
+                                                Thursday
+                                            </div><!-- /.event-one__date-text -->
+                                        </div><!-- /.event-one__date -->
+                                    </div><!-- /.event-one__content-top -->
+                                    <h3 class="event-one__title"><a href="event-details.html">Museum Day Celebration 2019</a></h3>
+                                    <!-- /.event-one__title -->
+                                </div><!-- /.event-one__text -->
+                            </div><!-- /.event-one__content -->
+                        </div><!-- /.col-lg-6 -->
+                        <div class="col-xl-6">
+                            <div class="event-one__right">
+                                <ul class="event-one__list list-unstyled">
+                                    <li>
+                                        <i class="egypt-icon-clock"></i>
+                                        <span>Clock</span>
+                                        10.00am to 6.00pm
+                                    </li>
+                                    <li>
+                                        <i class="egypt-icon-place-1"></i>
+                                        <span>Venue</span>
+                                        246 King Street, NY 10011
+                                    </li>
+                                </ul><!-- /.event-one__list -->
+
+                                <div class="event-one__button-block">
+                                    <a href="event-details.html" class="event-one__btn thm-btn">Book Online</a>
+                                </div><!-- /.event-one__button-block -->
+                            </div><!-- /.event-one__right -->
+                        </div><!-- /.col-lg-6 -->
+                    </div><!-- /.row -->
+                </div><!-- /.event-one__single -->
+
+                <div class="event-one__single wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="100ms">
+                    <div class="row">
+                        <div class="col-xl-6">
+                            <div class="event-one__content">
+                                <div class="event-one__image">
+                                    <div class="event-one__image-inner">
+                                        <img src="{% static 'images/event/event-1-2.jpg' %}" alt="">
+                                    </div><!-- /.event-one__image-inner -->
+                                    <div class="event-one__image-hover">
+                                        $25
+                                    </div><!-- /.event-one__image-hover -->
+                                </div><!-- /.event-one__image -->
+                                <div class="event-one__text">
+                                    <div class="event-one__content-top">
+                                        <div class="event-one__date">
+                                            <div class="event-one__date-num">
+                                                06
+                                            </div><!-- /.event-one__date-num -->
+                                            <div class="event-one__date-text">
+                                                <span>Nov</span>
+                                                Wednesday
+                                            </div><!-- /.event-one__date-text -->
+                                        </div><!-- /.event-one__date -->
+                                    </div><!-- /.event-one__content-top -->
+                                    <h3 class="event-one__title"><a href="event-details.html">Independent Japanese Antiquity</a></h3>
+                                    <!-- /.event-one__title -->
+                                </div><!-- /.event-one__text -->
+                            </div><!-- /.event-one__content -->
+                        </div><!-- /.col-lg-6 -->
+                        <div class="col-xl-6">
+                            <div class="event-one__right">
+                                <ul class="event-one__list list-unstyled">
+                                    <li>
+                                        <i class="egypt-icon-clock"></i>
+                                        <span>Clock</span>
+                                        3.00pm to 8.00pm
+                                    </li>
+                                    <li>
+                                        <i class="egypt-icon-place-1"></i>
+                                        <span>Venue</span>
+                                        95 Gilman Drive Jolla, CA 92093
+                                    </li>
+                                </ul><!-- /.event-one__list -->
+
+                                <div class="event-one__button-block">
+                                    <a href="event-details.html" class="event-one__btn thm-btn">Book Online</a>
+                                </div><!-- /.event-one__button-block -->
+                            </div><!-- /.event-one__right -->
+                        </div><!-- /.col-lg-6 -->
+                    </div><!-- /.row -->
+                </div><!-- /.event-one__single -->
+
+                <div class="event-one__single wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="200ms">
+                    <div class="row">
+                        <div class="col-xl-6">
+                            <div class="event-one__content">
+                                <div class="event-one__image">
+                                    <div class="event-one__image-inner">
+                                        <img src="{% static 'images/event/event-1-1.jpg' %}" alt="">
+                                    </div><!-- /.event-one__image-inner -->
+                                    <div class="event-one__image-hover">
+                                        $25
+                                    </div><!-- /.event-one__image-hover -->
+                                </div><!-- /.event-one__image -->
+                                <div class="event-one__text">
+                                    <div class="event-one__content-top">
+                                        <div class="event-one__date">
+                                            <div class="event-one__date-num">
+                                                30
+                                            </div><!-- /.event-one__date-num -->
+                                            <div class="event-one__date-text">
+                                                <span>Nov</span>
+                                                Saturday
+                                            </div><!-- /.event-one__date-text -->
+                                        </div><!-- /.event-one__date -->
+                                    </div><!-- /.event-one__content-top -->
+                                    <h3 class="event-one__title"><a href="event-details.html">Renaissance to Revolution</a></h3>
+                                    <!-- /.event-one__title -->
+                                </div><!-- /.event-one__text -->
+                            </div><!-- /.event-one__content -->
+                        </div><!-- /.col-lg-6 -->
+                        <div class="col-xl-6">
+                            <div class="event-one__right">
+                                <ul class="event-one__list list-unstyled">
+                                    <li>
+                                        <i class="egypt-icon-clock"></i>
+                                        <span>Clock</span>
+                                        11.00am to 2.00pm
+                                    </li>
+                                    <li>
+                                        <i class="egypt-icon-place-1"></i>
+                                        <span>Venue</span>
+                                        32 Queen Ga Street, NY 10015
+                                    </li>
+                                </ul><!-- /.event-one__list -->
+
+                                <div class="event-one__button-block">
+                                    <a href="event-details.html" class="event-one__btn thm-btn">Book Online</a>
+                                </div><!-- /.event-one__button-block -->
+                            </div><!-- /.event-one__right -->
+                        </div><!-- /.col-lg-6 -->
+                    </div><!-- /.row -->
+                </div><!-- /.event-one__single -->
+            </div><!-- /.container -->
+        </section><!-- /.event-one -->
+
+        <section class="blog-one">
+            <div class="container">
+                <div class="block-title text-center">
+                    <p class="block-title__tag-line">News Blog</p><!-- /.block-title__tag-line -->
+                    <h2 class="block-title__title">Latest From Our Blog</h2><!-- /.block-title__title -->
+                </div><!-- /.block-title -->
+                <div class="row">
+                    <div class="col-lg-3 col-md-6 col-sm-12 wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="0ms">
+                        <div class="blog-one__single">
+                            <div class="blog-one__image">
+                                <img src="{% static 'images/blog/blog-1-1.jpg' %}" alt="">
+                                <a href="blog-details.html"><i class="egypt-icon-add"></i><!-- /.egypt-icon-add --></a>
+                            </div><!-- /.blog-one__image -->
+                            <div class="blog-one__content">
+                                <div class="blog-one__top">
+                                    <div class="blog-one__date">
+                                        <span>
+                                            5 <br>
+                                            Oct
+                                        </span>
+                                    </div><!-- /.blog-one__date -->
+                                    <div class="blog-one__meta">
+                                        <a href="{% url 'home2' %}">Admin</a>
+                                        <a href="{% url 'home2' %}">Press Release</a>
+                                    </div><!-- /.blog-one__meta -->
+                                </div><!-- /.blog-one__top -->
+                                <h3 class="blog-one__title"><a href="blog-details.html">New visual identity for our
+                                        egypt museum</a></h3><!-- /.blog-one__title -->
+                                <a href="blog-details.html" class="blog-one__link">Read More <span>+</span></a>
+                                <!-- /.blog-one__link -->
+                            </div><!-- /.blog-one__content -->
+                        </div><!-- /.blog-one__single -->
+                    </div><!-- /.col-lg-3 col-md-6 -->
+                    <div class="col-lg-3 col-md-6 col-sm-12 wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="100ms">
+                        <div class="blog-one__single">
+                            <div class="blog-one__image">
+                                <img src="{% static 'images/blog/blog-1-2.jpg' %}" alt="">
+                                <a href="blog-details.html"><i class="egypt-icon-add"></i><!-- /.egypt-icon-add --></a>
+                            </div><!-- /.blog-one__image -->
+                            <div class="blog-one__content">
+                                <div class="blog-one__top">
+                                    <div class="blog-one__date">
+                                        <span>
+                                            21 <br>
+                                            Aug
+                                        </span>
+                                    </div><!-- /.blog-one__date -->
+                                    <div class="blog-one__meta">
+                                        <a href="{% url 'home2' %}">Admin</a>
+                                        <a href="{% url 'home2' %}">Photography</a>
+                                    </div><!-- /.blog-one__meta -->
+                                </div><!-- /.blog-one__top -->
+                                <h3 class="blog-one__title"><a href="blog-details.html">Earlier water color of palace
+                                        save for the nation</a></h3><!-- /.blog-one__title -->
+                                <a href="blog-details.html" class="blog-one__link">Read More <span>+</span></a>
+                                <!-- /.blog-one__link -->
+                            </div><!-- /.blog-one__content -->
+                        </div><!-- /.blog-one__single -->
+                    </div><!-- /.col-lg-3 col-md-6 -->
+                    <div class="col-lg-3 col-md-6 col-sm-12 wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="200ms">
+                        <div class="blog-one__single">
+                            <div class="blog-one__image">
+                                <img src="{% static 'images/blog/blog-1-3.jpg' %}" alt="">
+                                <a href="blog-details.html"><i class="egypt-icon-add"></i><!-- /.egypt-icon-add --></a>
+                            </div><!-- /.blog-one__image -->
+                            <div class="blog-one__content">
+                                <div class="blog-one__top">
+                                    <div class="blog-one__date">
+                                        <span>
+                                            10 <br>
+                                            Aug
+                                        </span>
+                                    </div><!-- /.blog-one__date -->
+                                    <div class="blog-one__meta">
+                                        <a href="{% url 'home2' %}">Admin</a>
+                                        <a href="{% url 'home2' %}">Information</a>
+                                    </div><!-- /.blog-one__meta -->
+                                </div><!-- /.blog-one__top -->
+                                <h3 class="blog-one__title"><a href="blog-details.html">The first ever production car
+                                        and flying car</a></h3><!-- /.blog-one__title -->
+                                <a href="blog-details.html" class="blog-one__link">Read More <span>+</span></a>
+                                <!-- /.blog-one__link -->
+                            </div><!-- /.blog-one__content -->
+                        </div><!-- /.blog-one__single -->
+                    </div><!-- /.col-lg-3 col-md-6 -->
+                    <div class="col-lg-3 col-md-6 col-sm-12 wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="300ms">
+                        <div class="blog-one__single">
+                            <div class="blog-one__image">
+                                <img src="{% static 'images/blog/blog-1-4.jpg' %}" alt="">
+                                <a href="blog-details.html"><i class="egypt-icon-add"></i><!-- /.egypt-icon-add --></a>
+                            </div><!-- /.blog-one__image -->
+                            <div class="blog-one__content">
+                                <div class="blog-one__top">
+                                    <div class="blog-one__date">
+                                        <span>
+                                            24 <br>
+                                            Jun
+                                        </span>
+                                    </div><!-- /.blog-one__date -->
+                                    <div class="blog-one__meta">
+                                        <a href="{% url 'home2' %}">Admin</a>
+                                        <a href="{% url 'home2' %}">Technology</a>
+                                    </div><!-- /.blog-one__meta -->
+                                </div><!-- /.blog-one__top -->
+                                <h3 class="blog-one__title"><a href="blog-details.html">Food: Bigger than the plate
+                                        exhibition highlights</a></h3><!-- /.blog-one__title -->
+                                <a href="blog-details.html" class="blog-one__link">Read More <span>+</span></a>
+                                <!-- /.blog-one__link -->
+                            </div><!-- /.blog-one__content -->
+                        </div><!-- /.blog-one__single -->
+                    </div><!-- /.col-lg-3 col-md-6 -->
+                </div><!-- /.row -->
+            </div><!-- /.container -->
+        </section><!-- /.blog-one -->
+
+        <section class="collection-two">
+            <div class="container">
+                <div class="collection-two__top">
+                    <div class="block-title text-left">
+                        <p class="block-title__tag-line">Collections</p><!-- /.block-title__tag-line -->
+                        <h2 class="block-title__title">Special Collections</h2><!-- /.block-title__title -->
+                    </div><!-- /.block-title -->
+
+                    <div class="collection-two__more-links-wrap">
+                        <a href="{% url 'home2' %}" class="collection-two__more-links">
+                            <i class="fa fa-angle-right"></i><!-- /.fa fa-angle-left -->
+                            View More Collections
+                        </a><!-- /.collection-two__more-links -->
+                    </div><!-- /.collection-two__more-links-wrap -->
+                </div><!-- /.collection-two__top -->
+                <div class="row masonary-layout">
+                    <div class="col-lg-4 col-md-6 col-sm-12 wow fadeInUp masonary-item" data-wow-duration="1500ms" data-wow-delay="0ms">
+                        <div class="collection-two__single">
+                            <div class="collection-two__image">
+                                <img src="{% static 'images/collections/collections-1-1.jpg' %}" alt="">
+                                <div class="collection-two__hover">
+                                    <a class="img-popup" href="{% static 'images/collections/collections-1-1.jpg' %}"><i class="egypt-icon-focus"></i>
+                                        <!-- /.egypt-icon-focus --></a>
+                                </div><!-- /.collection-two__hover -->
+                            </div><!-- /.collection-two__image -->
+                            <div class="collection-two__content">
+                                <p class="collection-two__category"><a href="collection-details.html">Painting</a></p>
+                                <!-- /.collection-two__category -->
+                                <h3 class="collection-two__title"><a href="collection-details.html">Alexandria in Prison</a></h3>
+                                <!-- /.collection-two__title -->
+                            </div><!-- /.collection-two__content -->
+                        </div><!-- /.collection-two__single -->
+                    </div><!-- /.col-lg-4 masonary-item -->
+                    <div class="col-lg-4 col-md-6 col-sm-12 wow fadeInUp masonary-item" data-wow-duration="1500ms" data-wow-delay="100ms">
+                        <div class="collection-two__single">
+                            <div class="collection-two__image">
+                                <img src="{% static 'images/collections/collections-1-2.jpg' %}" alt="">
+                                <div class="collection-two__hover">
+                                    <a class="img-popup" href="{% static 'images/collections/collections-1-2.jpg' %}"><i class="egypt-icon-focus"></i>
+                                        <!-- /.egypt-icon-focus --></a>
+                                </div><!-- /.collection-two__hover -->
+                            </div><!-- /.collection-two__image -->
+                            <div class="collection-two__content">
+                                <p class="collection-two__category"><a href="collection-details.html">Sculpture</a></p>
+                                <!-- /.collection-two__category -->
+                                <h3 class="collection-two__title"><a href="collection-details.html">The Lascaux Cave</a></h3>
+                                <!-- /.collection-two__title -->
+                            </div><!-- /.collection-two__content -->
+                        </div><!-- /.collection-two__single -->
+                    </div><!-- /.col-lg-4 masonary-item -->
+                    <div class="col-lg-4 col-md-6 col-sm-12 wow fadeInUp masonary-item" data-wow-duration="1500ms" data-wow-delay="200ms">
+                        <div class="collection-two__single">
+                            <div class="collection-two__image">
+                                <img src="{% static 'images/collections/collections-1-3.jpg' %}" alt="">
+                                <div class="collection-two__hover">
+                                    <a class="img-popup" href="{% static 'images/collections/collections-1-3.jpg' %}"><i class="egypt-icon-focus"></i>
+                                        <!-- /.egypt-icon-focus --></a>
+                                </div><!-- /.collection-two__hover -->
+                            </div><!-- /.collection-two__image -->
+                            <div class="collection-two__content">
+                                <p class="collection-two__category"><a href="collection-details.html">Drawing</a></p>
+                                <!-- /.collection-two__category -->
+                                <h3 class="collection-two__title"><a href="collection-details.html">Mare and Foal</a></h3>
+                                <!-- /.collection-two__title -->
+                            </div><!-- /.collection-two__content -->
+                        </div><!-- /.collection-two__single -->
+                    </div><!-- /.col-lg-4 masonary-item -->
+
+                    <div class="col-lg-4 col-md-6 col-sm-12 wow fadeInUp masonary-item" data-wow-duration="1500ms" data-wow-delay="300ms">
+                        <div class="collection-two__single">
+                            <div class="collection-two__image">
+                                <img src="{% static 'images/collections/collections-1-5.jpg' %}" alt="">
+                                <div class="collection-two__hover">
+                                    <a class="img-popup" href="{% static 'images/collections/collections-1-5.jpg' %}"><i class="egypt-icon-focus"></i>
+                                        <!-- /.egypt-icon-focus --></a>
+                                </div><!-- /.collection-two__hover -->
+                            </div><!-- /.collection-two__image -->
+                            <div class="collection-two__content">
+                                <p class="collection-two__category"><a href="collection-details.html">Painting</a></p>
+                                <!-- /.collection-two__category -->
+                                <h3 class="collection-two__title"><a href="collection-details.html">Tower of Babel (Babylon)</a></h3>
+                                <!-- /.collection-two__title -->
+                            </div><!-- /.collection-two__content -->
+                        </div><!-- /.collection-two__single -->
+                    </div><!-- /.col-lg-4 masonary-item -->
+                    <div class="col-lg-4 col-md-6 col-sm-12 wow fadeInUp masonary-item" data-wow-duration="1500ms" data-wow-delay="400ms">
+                        <div class="collection-two__single">
+                            <div class="collection-two__image">
+                                <img src="{% static 'images/collections/collections-1-4.jpg' %}" alt="">
+                                <div class="collection-two__hover">
+                                    <a class="img-popup" href="{% static 'images/collections/collections-1-4.jpg' %}"><i class="egypt-icon-focus"></i>
+                                        <!-- /.egypt-icon-focus --></a>
+                                </div><!-- /.collection-two__hover -->
+                            </div><!-- /.collection-two__image -->
+                            <div class="collection-two__content">
+                                <p class="collection-two__category"><a href="collection-details.html">Antiquities</a></p>
+                                <!-- /.collection-two__category -->
+                                <h3 class="collection-two__title"><a href="collection-details.html">Mercenary Soldiers</a></h3>
+                                <!-- /.collection-two__title -->
+                            </div><!-- /.collection-two__content -->
+                        </div><!-- /.collection-two__single -->
+                    </div><!-- /.col-lg-4 masonary-item -->
+                    <div class="col-lg-4 col-md-6 col-sm-12 wow fadeInUp masonary-item" data-wow-duration="1500ms" data-wow-delay="500ms">
+                        <div class="collection-two__single">
+                            <div class="collection-two__image">
+                                <img src="{% static 'images/collections/collections-1-6.jpg' %}" alt="">
+                                <div class="collection-two__hover">
+                                    <a class="img-popup" href="{% static 'images/collections/collections-1-6.jpg' %}"><i class="egypt-icon-focus"></i>
+                                        <!-- /.egypt-icon-focus --></a>
+                                </div><!-- /.collection-two__hover -->
+                            </div><!-- /.collection-two__image -->
+                            <div class="collection-two__content">
+                                <p class="collection-two__category"><a href="collection-details.html">Sculpture</a></p>
+                                <!-- /.collection-two__category -->
+                                <h3 class="collection-two__title"><a href="collection-details.html">Alexandria in Prison</a></h3>
+                                <!-- /.collection-two__title -->
+                            </div><!-- /.collection-two__content -->
+                        </div><!-- /.collection-two__single -->
+                    </div><!-- /.col-lg-4 masonary-item -->
+                </div><!-- /.row -->
+            </div><!-- /.container -->
+        </section><!-- /.collection-two -->
+
+
+        <section class="testimonials-two">
+            <div class="container">
+                <div class="block-title text-center">
+                    <p class="block-title__tag-line">Feedback</p><!-- /.block-title__tag-line -->
+                    <h2 class="block-title__title">Words From Visitors</h2><!-- /.block-title__title -->
+                </div><!-- /.block-title -->
+                <div class="row">
+                    <div class="col-lg-4 wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="0ms">
+                        <div class="testimonials-two__single">
+                            <div class="testimonials-two__image">
+                                <img src="{% static 'images/resources/testi-2-1.jpg' %}" alt="">
+                            </div><!-- /.testimonials-two__image -->
+                            <h3 class="testimonials-two__name">Jeffrin Melina</h3><!-- /.testimonials-two__name -->
+                            <p class="testimonials-two__designation">California</p><!-- /.testimonials-two__designation -->
+                            <div class="testimonials-two__content">
+                                <div class="testimonials-two__qoute"></div><!-- /.testimonials-two__qoute -->
+                                <h3 class="testimonials-two__title">Good worth to visit</h3><!-- /.testimonials-two__title -->
+                                <p class="testimonials-two__text">Wonderful Exhibit.Great presentation
+                                    lot of interestting things I did not know
+                                    about Egypt, it is awesome.</p><!-- /.testimonials-two__text -->
+                                <div class="testimonials-two__stars">
+                                    <i class="fa fa-star"></i><!-- /.fa fa-star -->
+                                    <i class="fa fa-star"></i><!-- /.fa fa-star -->
+                                    <i class="fa fa-star"></i><!-- /.fa fa-star -->
+                                    <i class="fa fa-star"></i><!-- /.fa fa-star -->
+                                    <i class="fa fa-star"></i><!-- /.fa fa-star -->
+                                </div><!-- /.testimonials-two__stars -->
+                            </div><!-- /.testimonials-two__content -->
+                        </div><!-- /.testimonials-two__single -->
+                    </div><!-- /.col-lg-4 -->
+                    <div class="col-lg-4 wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="100ms">
+                        <div class="testimonials-two__single">
+                            <div class="testimonials-two__image">
+                                <img src="{% static 'images/resources/testi-2-2.jpg' %}" alt="">
+                            </div><!-- /.testimonials-two__image -->
+                            <h3 class="testimonials-two__name">Duke Frederick </h3><!-- /.testimonials-two__name -->
+                            <p class="testimonials-two__designation">Newyork</p><!-- /.testimonials-two__designation -->
+                            <div class="testimonials-two__content">
+                                <div class="testimonials-two__qoute"></div><!-- /.testimonials-two__qoute -->
+                                <h3 class="testimonials-two__title">Guide was fabulous</h3><!-- /.testimonials-two__title -->
+                                <p class="testimonials-two__text">There are some interesting historical
+                                    pictures and information dating back to
+                                    the cattle ranches here.</p><!-- /.testimonials-two__text -->
+                                <div class="testimonials-two__stars">
+                                    <i class="fa fa-star"></i><!-- /.fa fa-star -->
+                                    <i class="fa fa-star"></i><!-- /.fa fa-star -->
+                                    <i class="fa fa-star"></i><!-- /.fa fa-star -->
+                                    <i class="fa fa-star"></i><!-- /.fa fa-star -->
+                                    <i class="fa fa-star-o"></i><!-- /.fa fa-star -->
+                                </div><!-- /.testimonials-two__stars -->
+                            </div><!-- /.testimonials-two__content -->
+                        </div><!-- /.testimonials-two__single -->
+                    </div><!-- /.col-lg-4 -->
+                    <div class="col-lg-4 wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="200ms">
+                        <div class="testimonials-two__single">
+                            <div class="testimonials-two__image">
+                                <img src="{% static 'images/resources/testi-2-3.jpg' %}" alt="">
+                            </div><!-- /.testimonials-two__image -->
+                            <h3 class="testimonials-two__name">Hugh Isadore </h3><!-- /.testimonials-two__name -->
+                            <p class="testimonials-two__designation">California</p><!-- /.testimonials-two__designation -->
+                            <div class="testimonials-two__content">
+                                <div class="testimonials-two__qoute"></div><!-- /.testimonials-two__qoute -->
+                                <h3 class="testimonials-two__title">The great history</h3><!-- /.testimonials-two__title -->
+                                <p class="testimonials-two__text">You’re immediately welcomed and
+                                    included. And then if you don’t want to
+                                    it’s easy enough to close.</p><!-- /.testimonials-two__text -->
+                                <div class="testimonials-two__stars">
+                                    <i class="fa fa-star"></i><!-- /.fa fa-star -->
+                                    <i class="fa fa-star"></i><!-- /.fa fa-star -->
+                                    <i class="fa fa-star"></i><!-- /.fa fa-star -->
+                                    <i class="fa fa-star"></i><!-- /.fa fa-star -->
+                                    <i class="fa fa-star"></i><!-- /.fa fa-star -->
+                                </div><!-- /.testimonials-two__stars -->
+                            </div><!-- /.testimonials-two__content -->
+                        </div><!-- /.testimonials-two__single -->
+                    </div><!-- /.col-lg-4 -->
+                </div><!-- /.row -->
+            </div><!-- /.container -->
+        </section><!-- /.testimonials-two -->
+
+        <section class="cta-one">
+            <div class="container">
+                <img src="{% static 'images/resources/cta-1-person.png' %}" class="cta-one__person wow fadeInRight" data-wow-duration="1500ms" alt="">
+                <div class="row">
+                    <div class="col-xl-6 col-lg-8">
+                        <div class="cta-one__block">
+                            <div class="cta-one__icon">
+                                <i class="egypt-icon-membership"></i><!-- /.egypt-icon-membership -->
+                            </div><!-- /.cta-one__icon -->
+                            <div class="cta-one__content">
+                                <h3 class="cta-one__title">Become a <br>
+                                    Member of Egypt</h3><!-- /.cta-one__title -->
+                                <p class="cta-one__text">Museum Members provide essential funding for us and <br> receive great
+                                    benefits in return!</p><!-- /.cta-one__text -->
+                                <ul class="list-unstyled cta-one__list">
+                                    <li>
+                                        <i class="egypt-icon-check"></i><!-- /.egypt-icon-check -->
+                                        Free Tickets to Special Exhibitions
+                                    </li>
+                                    <li>
+                                        <i class="egypt-icon-check"></i><!-- /.egypt-icon-check -->
+                                        Members-only exhibition previews & events
+                                    </li>
+                                    <li>
+                                        <i class="egypt-icon-check"></i><!-- /.egypt-icon-check -->
+                                        Access to a Member Entrance
+                                    </li>
+                                </ul><!-- /.list-unstyled cta-one__list -->
+                                <a href="{% url 'home2' %}" class="cta-one__link">
+                                    <i class="fa fa-angle-right"></i><!-- /.fa fa-angle-left -->
+                                    Become a Member
+                                </a><!-- /.cta-one__link -->
+                            </div><!-- /.cta-one__content -->
+                        </div><!-- /.cta-one__block -->
+                    </div><!-- /.col-lg-6 -->
+                </div><!-- /.row -->
+            </div><!-- /.container -->
+        </section><!-- /.cta-one -->
+
+
+        <section class="venue-one">
+            <div class="container">
+                <div class="venue-one__carousel owl-carousel owl-theme">
+                    <div class="item">
+                        <div class="venue-one__single">
+                            <div class="venue-one__icon">
+                                <img src="{% static 'images/icons/venue-1-1.png' %}" alt="">
+                            </div><!-- /.venue-one__icon -->
+                            <h3 class="venue-one__title">United Kingdon</h3><!-- /.venue-one__title -->
+                            <p class="venue-one__text"> 61 Wellfield Road Roath Cardiff <br>
+                                CF24 3DG</p><!-- /.venue-one__text -->
+                            <p class="venue-one__contact"><a href="tel:321-888-789-0123">p: 321 (888) 789-0123</a></p>
+                            <!-- /.venue-one__contact -->
+                        </div><!-- /.venue-one__single -->
+                    </div><!-- /.item -->
+                    <div class="item">
+                        <div class="venue-one__single">
+                            <div class="venue-one__icon">
+                                <img src="{% static 'images/icons/venue-1-2.png' %}" alt="">
+                            </div><!-- /.venue-one__icon -->
+                            <h3 class="venue-one__title">US of America</h3><!-- /.venue-one__title -->
+                            <p class="venue-one__text">973 Gilbert Ferry Road Se, Attalla <br> AL 35954</p>
+                            <!-- /.venue-one__text -->
+                            <p class="venue-one__contact"><a href="tel:+1-201-555-555-55">p: +1 (201) 555 555 55</a></p>
+                            <!-- /.venue-one__contact -->
+                        </div><!-- /.venue-one__single -->
+                    </div><!-- /.item -->
+                    <div class="item">
+                        <div class="venue-one__single">
+                            <div class="venue-one__icon">
+                                <img src="{% static 'images/icons/venue-1-3.png' %}" alt="">
+                            </div><!-- /.venue-one__icon -->
+                            <h3 class="venue-one__title">Switzerland</h3><!-- /.venue-one__title -->
+                            <p class="venue-one__text"> Todistrasse 7, avenue de la Paix <br>
+                                1202 Geneva</p><!-- /.venue-one__text -->
+                            <p class="venue-one__contact"><a href="tel:020-777-88-700">p: (020) 777 88 700</a></p>
+                            <!-- /.venue-one__contact -->
+                        </div><!-- /.venue-one__single -->
+                    </div><!-- /.item -->
+                    <div class="item">
+                        <div class="venue-one__single">
+                            <div class="venue-one__icon">
+                                <img src="{% static 'images/icons/venue-1-1.png' %}" alt="">
+                            </div><!-- /.venue-one__icon -->
+                            <h3 class="venue-one__title">United Kingdon</h3><!-- /.venue-one__title -->
+                            <p class="venue-one__text"> 61 Wellfield Road Roath Cardiff <br>
+                                CF24 3DG</p><!-- /.venue-one__text -->
+                            <p class="venue-one__contact"><a href="tel:321-888-789-0123">p: 321 (888) 789-0123</a></p>
+                            <!-- /.venue-one__contact -->
+                        </div><!-- /.venue-one__single -->
+                    </div><!-- /.item -->
+                    <div class="item">
+                        <div class="venue-one__single">
+                            <div class="venue-one__icon">
+                                <img src="{% static 'images/icons/venue-1-2.png' %}" alt="">
+                            </div><!-- /.venue-one__icon -->
+                            <h3 class="venue-one__title">US of America</h3><!-- /.venue-one__title -->
+                            <p class="venue-one__text">973 Gilbert Ferry Road Se, Attalla <br> AL 35954</p>
+                            <!-- /.venue-one__text -->
+                            <p class="venue-one__contact"><a href="tel:+1-201-555-555-55">p: +1 (201) 555 555 55</a></p>
+                            <!-- /.venue-one__contact -->
+                        </div><!-- /.venue-one__single -->
+                    </div><!-- /.item -->
+                    <div class="item">
+                        <div class="venue-one__single">
+                            <div class="venue-one__icon">
+                                <img src="{% static 'images/icons/venue-1-3.png' %}" alt="">
+                            </div><!-- /.venue-one__icon -->
+                            <h3 class="venue-one__title">Switzerland</h3><!-- /.venue-one__title -->
+                            <p class="venue-one__text"> Todistrasse 7, avenue de la Paix <br>
+                                1202 Geneva</p><!-- /.venue-one__text -->
+                            <p class="venue-one__contact"><a href="tel:020-777-88-700">p: (020) 777 88 700</a></p>
+                            <!-- /.venue-one__contact -->
+                        </div><!-- /.venue-one__single -->
+                    </div><!-- /.item -->
+                    <div class="item">
+                        <div class="venue-one__single">
+                            <div class="venue-one__icon">
+                                <img src="{% static 'images/icons/venue-1-1.png' %}" alt="">
+                            </div><!-- /.venue-one__icon -->
+                            <h3 class="venue-one__title">United Kingdon</h3><!-- /.venue-one__title -->
+                            <p class="venue-one__text"> 61 Wellfield Road Roath Cardiff <br>
+                                CF24 3DG</p><!-- /.venue-one__text -->
+                            <p class="venue-one__contact"><a href="tel:321-888-789-0123">p: 321 (888) 789-0123</a></p>
+                            <!-- /.venue-one__contact -->
+                        </div><!-- /.venue-one__single -->
+                    </div><!-- /.item -->
+                    <div class="item">
+                        <div class="venue-one__single">
+                            <div class="venue-one__icon">
+                                <img src="{% static 'images/icons/venue-1-2.png' %}" alt="">
+                            </div><!-- /.venue-one__icon -->
+                            <h3 class="venue-one__title">US of America</h3><!-- /.venue-one__title -->
+                            <p class="venue-one__text">973 Gilbert Ferry Road Se, Attalla <br> AL 35954</p>
+                            <!-- /.venue-one__text -->
+                            <p class="venue-one__contact"><a href="tel:+1-201-555-555-55">p: +1 (201) 555 555 55</a></p>
+                            <!-- /.venue-one__contact -->
+                        </div><!-- /.venue-one__single -->
+                    </div><!-- /.item -->
+                    <div class="item">
+                        <div class="venue-one__single">
+                            <div class="venue-one__icon">
+                                <img src="{% static 'images/icons/venue-1-3.png' %}" alt="">
+                            </div><!-- /.venue-one__icon -->
+                            <h3 class="venue-one__title">Switzerland</h3><!-- /.venue-one__title -->
+                            <p class="venue-one__text"> Todistrasse 7, avenue de la Paix <br>
+                                1202 Geneva</p><!-- /.venue-one__text -->
+                            <p class="venue-one__contact"><a href="tel:020-777-88-700">p: (020) 777 88 700</a></p>
+                            <!-- /.venue-one__contact -->
+                        </div><!-- /.venue-one__single -->
+                    </div><!-- /.item -->
+                </div><!-- /.venue-one__carousel owl-carousel owl-theme -->
+            </div><!-- /.container -->
+        </section><!-- /.venue-one -->
+
+
+
+    <a href="{% url 'home2' %}" data-target="html" class="scroll-to-target scroll-to-top"><i class="egypt-icon-arrow-2"></i></a>
+{% endblock content %}

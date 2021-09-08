@@ -1,0 +1,259 @@
+{% extends 'base/base.html' %}
+{% load  static %}
+
+{% block content %}
+    <section class="inner-banner">
+        <div class="container">
+            <h2 class="inner-banner__title">Donations</h2><!-- /.inner-banner__title -->
+            <ul class="list-unstyled thm-breadcrumb">
+                <li><a href="{% url 'home-url' %}">Home</a></li>
+                <li><a href="{% url 'donation-url' %}">Pages</a></li>
+                <li>Donations</li>
+            </ul><!-- /.thm-breadcrumb -->
+        </div><!-- /.container -->
+    </section><!-- /.inner-banner -->
+    <section class="cta-one cta-one__donation-page">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-6 col-lg-12">
+                    <div class="cta-one__block">
+                        <div class="cta-one__icon">
+                            <i class="egypt-icon-gift"></i><!-- /.egypt-icon-gift -->
+                        </div><!-- /.cta-one__icon -->
+                        <div class="cta-one__content">
+                            <h3 class="cta-one__title">Donate for <br> Achive Our Goal</h3><!-- /.cta-one__title -->
+                            <p class="cta-one__text">Thank you for considering giving to the museum. Your gift <br> will
+                                allow future generations to discover.</p><!-- /.cta-one__text -->
+                            <p class="cta-one__text"><span>Ways to Contribute to Our Museum:</span></p>
+                            <!-- /.cta-one__text -->
+                            <ul class="list-unstyled cta-one__list">
+                                <li>
+                                    <i class="egypt-icon-check"></i><!-- /.egypt-icon-check -->
+                                    Financial Donation
+                                </li>
+                                <li>
+                                    <i class="egypt-icon-check"></i><!-- /.egypt-icon-check -->
+                                    Donate the Historical Artifacts
+                                </li>
+                                <li>
+                                    <i class="egypt-icon-check"></i><!-- /.egypt-icon-check -->
+                                    Adopt an Artifact & Support the Museum
+                                </li>
+                            </ul><!-- /.list-unstyled cta-one__list -->
+                            <a href="{% url 'donation-url' %}" class="cta-one__link">
+                                <i class="fa fa-angle-right"></i><!-- /.fa fa-angle-left -->
+                                Questions? Check our FAQ
+                            </a><!-- /.cta-one__link -->
+                        </div><!-- /.cta-one__content -->
+                    </div><!-- /.cta-one__block -->
+                </div><!-- /.col-lg-6 -->
+                <div class="col-xl-6 col-lg-12">
+                    <img src="{% static 'images/resources/donation-1-1.jpg' %}" alt="" class="img-fluid"/>
+                </div><!-- /.col-lg-6 -->
+            </div><!-- /.row -->
+        </div><!-- /.container -->
+    </section><!-- /.cta-one -->
+    <section class="donation-form">
+        <div class="container">
+            <div class="inner-container">
+                <h3 class="donation-form__title text-center">Make a Donation</h3><!-- /.donation-form__title -->
+                <ul class="nav nav-tabs donation-form__tab">
+                    <li class="nav-item">
+                        <a class="nav-link active" data-toggle="tab" href="{% url 'donation-url' %}money">Money</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="{% url 'donation-url' %}artifacts">Artifacts</a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" data-toggle="tab" href="{% url 'donation-url' %}adopt">Adopt</a>
+                    </li>
+                </ul>
+                <div class="tab-content">
+                    <div class="tab-pane show active animated fadeInUp" id="money">
+                        <form action="{% url 'donation-url' %}" class="donation-form__form">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="donation-form__form-field">
+                                        <input type="text" name="name" placeholder="Your Full Name*">
+                                    </div><!-- /.donation-form__form-field -->
+                                </div><!-- /.col-md-12 -->
+                                <div class="col-md-6">
+                                    <div class="donation-form__form-field">
+                                        <input type="text" name="email" placeholder="Email Address*">
+                                    </div><!-- /.donation-form__form-field -->
+                                </div><!-- /.col-md-6 -->
+                                <div class="col-md-6">
+                                    <div class="donation-form__form-field">
+                                        <input type="text" name="phone" placeholder="Phone Num">
+                                    </div><!-- /.donation-form__form-field -->
+                                </div><!-- /.col-md-6 -->
+                                <div class="col-md-6">
+                                    <div class="donation-form__form-field">
+                                        <select class="selectpicker">
+                                            <option>50 USD</option>
+                                            <option>100 USD</option>
+                                            <option>150 USD</option>
+                                            <option>200 USD</option>
+                                        </select>
+                                    </div><!-- /.donation-form__form-field -->
+                                </div><!-- /.col-md-6 -->
+                                <div class="col-md-6">
+                                    <div class="donation-form__form-field">
+                                        <input type="text" name="phone" placeholder="$ Custom Amount">
+                                    </div><!-- /.donation-form__form-field -->
+                                </div><!-- /.col-md-6 -->
+                                <div class="col-md-6">
+                                    <div class="donation-form__form-field">
+                                        <select class="selectpicker">
+                                            <option>One Time</option>
+                                            <option>Monthly</option>
+                                            <option>Annually</option>
+                                        </select>
+                                    </div><!-- /.donation-form__form-field -->
+                                </div><!-- /.col-md-6 -->
+                                <div class="col-md-6">
+                                    <div class="donation-form__form-field">
+                                        <select class="selectpicker">
+                                            <option>Donation For</option>
+                                            <option>Artifacts</option>
+                                            <option>Adopt</option>
+                                        </select>
+                                    </div><!-- /.donation-form__form-field -->
+                                </div><!-- /.col-md-6 -->
+                                <div class="col-lg-12">
+                                    <div class="text-center">
+                                        <button type="submit" class="thm-btn donation-form__form-btn">Make Donation
+                                        </button>
+                                    </div><!-- /.text-center -->
+                                </div><!-- /.col-lg-12 -->
+                            </div><!-- /.row -->
+                        </form><!-- /.donation-form__form -->
+                    </div><!-- /.tab-pane show active animated fadeInUp -->
+                    <div class="tab-pane  animated fadeInUp" id="artifacts">
+                        <form action="{% url 'donation-url' %}" class="donation-form__form">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="donation-form__form-field">
+                                        <input type="text" name="name" placeholder="Your Full Name*">
+                                    </div><!-- /.donation-form__form-field -->
+                                </div><!-- /.col-md-12 -->
+                                <div class="col-md-6">
+                                    <div class="donation-form__form-field">
+                                        <input type="text" name="email" placeholder="Email Address*">
+                                    </div><!-- /.donation-form__form-field -->
+                                </div><!-- /.col-md-6 -->
+                                <div class="col-md-6">
+                                    <div class="donation-form__form-field">
+                                        <input type="text" name="phone" placeholder="Phone Num">
+                                    </div><!-- /.donation-form__form-field -->
+                                </div><!-- /.col-md-6 -->
+                                <div class="col-md-6">
+                                    <div class="donation-form__form-field">
+                                        <select class="selectpicker">
+                                            <option>50 USD</option>
+                                            <option>100 USD</option>
+                                            <option>150 USD</option>
+                                            <option>200 USD</option>
+                                        </select>
+                                    </div><!-- /.donation-form__form-field -->
+                                </div><!-- /.col-md-6 -->
+                                <div class="col-md-6">
+                                    <div class="donation-form__form-field">
+                                        <input type="text" name="phone" placeholder="$ Custom Amount">
+                                    </div><!-- /.donation-form__form-field -->
+                                </div><!-- /.col-md-6 -->
+                                <div class="col-md-6">
+                                    <div class="donation-form__form-field">
+                                        <select class="selectpicker">
+                                            <option>One Time</option>
+                                            <option>Monthly</option>
+                                            <option>Annually</option>
+                                        </select>
+                                    </div><!-- /.donation-form__form-field -->
+                                </div><!-- /.col-md-6 -->
+                                <div class="col-md-6">
+                                    <div class="donation-form__form-field">
+                                        <select class="selectpicker">
+                                            <option>Donation For</option>
+                                            <option>Artifacts</option>
+                                            <option>Adopt</option>
+                                        </select>
+                                    </div><!-- /.donation-form__form-field -->
+                                </div><!-- /.col-md-6 -->
+                                <div class="col-lg-12">
+                                    <div class="text-center">
+                                        <button type="submit" class="thm-btn donation-form__form-btn">Make Donation
+                                        </button>
+                                    </div><!-- /.text-center -->
+                                </div><!-- /.col-lg-12 -->
+                            </div><!-- /.row -->
+                        </form><!-- /.donation-form__form -->
+                    </div><!-- /.tab-pane  animated fadeInUp -->
+                    <div class="tab-pane  animated fadeInUp" id="adopt">
+                        <form action="{% url 'donation-url' %}" class="donation-form__form">
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <div class="donation-form__form-field">
+                                        <input type="text" name="name" placeholder="Your Full Name*">
+                                    </div><!-- /.donation-form__form-field -->
+                                </div><!-- /.col-md-12 -->
+                                <div class="col-md-6">
+                                    <div class="donation-form__form-field">
+                                        <input type="text" name="email" placeholder="Email Address*">
+                                    </div><!-- /.donation-form__form-field -->
+                                </div><!-- /.col-md-6 -->
+                                <div class="col-md-6">
+                                    <div class="donation-form__form-field">
+                                        <input type="text" name="phone" placeholder="Phone Num">
+                                    </div><!-- /.donation-form__form-field -->
+                                </div><!-- /.col-md-6 -->
+                                <div class="col-md-6">
+                                    <div class="donation-form__form-field">
+                                        <select class="selectpicker">
+                                            <option>50 USD</option>
+                                            <option>100 USD</option>
+                                            <option>150 USD</option>
+                                            <option>200 USD</option>
+                                        </select>
+                                    </div><!-- /.donation-form__form-field -->
+                                </div><!-- /.col-md-6 -->
+                                <div class="col-md-6">
+                                    <div class="donation-form__form-field">
+                                        <input type="text" name="phone" placeholder="$ Custom Amount">
+                                    </div><!-- /.donation-form__form-field -->
+                                </div><!-- /.col-md-6 -->
+                                <div class="col-md-6">
+                                    <div class="donation-form__form-field">
+                                        <select class="selectpicker">
+                                            <option>One Time</option>
+                                            <option>Monthly</option>
+                                            <option>Annually</option>
+                                        </select>
+                                    </div><!-- /.donation-form__form-field -->
+                                </div><!-- /.col-md-6 -->
+                                <div class="col-md-6">
+                                    <div class="donation-form__form-field">
+                                        <select class="selectpicker">
+                                            <option>Donation For</option>
+                                            <option>Artifacts</option>
+                                            <option>Adopt</option>
+                                        </select>
+                                    </div><!-- /.donation-form__form-field -->
+                                </div><!-- /.col-md-6 -->
+                                <div class="col-lg-12">
+                                    <div class="text-center">
+                                        <button type="submit" class="thm-btn donation-form__form-btn">Make Donation
+                                        </button>
+                                    </div><!-- /.text-center -->
+                                </div><!-- /.col-lg-12 -->
+                            </div><!-- /.row -->
+                        </form><!-- /.donation-form__form -->
+                    </div><!-- /.tab-pane  animated fadeInUp -->
+                </div><!-- /.tab-content -->
+            </div><!-- /.inner-container -->
+        </div><!-- /.container -->
+    </section><!-- /.donation-form -->
+
+    <a href="{% url 'donation-url' %}" data-target="html" class="scroll-to-target scroll-to-top"><i
+            class="egypt-icon-arrow-2"></i></a>
+{% endblock content %}

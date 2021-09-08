@@ -1,0 +1,62 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block content %}
+
+    <section class="collection-three">
+        <div class="container">
+            <div class="block-title text-center">
+                <p class="block-title__tag-line">Collections</p><!-- /.block-title__tag-line -->
+                <h2 class="block-title__title">Discover The Collection</h2><!-- /.block-title__title -->
+            </div><!-- /.block-title -->
+
+
+            <div class="row masonary-layout">
+
+                {% for discov in discover %}
+                    <div class="col-lg-4 col-md-6 col-sm-12 masonary-item wow fadeInUp" data-wow-duration="1500ms"
+                         data-wow-delay="000ms">
+                        <div class="collection-three__single">
+                            <img src="{{ discov.image.url }}" width="700" height="250" alt="Awesome Image"/>
+                            <div class="collection-three__content">
+                                <h3 class="collection-three__title"><a href="{% url 'collection_details-url' discov.pk %}">{{ discov.title }}</a></h3>
+                                <a href="{% url 'collection_details-url' discov.pk %}"
+                                   class="collection-three__link"><span>+</span></a>
+                            </div><!-- /.collection-three__content -->
+                        </div><!-- /.collection-three__single -->
+                    </div><!-- /.col-lg-4 masonary-item -->
+                {% endfor %}
+
+            </div><!-- /.row -->
+
+        <!-- Pagination -->
+        <div class="post-pagination post-pagination__two">
+            <span class="step_links">
+                {% if page_obj.has_previous %}
+                    <a href="?page={{ page_obj.previous_page_number }}">Prev</a>
+                {% endif %}
+
+                <span class="current">
+                    {% for num in page_obj.paginator.page_range %}
+                        {% if page_obj.number == num %}
+                            <span class="pagination-number pagination-current">{{ num }}</span>
+                        {% elif num > page_obj.number|add:-3 and num < page_obj.number|add:3 %}
+                            <a class="pagination-number" href="?page={{ num }}">{{ num }}</a>
+                        {% endif %}
+                    {% endfor %}
+                </span>
+
+                {% if page_obj.has_next %}
+                    <a href="?page={{ page_obj.next_page_number }}">Next</a>
+                {% endif %}
+            </span>
+        </div>
+        <!-- end Pagination -->
+
+        </div><!-- /.container -->
+    </section>
+
+    <a href="collection-cultural.html#" data-target="html" class="scroll-to-target scroll-to-top"><i
+            class="egypt-icon-arrow-2"></i></a>
+
+{% endblock content %}

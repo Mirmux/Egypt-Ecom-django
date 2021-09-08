@@ -1,0 +1,254 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block content %}
+
+    <section class="inner-banner">
+        <div class="container">
+            <h2 class="inner-banner__title">Plan Your Visit</h2><!-- /.inner-banner__title -->
+            <ul class="list-unstyled thm-breadcrumb">
+                <li><a href="{% url 'home-url' %}">Home</a></li>
+                <li>Visit</li>
+            </ul><!-- /.thm-breadcrumb -->
+        </div><!-- /.container -->
+    </section><!-- /.inner-banner -->
+    <section class="plan-visit">
+        <div class="container">
+            <ul class="nav nav-tabs plan-visit__tab-links">
+                <li class="nav-item">
+                    <a href="#open-hrs" data-target="#open-hrs" class="nav-link  active">Opening
+                        Hours</a>
+                </li><!-- /.nav-item -->
+                <li class="nav-item">
+                    <a href="#admission" data-target="#admission" class="nav-link ">Admission Cost</a>
+                </li><!-- /.nav-item -->
+                <li class="nav-item">
+                    <a href="#how-to-get" data-target="#how-to-get" class="nav-link ">Get Here</a>
+                </li><!-- /.nav-item -->
+                <li class="nav-item">
+                    <a href="#anenities" data-target="#anenities" class="nav-link ">Amenities</a>
+                </li><!-- /.nav-item -->
+                <li class="nav-item">
+                    <a href="#interior" data-target="#interior" class="nav-link ">Interior Map</a>
+                </li><!-- /.nav-item -->
+            </ul><!-- /.nav nav-tabs plan-visit -->
+            <div class="inner-container">
+                <div class="tab-content">
+                    <div class="plan-visit__tab-main">
+                        <div class="row ">
+                            <div class="col-lg-6">
+                                <img src="{{ object.image.url }}"
+                                     class="plan-visit__tab-main-image mb-2"
+                                     alt="Awesome Image"/>
+                                {% for photo in object.photos.all %}
+                                <img src="{{ photo.images.url }}"
+                                     class="plan-visit__tab-main-image mb-2"
+                                     alt="Awesome Image"/>
+                                {% endfor %}
+                            </div><!-- /.col-lg-6 -->
+                            <div class="col-lg-6">
+                                <div class="plan-visit__content">
+                                    <div class="plan-visit__single" id="open-hrs">
+                                        <div class="plan-visit__block-title">
+                                            <h3 class="plan-visit__block-title__title">Museum Opening Hours</h3>
+                                            <!-- /.plan-visit__block-title__title -->
+                                        </div><!-- /.plan-visit__block-title -->
+                                        <h3 class="plan-visit__subtitle">Museum Hours</h3>
+                                        <!-- /.plan-visit__subtitle -->
+                                        <p class="plan-visit__text"><span>Friday</span>: {{ object.work_t }}</p>
+                                        <!-- /.plan-visit__text -->
+                                        <p class="plan-visit__text"><span>Saturday until Thursday</span>: {{ object.work_t2 }}
+                                        </p>
+                                        <!-- /.plan-visit__text -->
+                                        <br>
+                                        <h3 class="plan-visit__subtitle">Museum Store Hours</h3>
+                                        <!-- /.plan-visit__subtitle -->
+                                        <p class="plan-visit__text"><span>Friday</span>: {{ object.work_st }}</p>
+                                        <!-- /.plan-visit__text -->
+                                        <p class="plan-visit__text"><span>Saturday until Thursday</span>: {{ object.work_st2 }}
+                                        </p>
+                                        <!-- /.plan-visit__text -->
+                                        <br>
+                                        <p class="plan-visit__text"><span>*We're closed <a href="request-visit.html#">Thanksgiving, Christmas & New Year's Day.</a></span>
+                                        </p><!-- /.plan-visit__text -->
+                                    </div><!-- /.plan-visit__single -->
+                                    <div class="plan-visit__single" id="admission">
+                                        <div class="plan-visit__block-title">
+                                            <h3 class="plan-visit__block-title__title">Admission Cost</h3>
+                                            <!-- /.plan-visit__block-title__title -->
+                                        </div><!-- /.plan-visit__block-title -->
+                                        <h3 class="plan-visit__subtitle">General Visit</h3>
+                                        <!-- /.plan-visit__subtitle -->
+                                        <div class="plan-visit__price-carousel owl-carousel owl-theme">
+                                            <div class="item">
+                                                <ul class="list-unstyled plan-visit__price-list">
+                                                    <li>
+                                                        <span>Adults:</span>
+                                                        <span>{{ object.adults_cost }}</span>
+                                                    </li>
+                                                    <li>
+                                                        <span>Students (Valid I.D.): </span>
+                                                        <span>{{ object.Student_cost }}</span>
+                                                    </li>
+                                                    <li>
+                                                        <span>Senior 60+:</span>
+                                                        <span>{{ object.Senior_cost }}</span>
+                                                    </li>
+                                                    <li>
+                                                        <span>Ages 6 and under 10:</span>
+                                                        <span>{{ object.children_cost }}</span>
+                                                    </li>
+                                                </ul><!-- /.plan-visit__price-list -->
+                                            </div><!-- /.item -->
+
+                                        </div><!-- /.plan-visit__price-carousel -->
+                                        <br>
+                                        <p class="plan-visit__text"><span>*Free Admission for Museum Members.</span></p>
+                                        <!-- /.plan-visit__text -->
+                                    </div><!-- /.plan-visit__single -->
+                                    <div class="plan-visit__single plan-visit__address" id="how-to-get">
+                                        <div class="plan-visit__block-title">
+                                            <h3 class="plan-visit__block-title__title">How to Get Here</h3>
+                                            <!-- /.plan-visit__block-title__title -->
+                                        </div><!-- /.plan-visit__block-title -->
+                                        <h3 class="plan-visit__subtitle">Address</h3><!-- /.plan-visit__subtitle -->
+                                        <p class="plan-visit__text">{{ object.address }}</p><!-- /.plan-visit__text -->
+                                        <br>
+                                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6139271.810170918!2d60.08339502755918!3d41.293822222444774!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38ae8b20a5d676b1%3A0xca0a6dad7e841e20!2sO%60zbekiston!5e0!3m2!1suz!2s!4v1626099743838!5m2!1suz!2s" width="400" height="300" style="border:0;"  loading="lazy"
+                                                class="google-map__home" allowfullscreen></iframe>
+                                        <br>
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <p class="plan-visit__text">
+                                                    <span>Metro:</span> <br>
+                                                    {{ object.metro }}
+                                                </p><!-- /.plan-visit__text -->
+                                            </div><!-- /.col-md-6 -->
+                                            <div class="col-md-6">
+                                                <p class="plan-visit__text">
+                                                    <span>Bus:</span> <br>
+                                                    {{ object.bus }}
+                                                </p><!-- /.plan-visit__text -->
+                                            </div><!-- /.col-md-6 -->
+                                            <div class="col-md-6">
+                                                <p class="plan-visit__text">
+                                                    <span>Electric Train:</span> <br>
+                                                    {{ object.electric_train }}
+                                                </p><!-- /.plan-visit__text -->
+                                            </div><!-- /.col-md-6 -->
+                                            <div class="col-md-6">
+                                                <p class="plan-visit__text">
+                                                    <span>Bike & Car:</span> <br>
+                                                    {{ object.bike_car }}
+                                                </p><!-- /.plan-visit__text -->
+                                            </div><!-- /.col-md-6 -->
+                                        </div><!-- /.row -->
+                                    </div><!-- /.plan-visit__single -->
+                                    <div class="plan-visit__single" id="anenities">
+                                        <div class="plan-visit__block-title">
+                                            <h3 class="plan-visit__block-title__title">Amenities</h3>
+                                            <!-- /.plan-visit__block-title__title -->
+                                        </div><!-- /.plan-visit__block-title -->
+                                        <div class="accrodion-grp" data-grp-name="plan-visit__accrodion">
+                                            <div class="accrodion active">
+                                                <div class="accrodion-title">
+                                                    <h4>Dining</h4>
+                                                </div>
+                                                <div class="accrodion-content">
+                                                    <div class="inner">
+                                                        <p>We denounce with righteous indignation and dislike men who
+                                                            are so beguiled and demoralized.</p>
+                                                    </div><!-- /.inner -->
+                                                </div>
+                                            </div>
+                                            <div class="accrodion ">
+                                                <div class="accrodion-title">
+                                                    <h4>Restrooms</h4>
+                                                </div>
+                                                <div class="accrodion-content">
+                                                    <div class="inner">
+                                                        <p>We denounce with righteous indignation and dislike men who
+                                                            are so beguiled and demoralized.</p>
+                                                    </div><!-- /.inner -->
+                                                </div>
+                                            </div>
+                                            <div class="accrodion">
+                                                <div class="accrodion-title">
+                                                    <h4>Wireless Access</h4>
+                                                </div>
+                                                <div class="accrodion-content">
+                                                    <div class="inner">
+                                                        <p>We denounce with righteous indignation and dislike men who
+                                                            are so beguiled and demoralized.</p>
+                                                    </div><!-- /.inner -->
+                                                </div>
+                                            </div>
+                                            <div class="accrodion">
+                                                <div class="accrodion-title">
+                                                    <h4>Wheelchairs</h4>
+                                                </div>
+                                                <div class="accrodion-content">
+                                                    <div class="inner">
+                                                        <p>We denounce with righteous indignation and dislike men who
+                                                            are so beguiled and demoralized.</p>
+                                                    </div><!-- /.inner -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div><!-- /.plan-visit__single -->
+                                    <div class="plan-visit__single" id="interior">
+                                        <div class="plan-visit__block-title">
+                                            <h3 class="plan-visit__block-title__title">Museum Interior</h3>
+                                            <!-- /.plan-visit__block-title__title -->
+                                        </div><!-- /.plan-visit__block-title -->
+                                        <ul class="nav nav-tabs plan-visit__map-tab-links" role="tablist">
+                                            <li class="nav-item">
+                                                <a role="tab" data-toggle="tab" href="request-visit.html#first-floor"
+                                                   class="nav-link active">First Floor</a>
+                                            </li><!-- /.nav-item -->
+                                            <li class="nav-item">
+                                                <a role="tab" data-toggle="tab" href="request-visit.html#second-floor"
+                                                   class="nav-link">Second Floor</a>
+                                            </li><!-- /.nav-item -->
+                                            <li class="nav-item">
+                                                <a role="tab" data-toggle="tab" href="request-visit.html#third-floor"
+                                                   class="nav-link">Third Floor</a>
+                                            </li><!-- /.nav-item -->
+                                        </ul><!-- /.nav nav-tabs plan-visit -->
+                                        <div class="tab-content">
+                                            <div class="tab-pane animated fadeInUp show active" id="first-floor">
+                                                <div class="plan-visit__map-content">
+                                                    <img class="img-fluid"
+                                                         src="{% static 'images/resources/int-map.jpg' %}"
+                                                         alt="Awesome Image"/>
+                                                </div><!-- /.plan-visit__map-content -->
+                                            </div>
+                                            <div class="tab-pane animated fadeInUp " id="second-floor">
+                                                <div class="plan-visit__map-content">
+                                                    <img class="img-fluid"
+                                                         src="{% static 'images/resources/int-map.jpg' %}"
+                                                         alt="Awesome Image"/>
+                                                </div><!-- /.plan-visit__map-content -->
+                                            </div>
+                                            <div class="tab-pane animated fadeInUp " id="third-floor">
+                                                <div class="plan-visit__map-content">
+                                                    <img class="img-fluid"
+                                                         src="{% static 'images/resources/int-map.jpg' %}"
+                                                         alt="Awesome Image"/>
+                                                </div><!-- /.plan-visit__map-content -->
+                                            </div>
+
+                                        </div><!-- /.tab-content -->
+                                    </div><!-- /.plan-visit__single -->
+                                </div><!-- /.plan-visit__content -->
+                            </div><!-- /.col-lg-6 -->
+                        </div><!-- /.row -->
+                    </div><!-- /.plan-visit__tab-main -->
+                </div><!-- /.tab-content -->
+            </div><!-- /.inner-container -->
+        </div><!-- /.container -->
+    </section><!-- /.plan-visit -->
+    <a href="request-visit.html#" data-target="html" class="scroll-to-target scroll-to-top"><i
+            class="egypt-icon-arrow-2"></i></a>
+
+{% endblock content %}

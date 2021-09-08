@@ -1,0 +1,119 @@
+{% extends 'base/base.html' %}
+{% load  static %}
+
+{% block content %}
+    <section class="inner-banner">
+        <div class="container">
+            <h2 class="inner-banner__title">Membership</h2><!-- /.inner-banner__title -->
+            <ul class="list-unstyled thm-breadcrumb">
+                <li><a href="{% url 'home-url' %}">Home</a></li>
+                <li><a href="{% url 'membership-url' %}">Pages</a></li>
+                <li>Membership</li>
+            </ul><!-- /.thm-breadcrumb -->
+
+        </div><!-- /.container -->
+    </section><!-- /.inner-banner -->
+
+
+    <section class="cta-one cta-one__membership-page">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-6 col-lg-12">
+                    <div class="cta-one__block">
+                        <div class="cta-one__icon">
+                            <i class="egypt-icon-membership"></i><!-- /.egypt-icon-membership -->
+                        </div><!-- /.cta-one__icon -->
+                        <div class="cta-one__content">
+                            <h3 class="cta-one__title">Become a <br>
+                                Member of Egypt</h3><!-- /.cta-one__title -->
+                            <p class="cta-one__text">Museum Members provide essential funding for us and <br> receive
+                                great
+                                benefits in return!</p><!-- /.cta-one__text -->
+                            <ul class="list-unstyled cta-one__list">
+                                <li>
+                                    <i class="egypt-icon-check"></i><!-- /.egypt-icon-check -->
+                                    Free Tickets to Special Exhibitions
+                                </li>
+                                <li>
+                                    <i class="egypt-icon-check"></i><!-- /.egypt-icon-check -->
+                                    Members-only exhibition previews & events
+                                </li>
+                                <li>
+                                    <i class="egypt-icon-check"></i><!-- /.egypt-icon-check -->
+                                    Access to a Member Entrance
+                                </li>
+                            </ul><!-- /.list-unstyled cta-one__list -->
+                            <a href="{% url 'membership-url' %}" class="cta-one__link">
+                                <i class="fa fa-angle-right"></i><!-- /.fa fa-angle-left -->
+                                Become a Member
+                            </a><!-- /.cta-one__link -->
+                        </div><!-- /.cta-one__content -->
+                    </div><!-- /.cta-one__block -->
+                </div><!-- /.col-lg-6 -->
+                <div class="col-xl-6 col-lg-12">
+                    <img src="{% static 'images/resources/membership-1-1.jpg' %}" alt="" class="img-fluid"/>
+                </div><!-- /.col-lg-6 -->
+            </div><!-- /.row -->
+        </div><!-- /.container -->
+    </section><!-- /.cta-one -->
+
+    <section class="pricing-one">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6">
+                    <div class="pricing-one__single wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="000ms">
+                        <p class="pricing-one__name">Plan 01</p><!-- /.pricing-one__name -->
+                        <h3 class="pricing-one__type">For Individual</h3><!-- /.pricing-one__type -->
+                        <p class="pricing-one__amount">49</p><!-- /.pricing-one__amount -->
+                        <p class="pricing-one__time">usd / Year</p><!-- /.pricing-one__time -->
+                        <div class="pricing-one__bottom">
+                            <p class="pricing-one__text">Benefits for One Person</p><!-- /.pricing-one__text -->
+                            <a href="{% url 'membership-url' %}" class="pricing-one__btn thm-btn">Join / Renew</a>
+                        </div><!-- /.pricing-one__bottom -->
+                    </div><!-- /.pricing-one__single -->
+                </div><!-- /.col-lg-3 col-md-6 -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="pricing-one__single wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="100ms">
+                        <p class="pricing-one__name">Plan 02</p><!-- /.pricing-one__name -->
+                        <h3 class="pricing-one__type">For Seniors</h3><!-- /.pricing-one__type -->
+                        <p class="pricing-one__amount">39</p><!-- /.pricing-one__amount -->
+                        <p class="pricing-one__time">usd / Year</p><!-- /.pricing-one__time -->
+                        <div class="pricing-one__bottom">
+                            <p class="pricing-one__text">60 and Above</p><!-- /.pricing-one__text -->
+                            <a href="{% url 'membership-url' %}" class="pricing-one__btn thm-btn">Join / Renew</a>
+                        </div><!-- /.pricing-one__bottom -->
+                    </div><!-- /.pricing-one__single -->
+                </div><!-- /.col-lg-3 col-md-6 -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="pricing-one__single wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="200ms">
+                        <p class="pricing-one__name">Plan 03</p><!-- /.pricing-one__name -->
+                        <h3 class="pricing-one__type">For Students</h3><!-- /.pricing-one__type -->
+                        <p class="pricing-one__amount">24</p><!-- /.pricing-one__amount -->
+                        <p class="pricing-one__time">usd / Year</p><!-- /.pricing-one__time -->
+                        <div class="pricing-one__bottom">
+                            <p class="pricing-one__text">School & colleage</p><!-- /.pricing-one__text -->
+                            <a href="{% url 'membership-url' %}" class="pricing-one__btn thm-btn">Join / Renew</a>
+                        </div><!-- /.pricing-one__bottom -->
+                    </div><!-- /.pricing-one__single -->
+                </div><!-- /.col-lg-3 col-md-6 -->
+                <div class="col-lg-3 col-md-6">
+                    <div class="pricing-one__single wow fadeInUp" data-wow-duration="1500ms" data-wow-delay="300ms">
+                        <p class="pricing-one__name">Plan 04</p><!-- /.pricing-one__name -->
+                        <h3 class="pricing-one__type">For Family</h3><!-- /.pricing-one__type -->
+                        <p class="pricing-one__amount">79</p><!-- /.pricing-one__amount -->
+                        <p class="pricing-one__time">usd / Year</p><!-- /.pricing-one__time -->
+                        <div class="pricing-one__bottom">
+                            <p class="pricing-one__text">2 Adults & Under 18 Childs</p><!-- /.pricing-one__text -->
+                            <a href="{% url 'membership-url' %}" class="pricing-one__btn thm-btn">Join / Renew</a>
+                        </div><!-- /.pricing-one__bottom -->
+                    </div><!-- /.pricing-one__single -->
+                </div><!-- /.col-lg-3 col-md-6 -->
+            </div><!-- /.row -->
+        </div><!-- /.container -->
+    </section><!-- /.pricing-one -->
+
+
+
+    <a href="{% url 'membership-url' %}" data-target="html" class="scroll-to-target scroll-to-top"><i
+            class="egypt-icon-arrow-2"></i></a>
+{% endblock content %}

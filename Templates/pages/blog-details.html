@@ -1,0 +1,331 @@
+{% extends 'base/base.html' %}
+{% load  static %}
+
+{% block content %}
+    <section class="inner-banner">
+        <div class="container">
+            <h2 class="inner-banner__title">Blog Single Post</h2><!-- /.inner-banner__title -->
+            <ul class="list-unstyled thm-breadcrumb">
+                <li><a href="{% url 'home-url' %}">Home</a></li>
+                <li>Blog Single Post</li>
+            </ul><!-- /.thm-breadcrumb -->
+        </div><!-- /.container -->
+    </section><!-- /.inner-banner -->
+    <section class="blog-details">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="blog-four__single">
+                        <div class="blog-four__date">
+                                <span>
+                                    <b>05</b>
+                                    Oct
+                                </span>
+                        </div><!-- /.blog-four__date -->
+                        <div class="blog-four__image">
+                            <img src="{% static 'images/blog/blog-l-1-1.jpg' %}" alt="Awesome Image"/>
+                        </div><!-- /.blog-four__image -->
+                        <div class="blog-four__content">
+                            <div class="blog-four__meta">
+                                <a href="{% url 'blog-detail-url' %}">Admin</a>
+                                <span class="blog-four__meta-sep">_</span><!-- /.blog-four__meta-sep -->
+                                <a href="{% url 'blog-detail-url' %}">Press Release</a>
+                                <span class="blog-four__meta-sep">_</span><!-- /.blog-four__meta-sep -->
+                                <a href="{% url 'blog-detail-url' %}">5 Comments</a>
+                                <span class="blog-four__meta-sep">_</span><!-- /.blog-four__meta-sep -->
+                                <a href="{% url 'blog-detail-url' %}">24 Views</a>
+                            </div><!-- /.blog-four__meta -->
+                            <h3 class="blog-four__title">Celebrating Authentic Marathon 2019</h3>
+                            <!-- /.blog-four__title -->
+                            <p class="blog-four__text">Explain to you how all this mistaken some idea of denouncing
+                                pleasure again is there or desires to obtain pain of itself, because great pleasure
+                                indignation & dislike men who are so beguiled and demoralized by the charms of pleasure
+                                of the moment, so blinded by that they cannot foresee the pain and trouble that are
+                                bound to ensue.</p><!-- /.blog-four__text -->
+                            <p class="blog-four__text">Beguiled and demoralized by the charms of pleasure of the moment,
+                                so blinded by desire, that they cannot foresee the pain and trouble that are bound to
+                                ensue; and equal blame belongs and equal blame belongs to who fail in their duty.</p>
+                            <!-- /.blog-four__text -->
+                            <h3 class="blog-details__subtitle">A swarm in May is worth a load of hay; a swarm in June is
+                                worth a but a swarm in July is not worth a fly</h3><!-- /.blog-details__subtitle -->
+                            <p class="blog-four__text">Must explain to you how all this mistaken idea of denouncing
+                                pleasure and praising pain was born and I will give you a complete all account system,
+                                and expound the actual teachings of the great explorer of the truth, the
+                                master-builder.</p><!-- /.blog-four__text -->
+                            <ul class="blog-details__list list-unstyled">
+                                <li>Great pleasure indignation and dislike men who are so beguiled and demoralize charms
+                                    of pleasure of the moment.
+                                </li>
+                                <li>Foresee the pain and trouble that are bound to ensue; and equal blame.</li>
+                                <li>That they cannot foresee the pain and trouble that are bound to ensue; and equal
+                                    belongs and equal blame belongs to who fail in their duty.
+                                </li>
+                            </ul><!-- /.blog-details__list -->
+                            <h3 class="blog-details__title">Some Special Edition</h3><!-- /.blog-details__title -->
+                            <p class="blog-four__text">Idea of denouncing pleasure again is there or desires to obtain
+                                pain of itself, because great pleasure indignation and dislike men who are so beguiled
+                                and demoralized by the charms of pleasure of the moment, so blinded by that they
+                                trouble.</p><!-- /.blog-four__text -->
+                            <div class="blog-details__gallery">
+                                <div class="row low-gutter masonry-layout">
+                                    <div class="col-lg-5 masonry-item">
+                                        <img src="{% static 'images/blog/blog-d-1-1.jpg' %}" alt="Awesome Image"/>
+                                    </div><!-- /.col-lg-4 -->
+                                    <div class="col-lg-7 masonry-item">
+                                        <img src="{% static 'images/blog/blog-d-1-2.jpg' %}" alt="Awesome Image"/>
+                                    </div><!-- /.col-lg-8 -->
+                                    <div class="col-lg-12 masonry-item">
+                                        <img src="{% static 'images/blog/blog-d-1-3.jpg' %}" alt="Awesome Image"/>
+                                    </div><!-- /.col-lg-12 -->
+                                </div><!-- /.row low-gutter -->
+                            </div><!-- /.blog-details__gallery -->
+                            <p class="blog-details__tags">
+                                <span class="text-uppercase">Tags:</span>
+                                <a href="{% url 'blog-detail-url' %}">Creative,</a>
+                                <a href="{% url 'blog-detail-url' %}">Designs,</a>
+                                <a href="{% url 'blog-detail-url' %}">Life Style,</a>
+                                <a href="{% url 'blog-detail-url' %}">Photography</a>
+                            </p><!-- /.blog-details__tags -->
+                            <div class="blog-details__social">
+                                <a href="{% url 'blog-detail-url' %}"><i class="fa fa-facebook-f"></i> Facebook</a>
+                                <a href="{% url 'blog-detail-url' %}"><i class="fa fa-twitter"></i> Twiter</a>
+                                <a href="{% url 'blog-detail-url' %}"><i class="fa fa-linkedin"></i> Linkedin</a>
+                                <a href="{% url 'blog-detail-url' %}"><i class="fa fa-pinterest-p"></i> Pinterest</a>
+                            </div><!-- /.blog-details__social -->
+                        </div><!-- /.blog-four__content -->
+                        <div class="blog-details__nav">
+                            <div class="blog-details__nav__prev">
+                                <span>Prev Post</span>
+                                <h3 class="blog-details__nav-title"><a href="{% url 'blog-detail-url' %}">Birth of Queen
+                                    Victoria</a></h3>
+                            </div><!-- /.blog-details__nav__prev -->
+                            <div class="blog-details__nav__next">
+                                <span>Next Post</span>
+                                <h3 class="blog-details__nav-title"><a href="{% url 'blog-detail-url' %}">Relax With Coloring
+                                    Page</a></h3>
+                            </div><!-- /.blog-details__nav__next -->
+                        </div><!-- /.blog-details__nav -->
+                        <div class="blog-details__comment">
+                            <h3 class="blog-details__comment-title">Comments</h3><!-- /.blog-details__comment-title -->
+                            <div class="blog-details__comment-single">
+                                <div class="blog-details__comment-image">
+                                    <div class="blog-details__comment-image-inner">
+                                        <img src="{% static 'images/blog/comment-1-1.jpg' %}" alt="Awesome Image"/>
+                                    </div><!-- /.blog-details__comment-image-inner -->
+                                </div><!-- /.blog-details__comment-image -->
+                                <div class="blog-details__comment-content">
+                                    <div class="blog-details__comment-top">
+                                        <h3 class="blog-details__comment-name">Steven Rich</h3>
+                                        <span class="blog-details__comment-sep">,</span>
+                                        <span class="blog-details__comment-date">Nov 26, 2019</span>
+                                    </div><!-- /.blog-details__comment-top -->
+                                    <p class="blog-details__comment-text">On the other hand, we denounce with righteous
+                                        indignation dislike men which toil and great pleasure.</p>
+                                    <!-- /.blog-details__comment-text -->
+                                    <a href="{% url 'blog-detail-url' %}" class="blog-details__comment-link">Reply <span>+</span></a>
+                                </div><!-- /.blog-details__comment-content -->
+                            </div><!-- /.blog-details__comment-single -->
+                            <div class="blog-details__comment-single">
+                                <div class="blog-details__comment-image">
+                                    <div class="blog-details__comment-image-inner">
+                                        <img src="{% static 'images/blog/comment-1-1.jpg' %}" alt="Awesome Image"/>
+                                    </div><!-- /.blog-details__comment-image-inner -->
+                                </div><!-- /.blog-details__comment-image -->
+                                <div class="blog-details__comment-content">
+                                    <div class="blog-details__comment-top">
+                                        <h3 class="blog-details__comment-name">Steven Rich</h3>
+                                        <span class="blog-details__comment-sep">,</span>
+                                        <span class="blog-details__comment-date">Nov 26, 2019</span>
+                                    </div><!-- /.blog-details__comment-top -->
+                                    <p class="blog-details__comment-text">On the other hand, we denounce with righteous
+                                        indignation dislike men which toil and great pleasure.</p>
+                                    <!-- /.blog-details__comment-text -->
+                                    <a href="{% url 'blog-detail-url' %}" class="blog-details__comment-link">Reply <span>+</span></a>
+                                </div><!-- /.blog-details__comment-content -->
+                            </div><!-- /.blog-details__comment-single -->
+                        </div><!-- /.blog-details__comment -->
+                        <div class="product-details__review-form">
+                            <h3 class="product-details__review-form__title">Add Your Comments</h3>
+                            <!-- /.product-details__review-form__title -->
+                            <p class="product-details__review-form__text">Your email address will not be published.
+                                Required fields are marked*</p><!-- /.product-details__review-form__text -->
+                            <form action="{% url 'blog-detail-url' %}" class="contact-one__form">
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <p class="contact-one__field">
+                                            <textarea name="message" placeholder="Your Comments"></textarea>
+                                        </p><!-- /.contact-one__field -->
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <p class="contact-one__field">
+                                            <input type="text" name="fname" placeholder="Your Name*">
+                                        </p><!-- /.contact-one__field -->
+                                    </div><!-- /.col-lg-6 -->
+                                    <div class="col-lg-6">
+                                        <p class="contact-one__field">
+                                            <input type="text" name="email" placeholder="Email*">
+                                        </p><!-- /.contact-one__field -->
+                                    </div><!-- /.col-lg-6 -->
+                                    <div class="col-lg-12">
+                                        <button type="submit" class="thm-btn contact-one__btn">Post Comment</button>
+                                    </div><!-- /.col-lg-12 -->
+                                </div><!-- /.row -->
+                            </form>
+                        </div> <!-- /.product-details__review-form -->
+                    </div><!-- /.blog-four__single -->
+                </div><!-- /.col-lg-8 -->
+                <div class="col-lg-4">
+                    <div class="sidebar sidebar__right">
+                        <div class="sidebar__single sidebar__search">
+                            <form action="{% url 'blog-detail-url' %}" class="sidebar__search-form">
+                                <input type="text" name="search" placeholder="Search...">
+                                <button type="submit"><i class="egypt-icon-search"></i></button>
+                            </form><!-- /.sidebar__search-form -->
+                        </div><!-- /.sidebar__single -->
+                        <div class="sidebar__single">
+                            <h3 class="sidebar__title">Categories</h3><!-- /.sidebar__title -->
+                            <ul class="list-unstyled sidebar__cat-list">
+                                <li>
+                                    <a href="{% url 'blog-detail-url' %}">
+                                        <span class="sidebar__cat-list__icon"></span>
+                                        History
+                                        <span class="sidebar__cat-list__count">(10)</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{% url 'blog-detail-url' %}">
+                                        <span class="sidebar__cat-list__icon"></span>
+                                        Internationl
+                                        <span class="sidebar__cat-list__count">(10)</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{% url 'blog-detail-url' %}">
+                                        <span class="sidebar__cat-list__icon"></span>
+                                        Exhibition
+                                        <span class="sidebar__cat-list__count">(10)</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{% url 'blog-detail-url' %}">
+                                        <span class="sidebar__cat-list__icon"></span>
+                                        Kids & Family
+                                        <span class="sidebar__cat-list__count">(10)</span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="{% url 'blog-detail-url' %}">
+                                        <span class="sidebar__cat-list__icon"></span>
+                                        Press Release
+                                        <span class="sidebar__cat-list__count">(10)</span>
+                                    </a>
+                                </li>
+                            </ul><!-- /.sidebar__cat-list -->
+                        </div><!-- /.sidebar__single -->
+                        <div class="sidebar__single">
+                            <h3 class="sidebar__title">Trending Post</h3><!-- /.sidebar__title -->
+                            <div class="sidebar__post-carousel owl-carousel owl-theme">
+                                <div class="item">
+                                    <div class="sidebar__post-single">
+                                        <div class="sidebar__post-image">
+                                            <div class="sidebar__post-date"><span>5</span> sep</div>
+                                            <!-- /.sidebar__post-date -->
+                                            <img src="{% static 'images/blog/blog-s-1-1.jpg' %}" alt="Awesome Image"/>
+                                        </div><!-- /.sidebar__post-image -->
+                                        <div class="sidebar__post-content">
+                                            <a href="{% url 'blog-detail-url' %}" class="sidebar__post-cata">International</a>
+                                            <h3 class="sidebar__post-title"><a href="{% url 'blog-detail-url' %}">5 Things You’ll
+                                                Learn at The Egypt National Symposium</a></h3>
+                                            <!-- /.sidebar__post-title -->
+                                            <a href="{% url 'blog-detail-url' %}" class="sidebar__post-link">Read More
+                                                <span>+</span></a>
+                                        </div><!-- /.sidebar__post-content -->
+                                    </div><!-- /.sidebar__post-single -->
+                                </div><!-- /.item -->
+                                <div class="item">
+                                    <div class="sidebar__post-single">
+                                        <div class="sidebar__post-image">
+                                            <div class="sidebar__post-date"><span>5</span> sep</div>
+                                            <!-- /.sidebar__post-date -->
+                                            <img src="{% static 'images/blog/blog-s-1-1.jpg' %}" alt="Awesome Image"/>
+                                        </div><!-- /.sidebar__post-image -->
+                                        <div class="sidebar__post-content">
+                                            <a href="{% url 'blog-detail-url' %}" class="sidebar__post-cata">International</a>
+                                            <h3 class="sidebar__post-title"><a href="{% url 'blog-detail-url' %}">5 Things You’ll
+                                                Learn at The Egypt National Symposium</a></h3>
+                                            <!-- /.sidebar__post-title -->
+                                            <a href="{% url 'blog-detail-url' %}" class="sidebar__post-link">Read More
+                                                <span>+</span></a>
+                                        </div><!-- /.sidebar__post-content -->
+                                    </div><!-- /.sidebar__post-single -->
+                                </div><!-- /.item -->
+                                <div class="item">
+                                    <div class="sidebar__post-single">
+                                        <div class="sidebar__post-image">
+                                            <div class="sidebar__post-date"><span>5</span> sep</div>
+                                            <!-- /.sidebar__post-date -->
+                                            <img src="{% static 'images/blog/blog-s-1-1.jpg' %}" alt="Awesome Image"/>
+                                        </div><!-- /.sidebar__post-image -->
+                                        <div class="sidebar__post-content">
+                                            <a href="{% url 'blog-detail-url' %}" class="sidebar__post-cata">International</a>
+                                            <h3 class="sidebar__post-title"><a href="{% url 'blog-detail-url' %}">5 Things You’ll
+                                                Learn at The Egypt National Symposium</a></h3>
+                                            <!-- /.sidebar__post-title -->
+                                            <a href="{% url 'blog-detail-url' %}" class="sidebar__post-link">Read More
+                                                <span>+</span></a>
+                                        </div><!-- /.sidebar__post-content -->
+                                    </div><!-- /.sidebar__post-single -->
+                                </div><!-- /.item -->
+                            </div><!-- /.sidebar__post-carousel -->
+                        </div><!-- /.sidebar__single -->
+                        <div class="sidebar__single">
+                            <h3 class="sidebar__title">Tags</h3><!-- /.sidebar__title -->
+                            <div class="sidebar__tags-list">
+                                <a href="{% url 'blog-detail-url' %}">Art</a>
+                                <a href="{% url 'blog-detail-url' %}">Collection</a>
+                                <a href="{% url 'blog-detail-url' %}">Display</a>
+                                <a href="{% url 'blog-detail-url' %}">Events</a>
+                                <a href="{% url 'blog-detail-url' %}">Exhibition</a>
+                                <a href="{% url 'blog-detail-url' %}">Gallery</a>
+                                <a href="{% url 'blog-detail-url' %}">Memorial</a>
+                                <a href="{% url 'blog-detail-url' %}">Visit</a>
+                            </div><!-- /.sidebar__tags-list -->
+                        </div><!-- /.sidebar__single -->
+                        <div class="sidebar__single">
+                            <h3 class="sidebar__title">Instagram</h3><!-- /.sidebar__title -->
+                            <ul class="sidebar__insta-list list-unstyled">
+                                <li><a href="{% url 'blog-detail-url' %}">
+                                    <span class="sidebar__insta-list__link">+</span>
+                                    <img src="{% static 'images/blog/blog-insta-1-1.jpg' %}" alt="Awesome Image"/>
+                                </a></li>
+                                <li><a href="{% url 'blog-detail-url' %}">
+                                    <span class="sidebar__insta-list__link">+</span>
+                                    <img src="{% static 'images/blog/blog-insta-1-2.jpg' %}" alt="Awesome Image"/>
+                                </a></li>
+                                <li><a href="{% url 'blog-detail-url' %}">
+                                    <span class="sidebar__insta-list__link">+</span>
+                                    <img src="{% static 'images/blog/blog-insta-1-3.jpg' %}" alt="Awesome Image"/>
+                                </a></li>
+                                <li><a href="{% url 'blog-detail-url' %}">
+                                    <span class="sidebar__insta-list__link">+</span>
+                                    <img src="{% static 'images/blog/blog-insta-1-4.jpg' %}" alt="Awesome Image"/>
+                                </a></li>
+                                <li><a href="{% url 'blog-detail-url' %}">
+                                    <span class="sidebar__insta-list__link">+</span>
+                                    <img src="{% static 'images/blog/blog-insta-1-5.jpg' %}" alt="Awesome Image"/>
+                                </a></li>
+                                <li><a href="{% url 'blog-detail-url' %}">
+                                    <span class="sidebar__insta-list__link">+</span>
+                                    <img src="{% static 'images/blog/blog-insta-1-6.jpg' %}" alt="Awesome Image"/>
+                                </a></li>
+                            </ul><!-- /.sidebar__insta-list -->
+                        </div><!-- /.sidebar__single -->
+                    </div><!-- /.sidebar -->
+                </div><!-- /.col-lg-4 -->
+            </div><!-- /.row -->
+        </div><!-- /.container -->
+    </section><!-- /.blog-details -->
+
+    <a href="{% url 'blog-detail-url' %}" data-target="html" class="scroll-to-target scroll-to-top"><i
+            class="egypt-icon-arrow-2"></i></a>
+{% endblock content %}

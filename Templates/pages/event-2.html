@@ -1,0 +1,215 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block content %}
+    <section class="event-page-header event-page__two">
+        <section class="event-sorting event-page-three">
+            <div class="container">
+                <div class="tab-content">
+                    <div id="searchByMonth-tab"
+                         class="event-sorting__tab-content tab-pane show active animated fadeInUp">
+                        <input type="text" name="searchByMonth-datepicker" class="searchByMonth-datepicker"
+                               value="November - 2019" readonly>
+                    </div><!-- /.event-sorting__tab-content tab-pane -->
+                    <div id="searchByDate-tab" class="event-sorting__tab-content tab-pane animated fadeInUp">
+                        <input type="text" name="searchByDate-datepicker" class="searchByDate-datepicker"
+                               value="14 - Dec - 2019" readonly>
+                    </div><!-- /.event-sorting__tab-content -->
+                </div><!-- /.tab-content -->
+                <ul class="nav nav-tabs">
+                    <li class="nav-item">
+                        <a href="event-2.html#searchByMonth-tab" data-toggle="tab" class="nav-link active">Search By
+                            Month</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="event-2.html#searchByDate-tab" data-toggle="tab" class="nav-link ">Search By Date <i
+                                class="fa fa-calendar-o"></i></a>
+                    </li>
+                </ul><!-- /.nav nav-tabs -->
+            </div><!-- /.container -->
+        </section><!-- /.event-sorting -->
+        <div class="collection-search event-page">
+            <div class="container">
+                <div class="inner-container">
+                    <div class="collection-search__outer">
+                        <div class="collection-search__field">
+                            <select class="selectpicker">
+                                <option>All Categories</option>
+                                <option>All Categories</option>
+                                <option>All Categories</option>
+                                <option>All Categories</option>
+                            </select>
+                        </div><!-- /.collection-search__field -->
+                        <div class="collection-search__field">
+                            <select class="selectpicker">
+                                <option>All Locations</option>
+                                <option>All Locations</option>
+                                <option>All Locations</option>
+                                <option>All Locations</option>
+                            </select>
+                        </div><!-- /.collection-search__field -->
+                        <div class="collection-search__field">
+                            <select class="selectpicker">
+                                <option>All Event Categories</option>
+                                <option>All Event Categories</option>
+                                <option>All Event Categories</option>
+                                <option>All Event Categories</option>
+                            </select>
+                        </div><!-- /.collection-search__field -->
+                    </div><!-- /.collection-search__outer -->
+                    <button type="submit" class="thm-btn collection-search__btn">Find Event</button>
+                </div><!-- /.inner-container -->
+            </div><!-- /.container -->
+        </div><!-- /.collection-serch -->
+    </section><!-- /.event-page-header -->
+    <section class="event-four">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <div class="event-four__single">
+                        <div class="event-four__image">
+                            <img src="{% static 'images/event/event-4-1.jpg' %}" alt="Awesome Image"/>
+                            <a href="event-1.html" class="event-four__cat">Tour</a>
+                        </div><!-- /.event-four__image -->
+                        <div class="event-four__content">
+                            <h3 class="event-four__title"><a href="event-details.html">Weekend Drop-In Sessions in the
+                                Sackler Lab</a></h3><!-- /.event-four__title -->
+                            <ul class="event-four__list list-unstyled">
+                                <li>
+                                    <span>Date & Time</span>
+                                    <p><i class="fa fa-clock-o"></i> 04 Nov 2019, 10.00 to 15.00</p>
+                                </li>
+                                <li>
+                                    <span>Location</span>
+                                    <p><i class="fa fa-location-arrow"></i> 246 King Street, NY 10011</p>
+                                </li>
+                            </ul><!-- /.event-four__list -->
+                            <a href="event-2.html#" class="thm-btn event-four__btn">More Details</a>
+                        </div><!-- /.event-four__content -->
+                    </div><!-- /.event-four__single -->
+                </div><!-- /.col-lg-6 col-md-6 -->
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <div class="event-four__single">
+                        <div class="event-four__image">
+                            <img src="{% static 'images/event/event-4-2.jpg' %}" alt="Awesome Image"/>
+                            <a href="event-1.html" class="event-four__cat">Tour</a>
+                        </div><!-- /.event-four__image -->
+                        <div class="event-four__content">
+                            <h3 class="event-four__title"><a href="event-details.html">Weekend Drop-In Sessions in the
+                                Sackler Lab</a></h3><!-- /.event-four__title -->
+                            <ul class="event-four__list list-unstyled">
+                                <li>
+                                    <span>Date & Time</span>
+                                    <p><i class="fa fa-clock-o"></i> 04 Nov 2019, 10.00 to 15.00</p>
+                                </li>
+                                <li>
+                                    <span>Location</span>
+                                    <p><i class="fa fa-location-arrow"></i> 246 King Street, NY 10011</p>
+                                </li>
+                            </ul><!-- /.event-four__list -->
+                            <a href="event-2.html#" class="thm-btn event-four__btn">More Details</a>
+                        </div><!-- /.event-four__content -->
+                    </div><!-- /.event-four__single -->
+                </div><!-- /.col-lg-6 col-md-6 -->
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <div class="event-four__single">
+                        <div class="event-four__image">
+                            <img src="{% static 'images/event/event-4-3.jpg' %}" alt="Awesome Image"/>
+                            <a href="event-1.html" class="event-four__cat">Tour</a>
+                        </div><!-- /.event-four__image -->
+                        <div class="event-four__content">
+                            <h3 class="event-four__title"><a href="event-details.html">Weekend Drop-In Sessions in the
+                                Sackler Lab</a></h3><!-- /.event-four__title -->
+                            <ul class="event-four__list list-unstyled">
+                                <li>
+                                    <span>Date & Time</span>
+                                    <p><i class="fa fa-clock-o"></i> 04 Nov 2019, 10.00 to 15.00</p>
+                                </li>
+                                <li>
+                                    <span>Location</span>
+                                    <p><i class="fa fa-location-arrow"></i> 246 King Street, NY 10011</p>
+                                </li>
+                            </ul><!-- /.event-four__list -->
+                            <a href="event-2.html#" class="thm-btn event-four__btn">More Details</a>
+                        </div><!-- /.event-four__content -->
+                    </div><!-- /.event-four__single -->
+                </div><!-- /.col-lg-6 col-md-6 -->
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <div class="event-four__single">
+                        <div class="event-four__image">
+                            <img src="{% static 'images/event/event-4-4.jpg' %}" alt="Awesome Image"/>
+                            <a href="event-1.html" class="event-four__cat">Tour</a>
+                        </div><!-- /.event-four__image -->
+                        <div class="event-four__content">
+                            <h3 class="event-four__title"><a href="event-details.html">Weekend Drop-In Sessions in the
+                                Sackler Lab</a></h3><!-- /.event-four__title -->
+                            <ul class="event-four__list list-unstyled">
+                                <li>
+                                    <span>Date & Time</span>
+                                    <p><i class="fa fa-clock-o"></i> 04 Nov 2019, 10.00 to 15.00</p>
+                                </li>
+                                <li>
+                                    <span>Location</span>
+                                    <p><i class="fa fa-location-arrow"></i> 246 King Street, NY 10011</p>
+                                </li>
+                            </ul><!-- /.event-four__list -->
+                            <a href="event-2.html#" class="thm-btn event-four__btn">More Details</a>
+                        </div><!-- /.event-four__content -->
+                    </div><!-- /.event-four__single -->
+                </div><!-- /.col-lg-6 col-md-6 -->
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <div class="event-four__single">
+                        <div class="event-four__image">
+                            <img src="{% static 'images/event/event-4-5.jpg' %}" alt="Awesome Image"/>
+                            <a href="event-1.html" class="event-four__cat">Tour</a>
+                        </div><!-- /.event-four__image -->
+                        <div class="event-four__content">
+                            <h3 class="event-four__title"><a href="event-details.html">Weekend Drop-In Sessions in the
+                                Sackler Lab</a></h3><!-- /.event-four__title -->
+                            <ul class="event-four__list list-unstyled">
+                                <li>
+                                    <span>Date & Time</span>
+                                    <p><i class="fa fa-clock-o"></i> 04 Nov 2019, 10.00 to 15.00</p>
+                                </li>
+                                <li>
+                                    <span>Location</span>
+                                    <p><i class="fa fa-location-arrow"></i> 246 King Street, NY 10011</p>
+                                </li>
+                            </ul><!-- /.event-four__list -->
+                            <a href="event-2.html#" class="thm-btn event-four__btn">More Details</a>
+                        </div><!-- /.event-four__content -->
+                    </div><!-- /.event-four__single -->
+                </div><!-- /.col-lg-6 col-md-6 -->
+                <div class="col-lg-6 col-md-6 col-sm-12">
+                    <div class="event-four__single">
+                        <div class="event-four__image">
+                            <img src="{% static 'images/event/event-4-6.jpg' %}" alt="Awesome Image"/>
+                            <a href="event-1.html" class="event-four__cat">Tour</a>
+                        </div><!-- /.event-four__image -->
+                        <div class="event-four__content">
+                            <h3 class="event-four__title"><a href="event-details.html">Weekend Drop-In Sessions in the
+                                Sackler Lab</a></h3><!-- /.event-four__title -->
+                            <ul class="event-four__list list-unstyled">
+                                <li>
+                                    <span>Date & Time</span>
+                                    <p><i class="fa fa-clock-o"></i> 04 Nov 2019, 10.00 to 15.00</p>
+                                </li>
+                                <li>
+                                    <span>Location</span>
+                                    <p><i class="fa fa-location-arrow"></i> 246 King Street, NY 10011</p>
+                                </li>
+                            </ul><!-- /.event-four__list -->
+                            <a href="event-2.html#" class="thm-btn event-four__btn">More Details</a>
+                        </div><!-- /.event-four__content -->
+                    </div><!-- /.event-four__single -->
+                </div><!-- /.col-lg-6 col-md-6 -->
+            </div><!-- /.row -->
+            <div class="post-pagination post-pagination__two">
+                <a href="event-2.html#">Prev</a>
+                <a href="event-2.html#" class="active">1</a>
+                <a href="event-2.html#">2</a>
+                <a href="event-2.html#">Next</a>
+            </div><!-- /.post-pagination -->
+        </div><!-- /.container -->
+    </section><!-- /.event-four -->
+{% endblock content %}

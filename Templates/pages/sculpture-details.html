@@ -1,0 +1,193 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block content %}
+
+
+    <section class="inner-banner">
+        <div class="container">
+            <h2 class="inner-banner__title">Single Collection</h2><!-- /.inner-banner__title -->
+            <ul class="list-unstyled thm-breadcrumb">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="collection-sculpture.html">Collections</a></li>
+                <li>Single Collection</li>
+            </ul><!-- /.thm-breadcrumb -->
+        </div><!-- /.container -->
+    </section><!-- /.inner-banner -->
+    <div class="collection-details">
+        <div class="container">
+            <div class="row justify-content-between">
+                <div class="col-lg-6">
+                    <div class="collection-details__content">
+                        <h3 class="collection-details__title">{{ object.name }}</h3>
+                        <!-- /.collection-details__title -->
+                        <br>
+                        <img src="{{ object.image.url }}" width="700" height="300" alt="Awesome Image"
+                             class="img-fluid"/>
+                        <br>
+                        <br>
+                        <a href="{{ object.image.url }}" download="{{ object.image.url }}"
+                           class="collection-details__link"><i
+                                class="fa fa-download"></i> Download Image</a>
+                        <br>
+                        <p class="collection-details__text">{{ object.description }}</p>
+                        <!-- /.collection-details__text -->
+                        <br>
+
+                        <h3 class="collection-details__subtitle">Highlights</h3><!-- /.collection-details__subtitle -->
+                        <br>
+                        <ul class="collection-details__list list-unstyled">
+                            <li>
+                                <i class="egypt-icon-check"></i>
+                                Indignation & dislike men who are so beguiled
+                            </li>
+                            <li>
+                                <i class="egypt-icon-check"></i>
+                                Equal blame belongs who those their duty
+                            </li>
+                            <li>
+                                <i class="egypt-icon-check"></i>
+                                Same as saying through shrinking
+                            </li>
+                            <li>
+                                <i class="egypt-icon-check"></i>
+                                Foresee the pain and trouble that are bound to ensue
+                            </li>
+                        </ul><!-- /.collection-details__list list-unstyled -->
+                    </div><!-- /.collection-details__content -->
+                </div><!-- /.col-lg-6 -->
+                <div class="col-lg-5 collection-details__sidebar-wrap">
+                    <div class="collection-details__sidebar">
+                        <div class="collection-details__sidebar-single">
+                            <h3 class="collection-details__sidebar-title"><span>Details of Sculpture</span></h3>
+                            <!-- /.collection-details__sidebar-title -->
+                            <ul class="collection-details__sidebar-list list-unstyled">
+                                <li>
+                                        <span class="collection-details__sidebar-list__name">
+                                            Artist
+                                            <span class="collection-details__sidebar-list__sep">:</span>
+                                        </span>
+                                    <span class="collection-details__sidebar-list__value">{{ object.artist_name }}</span>
+                                </li>
+                                <li>
+                                        <span class="collection-details__sidebar-list__name">
+                                            Year
+                                            <span class="collection-details__sidebar-list__sep">:</span>
+                                        </span>
+                                    <span class="collection-details__sidebar-list__value">{{ object.year }}</span>
+                                </li>
+                                <li>
+                                        <span class="collection-details__sidebar-list__name">
+                                            Style
+                                            <span class="collection-details__sidebar-list__sep">:</span>
+                                        </span>
+                                    <span class="collection-details__sidebar-list__value">{{ object.style }}</span>
+                                </li>
+                                <li>
+                                        <span class="collection-details__sidebar-list__name">
+                                            Material
+                                            <span class="collection-details__sidebar-list__sep">:</span>
+                                        </span>
+                                    <span class="collection-details__sidebar-list__value">{{ object.material }}</span>
+                                </li>
+                                <li>
+                                        <span class="collection-details__sidebar-list__name">
+                                            Dimension
+                                            <span class="collection-details__sidebar-list__sep">:</span>
+                                        </span>
+                                    <span class="collection-details__sidebar-list__value">{{ object.dimension }}</span>
+                                </li>
+                                <li>
+                                        <span class="collection-details__sidebar-list__name">
+                                            Type
+                                            <span class="collection-details__sidebar-list__sep">:</span>
+                                        </span>
+                                    <span class="collection-details__sidebar-list__value">{{ object.type }}</span>
+                                </li>
+                                <li>
+                                        <span class="collection-details__sidebar-list__name">
+                                            Object Num
+                                            <span class="collection-details__sidebar-list__sep">:</span>
+                                        </span>
+                                    <span class="collection-details__sidebar-list__value">{{ object.object_number }}</span>
+                                </li>
+                            </ul><!-- /.collection-details__sidebar-list list-unstyled -->
+                        </div><!-- /.collection-details__sidebar-single -->
+                        <div class="collection-details__sidebar-single">
+                            <h3 class="collection-details__sidebar-title"><span>About Artsit</span></h3>
+                            <!-- /.collection-details__sidebar-title -->
+                            <div class="collection-details__author">
+                                <div class="collection-details__author-top">
+                                    <div class="collection-details__author-image">
+                                        <div class="collection-details__author-image-inner">
+                                            <img src="{{ object.image_artist.url }}" width="100" height="100"
+                                                 alt="Awesome Image"/>
+                                        </div><!-- /.collection-details__author-image-inner -->
+                                    </div><!-- /.collection-details__author-image -->
+                                    <div class="collection-details__author-top-content">
+                                        <h3 class="collection-details__author-name">{{ object.artist_name }}</h3>
+                                        <!-- /.collection-details__name -->
+                                        <p class="collection-details__author-designation">{{ object.come_from }}</p>
+                                        <!-- /.collection-details__author-designation -->
+                                    </div><!-- /.collection-details__author-top-content -->
+                                </div><!-- /.collection-details__author-top -->
+                                <p class="collection-details__author-text">{{ object.description_artist }}.</p>
+                                <!-- /.collection-details__author-text -->
+                                <a href="collection-details.html#" class="collection-details__author-link"><span>See All Collection <i>+</i></span></a>
+                            </div><!-- /.collection-details__author -->
+                        </div><!-- /.collection-details__sidebar-single -->
+                        <div class="collection-details__sidebar-single">
+                            <h3 class="collection-details__sidebar-subtitle">Share With Friends</h3>
+                            <!-- /.collection-details__sidebar-subtitle -->
+                            <div class="collection-details__sidebar-social">
+                                <a href="https://www.facebook.com/{{ object.facebook }}" class="fa fa-facebook-f"></a>
+                                <a href="https://www.twitter.com/{{ object.twitter }}" class="fa fa-twitter"></a>
+                                <a href="https://www.linkedin.com/{{ object.linkedin }}" class="fa fa-linkedin"></a>
+                                <a href="https://www.rss.com" class="fa fa-rss"></a>
+                            </div><!-- /.collection-details__sidebar-social -->
+                        </div><!-- /.collection-details__sidebar-single -->
+                    </div><!-- /.collection-details__sidebar -->
+                </div><!-- /.col-lg-5 -->
+            </div><!-- /.row -->
+        </div><!-- /.container -->
+    </div><!-- /.collection-details -->
+
+
+    <section class="similar-collection collection-two__collection-page">
+        <div class="container">
+            <h3 class="text-center similar-collection__title">
+                Similar Collections
+            </h3><!-- /.text-center -->
+            <div class="row masonary-layout">
+                {% for detail in sculpture %}
+                    <div class="col-lg-4 col-md-6 col-sm-12 wow fadeInUp masonary-item" data-wow-duration="1500ms"
+                         data-wow-delay="0ms">
+                        <div class="collection-two__single">
+                            <div class="collection-two__image">
+                                <img src="{{ detail.image.url }}" height="450" width="200" alt="">
+                                <div class="collection-two__hover">
+                                    <a class="img-popup" href="{{ detail.image.url }}"><i
+                                            class="egypt-icon-focus"></i>
+                                        <!-- /.egypt-icon-focus --></a>
+                                </div><!-- /.collection-two__hover -->
+                            </div><!-- /.collection-two__image -->
+                            <div class="collection-two__content">
+                                <p class="collection-two__category"><a
+                                        href="{% url 'sculpture-details-url' detail.pk %}">{{ detail.name }}</a></p>
+                                <!-- /.collection-two__category -->
+                                <h3 class="collection-two__title"><a
+                                        href="{% url 'sculpture-details-url' detail.pk %}">{{ detail.artist_name }}</a>
+                                </h3>
+                                <!-- /.collection-two__title -->
+                            </div><!-- /.collection-two__content -->
+                        </div><!-- /.collection-two__single -->
+                    </div><!-- /.col-lg-4 masonary-item -->
+                {% endfor %}
+            </div><!-- /.row -->
+        </div><!-- /.container -->
+    </section><!-- /.similar-collection -->
+
+    <a href="collection-details.html#" data-target="html" class="scroll-to-target scroll-to-top"><i
+            class="egypt-icon-arrow-2"></i></a>
+
+{% endblock content %}

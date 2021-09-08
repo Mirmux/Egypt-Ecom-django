@@ -1,0 +1,180 @@
+{% extends 'base/base.html' %}
+{% load  static %}
+
+{% block content %}
+    <div class="container">
+        <ul class="list-unstyled thm-breadcrumb thm-breadcrumb__two">
+            <li><a href="{% url 'home-url' %}">Home</a></li>
+            <li><a href="{% url 'product-details-url' 1 %}">Pages</a></li>
+            <li><a href="{% url 'product-url' %}">Shop</a></li>
+            <li>Single Product</li>
+        </ul><!-- /.thm-breadcrumb -->
+    </div><!-- /.container -->
+    <section class="product-details">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="product-details__image">
+                        <img class="img-fluid" src="{{ object.image.url }}" alt="Awesome Image"/>
+                        <a href="{{ object.image.url }}" class="product-details__img-popup img-popup"><i
+                                class="fa fa-search"></i></a>
+                    </div><!-- /.product-details__image -->
+                </div><!-- /.col-lg-6 -->
+                <div class="col-lg-6">
+                    <div class="product-details__content">
+                        <h3 class="product-details__title">{{ object.name }}</h3><!-- /.product-details__title -->
+                        <p class="product-details__stars">
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <i class="fa fa-star"></i>
+                            <span>(24 Reviews)</span>
+                        </p><!-- /.product-details__stars -->
+
+                        <p class="product-details__price">${{ object.price }}</p><!-- /.product-details__price -->
+                        <p class="product-details__text">{{ object.description }}</p><!-- /.product-details__text -->
+                        <p class="product-details__categories">
+                            <span class="text-uppercase">Categories:</span>
+                            <a href="#">{{ object.categories }}</a>
+                        </p><!-- /.product-details__categories -->
+
+
+                        <div class="product-details__button-block">
+                            <button data-product="{{ object.id }}" data-action="add"
+                                    title="Add to Cart"
+                                    class="thm-btn product-details__cart-btn update-cart">Add to
+                                Cart <span>+</span></button>
+                        </div><!-- /.product-details__button-block -->
+
+
+                        <p class="product-details__availabelity">
+                            <span>Availability:</span>
+                            In stock
+                        </p><!-- /.product-details__availabelity -->
+                        <p class="product-details__social">
+                            <span><i class="egypt-icon-share"></i></span>
+                            <a href="https://www.facebook.com/"><i class="fa fa-facebook-f"></i></a>
+                            <a href="https://www.twitter.com/"><i class="fa fa-twitter"></i></a>
+                            <a href="https://www.linkedin.com/"><i class="fa fa-linkedin"></i></a>
+                            <a href="https://www.instagram.com/"><i class="fa fa-instagram"></i></a>
+                        </p><!-- /.product-details__social -->
+                        <div class="accrodion-grp" data-grp-name="product-details__accrodion">
+                            <div class="accrodion ">
+                                <div class="accrodion-title">
+                                    <h4>Description</h4>
+                                </div>
+                                <div class="accrodion-content">
+                                    <div class="inner">
+                                        <p>{{ object.description }}</p>
+                                    </div><!-- /.inner -->
+                                </div>
+                            </div>
+                            <div class="accrodion active">
+                                <div class="accrodion-title">
+                                    <h4>Reviews</h4>
+                                </div>
+                                <div class="accrodion-content">
+                                    <div class="inner">
+                                        <div class="product-details__review">
+                                            {% for comment in object.comments.all %}
+                                            <div class="product-details__review-single">
+                                                <div class="product-details__review-left">
+                                                    <img src="{% static 'images/shop/person-icon.png' %}"
+                                                        height="70" width="70" alt="Awesome Image"/>
+                                                </div><!-- /.product-details__review-left -->
+                                                <div class="product-details__review-right">
+                                                    <div class="product-details__review-top">
+                                                        <div class="product-details__review-top-left">
+                                                            <h3 class="product-details__review-title">{{ comment.name }}</h3>
+                                                            <span class="product-details__review-sep">–</span>
+                                                            <span class="product-details__review-date">{{ comment.created }}</span>
+                                                        </div><!-- /.product-details__review-top-left -->
+                                                        <div class="product-details__review-top-right">
+                                                            <i class="fa fa-star"></i>
+                                                            <i class="fa fa-star"></i>
+                                                            <i class="fa fa-star"></i>
+                                                            <i class="fa fa-star"></i>
+                                                            <i class="fa fa-star"></i>
+                                                        </div><!-- /.product-details__review-top-right -->
+                                                    </div><!-- /.product-details__review-top -->
+                                                    <p class="product-details__review-text">{{ comment.description }}</p><!-- /.product-details__review-text -->
+                                                </div><!-- /.product-details__review-right -->
+                                            </div><!-- /.product-details__review-single -->
+                                            {% endfor %}
+                                        </div><!-- /.product-details__review -->
+                                        <div class="product-details__review-form">
+                                            <h3 class="product-details__review-form__title">Add Your Comments</h3>
+                                            <!-- /.product-details__review-form__title -->
+                                            <p class="product-details__review-form__text">Your email address will not be
+                                                published. Required fields are marked*</p>
+                                            <!-- /.product-details__review-form__text -->
+                                            <p class="product-details__review-form__rating">
+                                                <span>Rating</span>
+                                                <i class="fa fa-star-o"></i>
+                                                <i class="fa fa-star-o"></i>
+                                                <i class="fa fa-star-o"></i>
+                                                <i class="fa fa-star-o"></i>
+                                                <i class="fa fa-star-o"></i>
+                                            </p><!-- /.product-details__review-form__rating -->
+                                            <form action="" method="post" class="contact-one__form contact-one__field">
+                                                {{ comment_form.as_p }}
+                                                {% csrf_token %}
+                                                 <button type="submit" class="thm-btn contact-one__btn">
+                                                     Submit <span>+</span></button>
+                                                <a href="{% url 'comment-url' object.pk %}" class="thm-btn contact-one__btn">Add comment another way</a>
+
+                                            </form>
+                                        </div><!-- /.product-details__review-form -->
+                                    </div><!-- /.inner -->
+                                </div>
+                            </div>
+                        </div>
+                    </div><!-- /.product-details__content -->
+                </div><!-- /.col-lg-6 -->
+            </div><!-- /.row -->
+        </div><!-- /.container -->
+    </section><!-- /.product-details -->
+    <section class="related-product">
+        <div class="container">
+            <h3 class="related-product__title">Related Products</h3><!-- /.related-product__title -->
+            <div class="related-product__carousel owl-carousel owl-theme">
+                {% for product in products %}
+                    <div class="item">
+                        <div class="product-one__single">
+                            <div class="product-one__image">
+                                <img src="{{ product.image.url }}" height="260" width="200" alt="Awesome Image"/>
+                            </div><!-- /.product-one__image -->
+                            <div class="product-one__content">
+                                <div class="product-one__content-left">
+                                    <h3 class="product-one__title">
+                                        <a href="{% url 'product-details-url' product.pk %}">{{ product.name }}</a>
+                                    </h3><!-- /.product-one__title -->
+                                    <p class="product-one__text">${{ product.price }}</p><!-- /.product-one__text -->
+                                    <p class="product-one__stars">
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                        <span>({{ product.get_comment_total }} Reviews)</span>
+                                    </p><!-- /.product-one__stars -->
+                                </div><!-- /.product-one__content-left -->
+                                <div class="product-one__content-right">
+                                    <button data-product="{{ product.id }}" data-action="add" data-toggle="tooltip"
+                                            data-placement="top"
+                                            title="Add to Cart"
+                                            class="product-one__cart-btn update-cart"><i
+                                            class="egypt-icon-supermarket"></i></button>
+                                </div><!-- /.product-one__content-right -->
+                            </div><!-- /.product-one__content -->
+                        </div><!-- /.product-one__single -->
+                    </div><!-- /.item -->
+                {% endfor %}
+            </div><!-- /.related-product__carousel owl-carousel owl-theme -->
+        </div><!-- /.container -->
+    </section><!-- /.related-product -->
+
+    <a href="#" data-target="html" class="scroll-to-target scroll-to-top"><i
+            class="egypt-icon-arrow-2"></i></a>
+{% endblock content %}

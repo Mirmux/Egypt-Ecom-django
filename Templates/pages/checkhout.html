@@ -1,0 +1,243 @@
+{% extends 'base/base.html' %}
+{% load  static %}
+
+{% block content %}
+    <div class="container">
+        <ul class="list-unstyled thm-breadcrumb thm-breadcrumb__two">
+            <li><a href="{% url 'home-url' %}">Home</a></li>
+            <li><a href="{% url 'checkout-url' %}">Pages</a></li>
+            <li><a href="{% url 'product-url' %}">Shop</a></li>
+            <li>Checkout</li>
+        </ul><!-- /.thm-breadcrumb -->
+    </div><!-- /.container -->
+    <section class="checkout-one">
+        <div class="container">
+            <form id="form" action="{% url 'checkout-url' %}" class="row checkout-one__main-form">
+                {% csrf_token %}
+                <div class="col-lg-6">
+                    <div class="checkout-one__form" id="user-info">
+                        <h3 class="checkout-one__title">Contact Information</h3><!-- /.checkout-one__title -->
+                        <div class="row">
+                            <div class="col-md-12">
+                                <input type="text" name="phone" placeholder="Phone Number">
+                            </div><!-- /.col-md-12 -->
+                            <div class="col-md-12">
+                                <input type="text" name="email" placeholder="Email Address">
+                            </div><!-- /.col-md-12 -->
+                        </div><!-- /.row -->
+                        <p class="checkout-one__checkbox">
+                            <input type="checkbox" id="test1" name="radio-group" checked>
+                            <label for="test1">Get Product Updates & Offers</label>
+                        </p>
+                    </div><!-- /.checkout-one__form -->
+
+                    <div id="shipping-info" class="checkout-one__form">
+                        <h3 class="checkout-one__title">Shipping Address</h3><!-- /.checkout-one__title -->
+                        <div class="row">
+                            <div class="col-md-6">
+                                <input id="form-button" type="text" name="fname" placeholder="First Name">
+                            </div><!-- /.col-md-6 -->
+                            <div class="col-md-6">
+                                <input id="form-button" type="text" name="lname" placeholder="Last Name">
+                            </div><!-- /.col-md-6 -->
+                            <div class="col-md-12">
+                                <input id="form-button" type="text" name="address" placeholder="Address">
+                            </div><!-- /.col-md-12 -->
+                            <div class="col-md-12">
+                                <input id="form-button" type="text" name="city" placeholder="City">
+                            </div><!-- /.col-md-12 -->
+                            <div class="col-md-6">
+                                <input id="form-button" type="text" name="zipcode" placeholder="Zipcode">
+                            </div><!-- /.col-md-6 -->
+                        </div><!-- /.row -->
+                        <p class="checkout-one__checkbox">
+                            <input type="checkbox" id="test2" name="radio-group">
+                            <label for="test2">Save for future shopping</label>
+                        </p>
+                    </div><!-- /.checkout-one__form -->
+                    <div id="paypal-button-container"></div>
+                </div><!-- /.col-lg-6 -->
+                <div class="col-lg-6">
+                    <div id="payment-info" class="checkout-one__content hidden">
+                        {% for item in items %}
+                            <div class="checkout-one__content-single">
+                                <div class="checkout-one__content-single__left">
+                                    <div class="checkout-one__content-image">
+                                        <div class="checkout-one__content-image-inner">
+                                            <img src="{{ item.product.image.url }}" width="100" height="100"
+                                                 alt="Awesome Image"/>
+                                        </div><!-- /.checkout-one__content-image-inner -->
+                                    </div><!-- /.checkout-one__content-image -->
+                                    <h3 class="checkout-one__content-title">{{ item.product.name }}</h3>
+                                    <!-- /.checkout-one__content-title -->
+                                </div><!-- /.checkout-one__content-single__left -->
+                                <div class="checkout-one__content-single__right">
+                                    <p class="checkout-one__content-price">${{ item.product.price }}</p>
+                                    <!-- /.checkout-one__content-price -->
+                                </div><!-- /.checkout-one__content-single__right -->
+                            </div><!-- /.checkout-one__content-single -->
+                        {% endfor %}
+                        <div class="checkout-one__price">
+                            <div class="checkout-one__price-single">
+                                <p class="checkout-one__price-name"><span>Sub total</span></p>
+                                <!-- /.checkout-one__price-name -->
+                                <p class="checkout-one__price-amount"><span>${{ order.get_cart_total }}</span></p>
+                                <!-- /.checkout-one__price-amount -->
+                            </div><!-- /.checkout-one__price-single -->
+                            <div class="checkout-one__price-single">
+                                <p class="checkout-one__price-name"><span>Shipping</span></p>
+                                <!-- /.checkout-one__price-name -->
+                                <p class="checkout-one__price-amount">
+                                    <span>${{ order.get_shipping|floatformat:2 }}</span></p>
+                                <!-- /.checkout-one__price-amount -->
+                            </div><!-- /.checkout-one__price-single -->
+                        </div><!-- /.checkout-one__price -->
+
+                        <div class="checkout-one__total">
+                            <p class="checkout-one__total-name">Total</p><!-- /.checkout-one__total-name -->
+                            <p class="checkout-one__total-amount">${{ order.get_cart_total_shipping }}</p>
+                            <!-- /.checkout-one__total-amount -->
+                        </div><!-- /.checkout-one__total -->
+                        <button id="make-payment" type="submit" class="thm-btn checkout-one__btn">Continue Payment for free
+                            <span>+</span></button>
+                    </div><!-- /.checkout-one__content -->
+                </div><!-- /.col-lg-6 -->
+            </form><!-- /.row -->
+        </div><!-- /.container -->
+    </section><!-- /.checkout-one -->
+
+    <a href="{% url 'checkout-url' %}" data-target="html" class="scroll-to-target scroll-to-top"><i
+            class="egypt-icon-arrow-2"></i></a>
+
+    <script src="https://www.paypal.com/sdk/js?client-id=test&currency=USD"></script>
+
+    <script>
+        // Render the PayPal button into #paypal-button-container
+        paypal.Buttons({
+
+            style:{
+                shape: 'rect'
+            },
+
+            // Set up the transaction
+            createOrder: function (data, actions) {
+                return actions.order.create({
+                    purchase_units: [{
+                        amount: {
+                            value: '88.44'
+                        }
+                    }]
+                });
+            },
+
+            // Finalize the transaction
+            onApprove: function (data, actions) {
+                return actions.order.capture().then(function (orderData) {
+                    // Successful capture! For demo purposes:
+                    console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
+                    var transaction = orderData.purchase_units[0].payments.captures[0];
+                    alert('Transaction ' + transaction.status + ': ' + transaction.id + '\n\nSee console for all available details');
+
+                    // Replace the above to show a success message within this page, e.g.
+                    // const element = document.getElementById('paypal-button-container');
+                    // element.innerHTML = '';
+                    // element.innerHTML = '<h3>Thank you for your payment!</h3>';
+                    // Or go to another URL:  actions.redirect('thank_you.html');
+                });
+            }
+
+
+        }).render('#paypal-button-container');
+    </script>
+
+    <script type="text/javascript">
+        var shipping =
+            '{{ order.shipping }}'
+        var total = '{{ order.get_cart_total_shipping|floatformat:2 }}'
+
+        if (shipping == 'False') {
+            document.getElementById('shipping-info').innerHTML = ''
+        }
+
+        if (user != 'AnonymousUser') {
+            document.getElementById('user-info').innerHTML = ''
+        }
+
+        if (shipping == 'False' && user != 'AnonymousUser') {
+            document.getElementById('form-wrapper').classList.add('hidden')
+            document.getElementById('payment-info').classList.remove('hidden')
+        }
+
+
+        var form = document.getElementById('form')
+
+        csrftokens = form.getElementsByTagName("input")[0].value
+        console.log('Newtoken', form.getElementsByTagName("input")[0].value)
+
+        form.addEventListener('submit', function (e) {
+            e.preventDefault()
+            console.log('Form Submitted...')
+            document.getElementById('form-button').classList.add('hidden')
+            document.getElementById('payment-info').classList.remove('hidden')
+
+        })
+
+        document.getElementById('make-payment').addEventListener('click', function (e) {
+            submitFormData()
+
+        })
+
+
+        function submitFormData() {
+            console.log('Payment button clicked')
+
+            var userFormData = {
+                'name': null,
+                'email': null,
+                'total': total
+            }
+
+            var shippingInfo = {
+                'fname': null,
+                'lname': null,
+                'address': null,
+                'city': null,
+                'zipcode': null,
+            }
+
+            if (shipping != 'False') {
+                shippingInfo.fname = form.fname.value
+                shippingInfo.lname = form.lname.value
+                shippingInfo.address = form.address.value
+                shippingInfo.city = form.city.value
+                shippingInfo.zipcode = form.zipcode.value
+            }
+
+            if (user == 'AnonymousUser') {
+                userFormData.name = form.name.value
+                userFormData.email = form.email.value
+            }
+
+            console.log('Shipping Info:', shippingInfo)
+            console.log('User Info:', userFormData)
+
+            var url = '/process-order/'
+            fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRFToken': csrftoken,
+                },
+                body: JSON.stringify({
+                    'form': userFormData, 'shipping': shippingInfo
+                })
+            })
+                .then((response) => response.json())
+                .then((data) => {
+                    console.log('Success:', data)
+                    alert('Transaction completed')
+                    window.location.href = "{% url 'product-url' %}"
+                });
+        }
+    </script>
+{% endblock content %}

@@ -1,0 +1,161 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block content %}
+
+
+
+
+    <section class="inner-banner">
+        <div class="container">
+            <h2 class="inner-banner__title">Contact Us</h2><!-- /.inner-banner__title -->
+            <p class="inner-banner__text">We’re always here to help you with anything you might need.</p>
+            <!-- /.inner-banner__text -->
+            <ul class="list-unstyled thm-breadcrumb">
+                <li><a href="{% url 'home-url' %}">Home</a></li>
+                <li><a href="{% url 'about-url' %}">The Museum</a></li>
+                <li>Contact Us</li>
+            </ul><!-- /.thm-breadcrumb -->
+            {% if messages %}
+                <ul class="messages list-unstyled">
+                    {% for message in messages %}
+                        <li class="alert alert-{{ message.tags }}">
+                            {{ message }}
+                        </li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        </div><!-- /.container -->
+    </section><!-- /.inner-banner -->
+
+    <section class="contact-one">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="contact-one__main">
+                        <div class="contact-one__image">
+                            <img src="{% static 'images/resources/contact-1-1.jpg' %}" class="img-fluid" alt=""/>
+                        </div><!-- /.contact-one__image -->
+                        <div class="contact-one__content">
+                            <div class="row no-gutters">
+                                <div class="col-lg-6">
+                                    <h3 class="contact-one__title">United Kingdon</h3><!-- /.contact-one__title -->
+                                    <p class="contact-one__text">61 Wellfield Road Roath Cardiff <br> CF24 3DG</p>
+                                    <!-- /.contact-one__text -->
+                                    <p class="contact-one__text"><a href="tel:321-888-789-0123">p: 321 (888)
+                                        789-0123</a></p><!-- /.contact-one__text -->
+                                    <p class="contact-one__text"><a href="mailto:egyptmuseum@example.com">E:
+                                        egyptmuseum@example.com</a></p><!-- /.contact-one__text -->
+                                </div><!-- /.col-lg-6 -->
+                                <div class="col-lg-6">
+                                    <ul class="contact-one__list list-unstyled">
+                                        <li><span class="contact-one__list-name">Mo & Tu <span
+                                                class="contact-one__list-colon">:</span></span>9am to 6.00pm
+                                        </li>
+                                        <li><span class="contact-one__list-name">We & Th <span
+                                                class="contact-one__list-colon">:</span></span>10am to 7.00pm
+                                        </li>
+                                        <li><span class="contact-one__list-name">Sa & Su <span
+                                                class="contact-one__list-colon">:</span></span>10am to 7.00pm
+                                        </li>
+                                        <li><span class="contact-one__list-name">FR <span
+                                                class="contact-one__list-colon">:</span></span>Closed
+                                        </li>
+                                    </ul><!-- /.contact-one__list -->
+                                </div><!-- /.col-lg-6 -->
+                            </div><!-- /.row -->
+                        </div><!-- /.contact-one__content -->
+                    </div><!-- /.contact-one__main -->
+                </div><!-- /.col-lg-6 -->
+                <div class="col-lg-6">
+                    <form action="{% url 'contact-url' %}" method="POST" class="contact-one__form">
+                        {% csrf_token %}
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <p class="contact-one__field">
+                                    <label>First Name:</label>
+                                    <input type="text" placeholder="First name" name="first_name">
+                                </p><!-- /.contact-one__field -->
+                            </div><!-- /.col-lg-6 -->
+                            <div class="col-lg-6">
+                                <p class="contact-one__field">
+                                    <label>Last Name:</label>
+                                    <input type="text" placeholder="Last name" name="last_name">
+                                </p><!-- /.contact-one__field -->
+                            </div><!-- /.col-lg-6 -->
+                            <div class="col-lg-6">
+                                <p class="contact-one__field">
+                                    <label>Email:</label>
+                                    <input type="text" placeholder="Email" name="email">
+                                </p><!-- /.contact-one__field -->
+                            </div><!-- /.col-lg-6 -->
+                            <div class="col-lg-6">
+                                <p class="contact-one__field">
+                                    <label>Phone:</label>
+                                    <input type="text" placeholder="Phone" name="phone">
+                                </p><!-- /.contact-one__field -->
+                            </div><!-- /.col-lg-6 -->
+                            <div class="col-lg-12">
+                                <p class="contact-one__field">
+                                    <label>Subject:</label>
+                                    <input type="text" placeholder="Subject" name="subject">
+                                </p><!-- /.contact-one__field -->
+                            </div><!-- /.col-lg-6 -->
+                            <div class="col-lg-12">
+                                <p class="contact-one__field">
+                                    <label>Message:</label>
+                                    <textarea name="message" placeholder="message"></textarea>
+                                    <button type="submit" class="thm-btn contact-one__btn">Send Message</button>
+                                </p><!-- /.contact-one__field -->
+                            </div><!-- /.col-lg-6 -->
+                        </div><!-- /.row -->
+                    </form>
+                </div><!-- /.col-lg-6 -->
+            </div><!-- /.row -->
+        </div><!-- /.container -->
+    </section><!-- /.contact-one -->
+    <div class="contact-map-one">
+        <div class="container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4562.753041141002!2d-118.80123790098536!3d34.152323469614075!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80e82469c2162619%3A0xba03efb7998eef6d!2sCostco+Wholesale!5e0!3m2!1sbn!2sbd!4v1562518641290!5m2!1sbn!2sbd"
+                    class="google-map__home" allowfullscreen></iframe>
+        </div><!-- /.container -->
+    </div><!-- /.contact-map-one -->
+    <section class="venue-two">
+        <div class="container">
+            <h3 class="venue-two__block-title text-center">Country Venues</h3><!-- /.venue-two__block-title -->
+            <div class="inner-container">
+                <div class="venue-two__carousel owl-carousel owl-theme">
+                    {% for countries in country %}
+                    <div class="item">
+                        <div class="venue-two__single">
+                            <div class="venue-two__icon">
+                                <img src="{{ countries.image.url }}" height="200" width="300" alt="">
+                            </div><!-- /.venue-two__icon -->
+                            <h3 class="venue-two__title">{{ countries.name }}</h3><!-- /.venue-two__title -->
+                            <p class="venue-two__contact">
+                                <a href="tel:{{ countries.phone }}">{{ countries.phone }}</a> <br>
+                                <a href="mailto:{{ countries.email }}">E: {{ countries.email }}</a>
+                            </p><!-- /.venue-two__contact -->
+                            <div class="venue-two__hover">
+                                <h3 class="venue-two__title">{{ countries.name }}</h3><!-- /.venue-two__title -->
+                                <a href="{% url 'venues-museum-url' countries.pk %}" class="thm-btn venue-two__btn">Plan Your Visit</a>
+                                <p class="venue-two__contact">
+                                    <a href="tel:{{ countries.phone }}">p: {{ countries.phone }}</a> <br>
+                                    <a href="mailto:{{ countries.email }}">E: {{ countries.email }}</a>
+                                </p><!-- /.venue-two__contact -->
+                            </div><!-- /.venue-two__hover -->
+                        </div><!-- /.venue-two__single -->
+                    </div><!-- /.item -->
+                    {% endfor %}
+                </div><!-- /.venue-two__carousel -->
+            </div><!-- /.inner-container -->
+            <div class="venue-two__carousel-nav">
+                <a href="contact.html#" class="venue-two__carousel-nav-left"><i class="fa fa-angle-left"></i></a>
+                <a href="contact.html#" class="venue-two__carousel-nav-right"><i class="fa fa-angle-right"></i></a>
+            </div><!-- /.venue-two__carousel-nav -->
+        </div><!-- /.container -->
+    </section><!-- /.venue-two -->
+
+    <a href="contact.html#" data-target="html" class="scroll-to-target scroll-to-top"><i class="egypt-icon-arrow-2"></i></a>
+
+{% endblock content %}

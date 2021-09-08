@@ -1,0 +1,106 @@
+{% load static %}
+
+<header class="site-header site-header__header-one  ">
+    <nav class="navbar navbar-expand-lg navbar-light header-navigation stricky">
+        <div class="container clearfix">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="logo-box">
+                <a class="navbar-brand" href="{% url 'home-url' %}">
+                    <img src="{% static 'images/resources/light-logo.png' %}" class="main-logo" alt="Awesome Image"/>
+                </a>
+                <button class="menu-toggler" data-target=".main-navigation">
+                    <span class="fa fa-bars"></span>
+                </button>
+            </div><!-- /.logo-box -->
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="main-navigation">
+                <ul class=" navigation-box @@extra_class">
+                    <li class="current">
+                        <a href="{% url 'home-url' %}">Home</a>
+                        <ul class="submenu">
+                            <li><a href="{% url 'home-url' %}">Home One</a></li>
+                            <li><a href="{% url 'home2' %}">Home Two</a></li>
+                            <li><a href="{% url 'home-url' %}">Header Variations</a>
+                                <ul class="submenu">
+                                    <li><a href="{% url 'home-url' %}">Home One</a></li>
+                                    <li><a href="{% url 'home2' %}">Home Two</a></li>
+                                </ul><!-- /.submenu -->
+                            </li>
+                        </ul><!-- /.submenu -->
+                    </li>
+                    <li>
+                        <a href="{% url 'about-url' %}">The Museum</a>
+                        <ul class="submenu">
+                            <li><a href="{% url 'about-url' %}">About Us </a></li>
+                            <li><a href="{% url 'team-url' %}">Meet Our Team</a></li>
+                            <li><a href="{% url 'contact-url' %}">Contact</a></li>
+                        </ul><!-- /.submenu -->
+                    </li>
+
+                    <li>
+                        <a href="{% url 'venues-url' %}">Venues</a>
+                    </li>
+
+                    <li>
+                        <a href="#">What’s On</a>
+                        <ul class="submenu">
+                            <li>
+                                <a href="{% url 'event-1-url' %}">Events </a>
+                                <ul class="submenu">
+                                    <li><a href="{% url 'event-1-url' %}">Events 01 </a></li>
+                                    <li><a href="{% url 'event-2-url' %}">Events 02 </a></li>
+                                </ul><!-- /.submenu -->
+                            </li>
+                            <li><a href="{% url 'exbition-url' %}">Exhibition</a></li>
+                        </ul><!-- /.submenu -->
+                    </li>
+                    <li>
+                        <a href="#">Collections</a>
+                        <ul class="submenu">
+                            <li><a href="{% url 'collection-url' %}">Antiquities</a></li>
+                            <li><a href="{% url 'collection-cultural-url' %}">Cultural</a></li>
+                            <li><a href="{% url 'collection-sculpture-url' %}">Sculpture</a></li>
+                            <li><a href="{% url 'collection_detail-url' %}">Single Collection</a></li>
+                        </ul><!-- /.submenu -->
+                    </li>
+                    <li>
+                        <a href="{% url 'product-url' %}">Shop</a>
+                        <ul class="submenu">
+                            <li><a href="{% url 'product-url' %}">Products</a></li>
+                            <li><a href="{% url 'cart-url' %}">Shopping Cart</a></li>
+                            <li><a href="{% url 'checkout-url' %}">Checkout</a></li>
+                            <li><a href="{% url 'myaccount-url' %}">My Account</a></li>
+                        </ul><!-- /.submenu -->
+                    </li>
+                    <li>
+                        <a href="#">Pages</a>
+                        <ul class="submenu">
+{#                            <li><a href="{% url 'blog-masonry-url' %}">Blog</a>#}
+{#                                <ul class="submenu right-align">#}
+{#                                    <li><a href="{% url 'blog-masonry-url' %}">Masonry View</a></li>#}
+{#                                    <li><a href="{% url 'blog-grid-url' %}">Grid View</a></li>#}
+{#                                    <li><a href="{% url 'blog-large-url' %}">Large Image</a></li>#}
+{#                                    <li><a href="{% url 'blog-detail-url' %}">Single Post</a></li>#}
+{#                                </ul><!-- /.submenu -->#}
+{#                            </li>#}
+                            <li><a href="{% url 'donation-url' %}">Donation</a></li>
+                            <li><a href="{% url 'faq-url' %}">FAQ’s</a></li>
+                            <li><a href="{% url 'membership-url' %}">Membership</a></li>
+                        </ul><!-- /.submenu -->
+                    </li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+            <div class="right-side-box">
+                <a href="{% url 'cart-url' %}" class="site-header__cart"><i class="egypt-icon-supermarket"></i>
+                    <!-- /.egypt-icon-supermarket --> <span class="count">{{ cartItems }}</span><!-- /.count --></a>
+                <!-- /.site-header__cart -->
+                <a href="{% url 'home-url' %}" class="site-header__sidemenu-nav side-menu__toggler">
+                    <span class="site-header__sidemenu-nav-line"></span><!-- /.site-header__sidemenu-nav-line -->
+                    <span class="site-header__sidemenu-nav-line"></span><!-- /.site-header__sidemenu-nav-line -->
+                    <span class="site-header__sidemenu-nav-line"></span><!-- /.site-header__sidemenu-nav-line -->
+                </a><!-- /.site-header__sidemenu -->
+            </div><!-- /.right-side-box -->
+        </div>
+        <!-- /.container -->
+    </nav>
+</header><!-- /.site-header -->

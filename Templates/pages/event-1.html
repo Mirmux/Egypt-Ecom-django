@@ -1,0 +1,125 @@
+{% extends 'base/base.html' %}
+{% load static %}
+{% block content %}
+    <section class="event-page-header">
+        <section class="event-sorting event-page-three">
+            <div class="container">
+                <div class="tab-content">
+                    <div id="searchByMonth-tab"
+                         class="event-sorting__tab-content tab-pane show active animated fadeInUp">
+                        <input type="text" name="searchByMonth-datepicker" class="searchByMonth-datepicker"
+                               value="November - 2019" readonly>
+                    </div><!-- /.event-sorting__tab-content tab-pane -->
+                    <div id="searchByDate-tab" class="event-sorting__tab-content tab-pane animated fadeInUp">
+                        <input type="text" name="searchByDate-datepicker" class="searchByDate-datepicker"
+                               value="14 - Dec - 2019" readonly>
+                    </div><!-- /.event-sorting__tab-content -->
+                </div><!-- /.tab-content -->
+                <ul class="nav nav-tabs">
+                    <li class="nav-item">
+                        <a href="event-1.html#searchByMonth-tab" data-toggle="tab" class="nav-link active">Search By
+                            Month</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="event-1.html#searchByDate-tab" data-toggle="tab" class="nav-link ">Search By Date <i
+                                class="fa fa-calendar-o"></i></a>
+                    </li>
+                </ul><!-- /.nav nav-tabs -->
+            </div><!-- /.container -->
+        </section><!-- /.event-sorting -->
+        <div class="collection-search event-page">
+            <div class="container">
+                <div class="inner-container">
+                    <div class="collection-search__outer">
+                        <div class="collection-search__field">
+                            <select class="selectpicker">
+                                <option>All Categories</option>
+                                <option>All Categories</option>
+                                <option>All Categories</option>
+                                <option>All Categories</option>
+                            </select>
+                        </div><!-- /.collection-search__field -->
+                        <div class="collection-search__field">
+                            <select class="selectpicker">
+                                <option>All Locations</option>
+                                <option>All Locations</option>
+                                <option>All Locations</option>
+                                <option>All Locations</option>
+                            </select>
+                        </div><!-- /.collection-search__field -->
+                        <div class="collection-search__field">
+                            <select class="selectpicker">
+                                <option>All Event Categories</option>
+                                <option>All Event Categories</option>
+                                <option>All Event Categories</option>
+                                <option>All Event Categories</option>
+                            </select>
+                        </div><!-- /.collection-search__field -->
+                    </div><!-- /.collection-search__outer -->
+                    <button type="submit" class="thm-btn collection-search__btn">Find Event</button>
+                </div><!-- /.inner-container -->
+            </div><!-- /.container -->
+        </div><!-- /.collection-serch -->
+    </section><!-- /.event-page-header -->
+    <section class="event-three">
+        <div class="container">
+            <div class="row">
+                {% for event in events %}
+                    <div class="col-lg-4 col-md-6 col-sm-12">
+                        <div class="event-three__single">
+                            <div class="event-three__image">
+                                <img src="{% static 'images/event/event-3-1.jpg' %}" alt="Awesome Image"/>
+                                <h3 class="event-three__title"><a href="event-details.html">{{ event.organizer }}</a>
+                                </h3><!-- /.event-three__title -->
+                                <a href="event-1.html" class="event-three__cat">Tour</a>
+                            </div><!-- /.event-three__image -->
+                            <div class="event-three__content">
+                                <p class="event-three__text">{{ event.description|truncatechars:70 }}</p>
+                                <!-- /.event-three__text -->
+                                <ul class="event-three__list list-unstyled">
+                                    <li>
+                                        <span>Date & Time</span>
+                                        <p><i class="fa fa-clock-o"></i>{{ event.created|date }}, {{ event.start_time }}
+                                            to {{ event.end_time }}</p>
+                                    </li>
+                                    <li>
+                                        <span>Location</span>
+                                        <p><i class="fa fa-location-arrow"></i> {{ event.address }}</p>
+                                    </li>
+                                </ul><!-- /.event-three__list -->
+                                <a href="{% url 'event1-details-url' event.pk %}" class="thm-btn event-three__btn"><span
+                                        class="main-text">${{ event.cost_adults }}.00 / Person</span>
+                                    <span class="hover-text">More Details</span></a>
+                            </div><!-- /.event-three__content -->
+                        </div><!-- /.event-three__single -->
+                    </div><!-- /.col-lg-4 -->
+                {% endfor %}
+            </div><!-- /.row -->
+
+            <!-- Pagination -->
+            <div class="post-pagination post-pagination__two">
+            <span class="step_links">
+                {% if page_obj.has_previous %}
+                    <a href="?page={{ page_obj.previous_page_number }}">Prev</a>
+                {% endif %}
+
+                <span class="current">
+                    {% for num in page_obj.paginator.page_range %}
+                        {% if page_obj.number == num %}
+                            <span class="pagination-number pagination-current">{{ num }}</span>
+                        {% elif num > page_obj.number|add:-3 and num < page_obj.number|add:3 %}
+                            <a class="pagination-number" href="?page={{ num }}">{{ num }}</a>
+                        {% endif %}
+                    {% endfor %}
+                </span>
+
+                {% if page_obj.has_next %}
+                    <a href="?page={{ page_obj.next_page_number }}">Next</a>
+                {% endif %}
+            </span>
+            </div>
+            <!-- end pagination -->
+
+        </div><!-- /.container -->
+    </section><!-- /.event-three -->
+{% endblock content %}

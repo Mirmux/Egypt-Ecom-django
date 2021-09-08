@@ -1,0 +1,95 @@
+{% extends 'base/base.html' %}
+{% load static %}
+
+{% block content %}
+    <section class="inner-banner inner-banner__collection-page">
+        <div class="container">
+            <h2 class="inner-banner__title">Sculpture Collections</h2><!-- /.inner-banner__title -->
+            <ul class="list-unstyled thm-breadcrumb">
+                <li><a href="{% url 'home-url' %}">Home</a></li>
+                <li><a href="{% url 'collection-sculpture-url' %}">Collections</a></li>
+                <li>Sculpture</li>
+            </ul><!-- /.thm-breadcrumb -->
+        </div><!-- /.container -->
+    </section><!-- /.inner-banner -->
+    <div class="collection-search collection-page">
+        <div class="container">
+            <div class="inner-container">
+                <div class="collection-search__outer">
+                    <div class="collection-search__field">
+                        <select class="selectpicker">
+                            <option>Collections</option>
+                            <option>Collections</option>
+                            <option>Collections</option>
+                            <option>Collections</option>
+                        </select>
+                    </div><!-- /.collection-search__field -->
+                    <div class="collection-search__field">
+                        <select class="selectpicker">
+                            <option>Artist</option>
+                            <option>Artist</option>
+                            <option>Artist</option>
+                            <option>Artist</option>
+                        </select>
+                    </div><!-- /.collection-search__field -->
+                    <div class="collection-search__field">
+                        <select class="selectpicker">
+                            <option>Objects</option>
+                            <option>Objects</option>
+                            <option>Objects</option>
+                            <option>Objects</option>
+                        </select>
+                    </div><!-- /.collection-search__field -->
+                </div><!-- /.collection-search__outer -->
+                <button type="submit" class="thm-btn collection-search__btn">Collections <span>+</span></button>
+            </div><!-- /.inner-container -->
+        </div><!-- /.container -->
+    </div><!-- /.collection-serch -->
+    <section class="collection-six">
+        <div class="container">
+            <div class="row">
+                {% for sculpture in sculptures %}
+                    <div class="col-lg-4 col-md-6 col-sm-12">
+                        <div class="collection-six__single">
+                            <img src="{{ sculpture.image.url }}" width="360" height="450" alt="Awesome Image"/>
+                            <div class="collection-six__content">
+                                <p class="collection-six__cat">Sculpture</p><!-- /.collection-six__cat -->
+                                <h3 class="collection-six__title"><a
+                                        href="{% url 'sculpture-details-url' sculpture.pk %}">{{ sculpture.name }}</a>
+                                </h3><!-- /.collection-six__title -->
+                            </div><!-- /.collection-six__content -->
+                            <p class="collection-six__tag-line">{{ sculpture.artist_name }} ( {{ sculpture.year }}
+                                ) </p>
+                            <!-- /.collection-six__tag-line -->
+                        </div><!-- /.collection-six__single -->
+                    </div><!-- /.col-lg-4 -->
+                {% endfor %}
+            </div><!-- /.row -->
+
+        <br>
+            <div class="post-pagination post-pagination__two">
+            <span class="step_links">
+                {% if page_obj.has_previous %}
+                    <a href="?page={{ page_obj.previous_page_number }}">Prev</a>
+                {% endif %}
+
+                <span class="current">
+                    {% for num in page_obj.paginator.page_range %}
+                        {% if page_obj.number == num %}
+                            <span class="pagination-number pagination-current">{{ num }}</span>
+                        {% elif num > page_obj.number|add:-3 and num < page_obj.number|add:3 %}
+                            <a class="pagination-number" href="?page={{ num }}">{{ num }}</a>
+                        {% endif %}
+                    {% endfor %}
+                </span>
+
+                {% if page_obj.has_next %}
+                    <a href="?page={{ page_obj.next_page_number }}">Next</a>
+                {% endif %}
+            </span>
+            </div>
+        </div><!-- /.container -->
+    </section><!-- /.collection-six -->
+    <a href="{% url 'collection-sculpture-url' %}" data-target="html" class="scroll-to-target scroll-to-top"><i
+            class="egypt-icon-arrow-2"></i></a>
+{% endblock content %}
